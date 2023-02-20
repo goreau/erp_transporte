@@ -1,0 +1,29 @@
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Debug\ERP Transporte.exe.config
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Debug\ERP Transporte.exe
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Debug\ERP Transporte.pdb
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Debug\MySqlConnector.dll
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Debug\System.Buffers.dll
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Debug\System.Memory.dll
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Debug\MySqlConnector.xml
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Debug\System.Buffers.xml
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Debug\System.Memory.xml
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Debug\ERP Transporte.csproj.AssemblyReference.cache
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Debug\ERP Transporte.csproj.SuggestedBindingRedirects.cache
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Debug\ERP_Transporte.Properties.Resources.resources
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Debug\ERP Transporte.csproj.GenerateResource.cache
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Debug\ERP Transporte.csproj.CoreCompileInputs.cache
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Debug\ERP Transporte.csproj.CopyComplete
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Debug\ERP Transporte.exe
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Debug\ERP Transporte.pdb
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Debug\ERP_Transporte.Views.frmEscola.resources
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Debug\ERP_Transporte.Views.frmConsulta.resources
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Debug\ERP_Transporte.Views.frmEstudante.resources
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Debug\ERP_Transporte.frmMain.resources
