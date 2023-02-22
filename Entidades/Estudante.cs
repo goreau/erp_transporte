@@ -144,7 +144,9 @@ namespace ERP_Transporte.Entidades
 
         public DataTable Consulta()
         {
-            string sql = "SELECT * FROM estudante";
+            string sql = "SELECT e.`id`, e.`nome` as 'Nome', CONCAT(e.`logradouro`,', ', e.`numero`, ' - ', e.`bairro`) as 'Endereço', s.nome as 'Escola', (CASE e.`periodo` WHEN 1 THEN 'M' when 2 THEN 'T' ELSE 'I' END) as 'Período', `ra_rg` as 'RA/RG', `dt_nascimento` as 'Nascimento', `pai` as 'Nome Pai', `tel_pai` as 'Tel. do Pai', `mae` as 'Nome Mãe', `tel_mae` as 'Tel da Mãe', " +
+                "`responsavel` as 'Responsável', `resp_qualif` as 'Qualificação', `tel_resp` as 'Tel do Responsável', `naturalidade` as 'Naturalidade', `nacionalidade` as 'Nacionalidade', `est_civil` as 'Estado Civil', `rg` as 'RG', `cpf` as 'CPF', r.nome as 'Rota', `obs` as 'Observação', e.`updated_at` as 'Ultima Atualização' " +
+                "FROM `estudante` e JOIN escola s on e.id_escola=s.id JOIN rota r on e.id_rota = r.id  ORDER BY id desc";
 
             MySqlCommand cmd = new MySqlCommand(sql, conn);
 

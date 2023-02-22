@@ -63,6 +63,16 @@ namespace ERP_Transporte.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ajuda_64 {
+            get {
+                object obj = ResourceManager.GetObject("ajuda-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap aluna_48 {
             get {
                 object obj = ResourceManager.GetObject("aluna-48", resourceCulture);
@@ -83,9 +93,49 @@ namespace ERP_Transporte.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bookmark_64 {
+            get {
+                object obj = ResourceManager.GetObject("bookmark-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap calendario_48 {
+            get {
+                object obj = ResourceManager.GetObject("calendario-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap crescimento_económico_48 {
+            get {
+                object obj = ResourceManager.GetObject("crescimento-económico-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap delete_24 {
             get {
                 object obj = ResourceManager.GetObject("delete-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap documentos_48 {
+            get {
+                object obj = ResourceManager.GetObject("documentos-48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -106,6 +156,36 @@ namespace ERP_Transporte.Properties {
         internal static System.Drawing.Bitmap escola_48 {
             get {
                 object obj = ResourceManager.GetObject("escola-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap escolan {
+            get {
+                object obj = ResourceManager.GetObject("escolan", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gasolina_48 {
+            get {
+                object obj = ResourceManager.GetObject("gasolina-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap handcart_48 {
+            get {
+                object obj = ResourceManager.GetObject("handcart-48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

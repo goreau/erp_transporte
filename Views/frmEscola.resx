@@ -157,7 +157,7 @@
     <value>Microsoft Sans Serif, 9pt</value>
   </data>
   <data name="txtNome.Location" type="System.Drawing.Point, System.Drawing">
-    <value>223, 46</value>
+    <value>224, 46</value>
   </data>
   <data name="txtNome.Size" type="System.Drawing.Size, System.Drawing">
     <value>506, 28</value>
@@ -187,7 +187,7 @@
     <value>NoControl</value>
   </data>
   <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>101, 340</value>
+    <value>100, 340</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
     <value>101, 22</value>
@@ -220,7 +220,7 @@
     <value>NoControl</value>
   </data>
   <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>101, 288</value>
+    <value>100, 288</value>
   </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
     <value>101, 22</value>
@@ -253,7 +253,7 @@
     <value>NoControl</value>
   </data>
   <data name="Label12.Location" type="System.Drawing.Point, System.Drawing">
-    <value>551, 478</value>
+    <value>550, 478</value>
   </data>
   <data name="Label12.Size" type="System.Drawing.Size, System.Drawing">
     <value>83, 22</value>
@@ -400,7 +400,7 @@
     <value>2</value>
   </data>
   <data name="groupBox4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>223, 391</value>
+    <value>224, 391</value>
   </data>
   <data name="groupBox4.Size" type="System.Drawing.Size, System.Drawing">
     <value>402, 60</value>
@@ -460,10 +460,10 @@
     <value>Microsoft Sans Serif, 9pt</value>
   </data>
   <data name="txtLink.Location" type="System.Drawing.Point, System.Drawing">
-    <value>223, 227</value>
+    <value>224, 228</value>
   </data>
   <data name="txtLink.Size" type="System.Drawing.Size, System.Drawing">
-    <value>383, 28</value>
+    <value>384, 28</value>
   </data>
   <data name="txtLink.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -490,7 +490,7 @@
     <value>NoControl</value>
   </data>
   <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>154, 233</value>
+    <value>154, 232</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 22</value>
@@ -517,7 +517,7 @@
     <value>Microsoft Sans Serif, 9pt</value>
   </data>
   <data name="txtBairro.Location" type="System.Drawing.Point, System.Drawing">
-    <value>223, 176</value>
+    <value>224, 175</value>
   </data>
   <data name="txtBairro.Size" type="System.Drawing.Size, System.Drawing">
     <value>349, 28</value>
@@ -547,7 +547,7 @@
     <value>NoControl</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>139, 182</value>
+    <value>140, 182</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>63, 22</value>
@@ -574,10 +574,10 @@
     <value>Microsoft Sans Serif, 9pt</value>
   </data>
   <data name="txtNumero.Location" type="System.Drawing.Point, System.Drawing">
-    <value>695, 124</value>
+    <value>694, 125</value>
   </data>
   <data name="txtNumero.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 28</value>
+    <value>96, 28</value>
   </data>
   <data name="txtNumero.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -604,7 +604,7 @@
     <value>NoControl</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>606, 130</value>
+    <value>606, 129</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>78, 22</value>
@@ -631,7 +631,7 @@
     <value>Microsoft Sans Serif, 9pt</value>
   </data>
   <data name="txtLogradouro.Location" type="System.Drawing.Point, System.Drawing">
-    <value>223, 124</value>
+    <value>224, 125</value>
   </data>
   <data name="txtLogradouro.Size" type="System.Drawing.Size, System.Drawing">
     <value>349, 28</value>
@@ -661,7 +661,7 @@
     <value>NoControl</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>95, 130</value>
+    <value>94, 129</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>107, 22</value>
@@ -688,7 +688,7 @@
     <value>Microsoft Sans Serif, 9pt</value>
   </data>
   <data name="txtPeriodo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>735, 327</value>
+    <value>735, 328</value>
   </data>
   <data name="txtPeriodo.Size" type="System.Drawing.Size, System.Drawing">
     <value>55, 28</value>
@@ -742,13 +742,13 @@
     <value>Microsoft Sans Serif, 9pt</value>
   </data>
   <data name="txtEntrada.Location" type="System.Drawing.Point, System.Drawing">
-    <value>223, 475</value>
+    <value>224, 475</value>
   </data>
   <data name="txtEntrada.Mask" xml:space="preserve">
     <value>90:00</value>
   </data>
   <data name="txtEntrada.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 28</value>
+    <value>66, 28</value>
   </data>
   <data name="txtEntrada.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -775,7 +775,7 @@
     <value>90:00</value>
   </data>
   <data name="txtSaida.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 28</value>
+    <value>66, 28</value>
   </data>
   <data name="txtSaida.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -802,7 +802,7 @@
     <value>90:00</value>
   </data>
   <data name="txtEspecial.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 28</value>
+    <value>66, 28</value>
   </data>
   <data name="txtEspecial.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -823,7 +823,7 @@
     <value>Microsoft Sans Serif, 9pt</value>
   </data>
   <data name="txtTelefone1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>223, 282</value>
+    <value>224, 282</value>
   </data>
   <data name="txtTelefone1.Mask" xml:space="preserve">
     <value>(99) 90000-0000</value>
@@ -850,7 +850,7 @@
     <value>Microsoft Sans Serif, 9pt</value>
   </data>
   <data name="txtTelefone2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>223, 334</value>
+    <value>224, 334</value>
   </data>
   <data name="txtTelefone2.Mask" xml:space="preserve">
     <value>(99) 90000-0000</value>
@@ -877,7 +877,7 @@
     <value>NoControl</value>
   </data>
   <data name="btSalva.Location" type="System.Drawing.Point, System.Drawing">
-    <value>493, 552</value>
+    <value>494, 552</value>
   </data>
   <data name="btSalva.Size" type="System.Drawing.Size, System.Drawing">
     <value>297, 60</value>
@@ -913,7 +913,7 @@
     <value>9, 20</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>894, 624</value>
+    <value>894, 625</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1203,7 +1203,7 @@
 </value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterParent</value>
+    <value>CenterScreen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Escola</value>

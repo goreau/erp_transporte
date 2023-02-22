@@ -61,6 +61,7 @@ namespace ERP_Transporte.Views
                 if (result > 0)
                 {
                     MessageBox.Show("Registro inserido!");
+                    this.Limpa();
                 }
             }
             else
@@ -74,6 +75,40 @@ namespace ERP_Transporte.Views
                 }
             }
 
+        }
+
+        private void Limpa()
+        {
+            foreach (Control ctrl in this.Controls)
+            {
+                TextBox tb = ctrl as TextBox;
+                if (tb != null)
+                {
+                    tb.Text = "";
+                }
+                //for combobox
+                ComboBox cb = ctrl as ComboBox;
+                if (cb != null)
+                {
+                    cb.ResetText();
+                    cb.Text = null;
+                }
+                //for rich textbox
+                RichTextBox rtxtbox = ctrl as RichTextBox;
+                if (rtxtbox != null)
+                {
+                    rtxtbox.Clear();
+                }
+                //for radio button
+                if (ctrl is RadioButton)
+                {
+                    RadioButton rb = ctrl as RadioButton;
+                    if (rb.Checked == true)
+                    {
+                        rb.Checked = false;
+                    }
+                }
+            }
         }
 
         private void rbManha_CheckedChanged(object sender, EventArgs e)
@@ -135,29 +170,5 @@ namespace ERP_Transporte.Views
             txtObs.Text = dr["obs"].ToString();
         }
 
-        private void btSalva_Click_1(object sender, EventArgs e)
-        {
-            Estudante obj = new Estudante();
-            int result = 0;
-
-            if (id == 0)
-            {
-                result = obj.Add(this);
-                if (result > 0)
-                {
-                    MessageBox.Show("Registro inserido!");
-                }
-            }
-            else
-            {
-                result = obj.Edit(this);
-
-                if (result > 0)
-                {
-                    MessageBox.Show("Registro atualizado!");
-                    this.Dispose();
-                }
-            }
-        }
     }
 }

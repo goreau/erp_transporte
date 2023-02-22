@@ -88,8 +88,26 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Auxiliares\Database.cs" />
+    <Compile Include="Auxiliares\frmSplash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Auxiliares\frmSplash.Designer.cs">
+      <DependentUpon>frmSplash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Auxiliares\HarWorker.cs" />
+    <Compile Include="Entidades\Abastecimento.cs" />
+    <Compile Include="Entidades\Auxiliar.cs" />
+    <Compile Include="Entidades\Colaborador.cs" />
+    <Compile Include="Entidades\Dias.cs" />
     <Compile Include="Entidades\Escola.cs" />
     <Compile Include="Entidades\Estudante.cs" />
+    <Compile Include="Entidades\Fornecedor.cs" />
+    <Compile Include="Entidades\Manutencao.cs" />
+    <Compile Include="Entidades\Pagamento.cs" />
+    <Compile Include="Entidades\Recebimento.cs" />
+    <Compile Include="Entidades\Rota.cs" />
+    <Compile Include="Entidades\Trafego.cs" />
+    <Compile Include="Entidades\Veiculo.cs" />
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,11 +121,35 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Views\frmAbastecimento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmAbastecimento.Designer.cs">
+      <DependentUpon>frmAbastecimento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmAuxiliar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmAuxiliar.Designer.cs">
+      <DependentUpon>frmAuxiliar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmColaborador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmColaborador.Designer.cs">
+      <DependentUpon>frmColaborador.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\frmConsulta.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\frmConsulta.Designer.cs">
       <DependentUpon>frmConsulta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmDias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmDias.Designer.cs">
+      <DependentUpon>frmDias.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\frmEscola.cs">
       <SubType>Form</SubType>
@@ -121,6 +163,57 @@
     <Compile Include="Views\frmEstudante.Designer.cs">
       <DependentUpon>frmEstudante.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\frmFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmFornecedor.Designer.cs">
+      <DependentUpon>frmFornecedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmManutencao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmManutencao.Designer.cs">
+      <DependentUpon>frmManutencao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmPagamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmPagamento.Designer.cs">
+      <DependentUpon>frmPagamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmRecebimento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmRecebimento.Designer.cs">
+      <DependentUpon>frmRecebimento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmRota.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmRota.Designer.cs">
+      <DependentUpon>frmRota.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Auxiliares\frmSobre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Auxiliares\frmSobre.Designer.cs">
+      <DependentUpon>frmSobre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmTrafego.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmTrafego.Designer.cs">
+      <DependentUpon>frmTrafego.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmVeiculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmVeiculo.Designer.cs">
+      <DependentUpon>frmVeiculo.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Auxiliares\frmSplash.resx">
+      <DependentUpon>frmSplash.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -128,14 +221,47 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmAbastecimento.resx">
+      <DependentUpon>frmAbastecimento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmAuxiliar.resx">
+      <DependentUpon>frmAuxiliar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmColaborador.resx">
+      <DependentUpon>frmColaborador.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\frmConsulta.resx">
       <DependentUpon>frmConsulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmDias.resx">
+      <DependentUpon>frmDias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\frmEscola.resx">
       <DependentUpon>frmEscola.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\frmEstudante.resx">
       <DependentUpon>frmEstudante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmFornecedor.resx">
+      <DependentUpon>frmFornecedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmManutencao.resx">
+      <DependentUpon>frmManutencao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmPagamento.resx">
+      <DependentUpon>frmPagamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmRecebimento.resx">
+      <DependentUpon>frmRecebimento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmRota.resx">
+      <DependentUpon>frmRota.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmTrafego.resx">
+      <DependentUpon>frmTrafego.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmVeiculo.resx">
+      <DependentUpon>frmVeiculo.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -153,6 +279,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="bus-96.ico" />
+    <None Include="Resources\escolan.png" />
+    <None Include="Resources\escola.png" />
+    <None Include="Resources\ajuda-64.png" />
+    <None Include="Resources\documentos-48.png" />
+    <None Include="Resources\calendario-48.png" />
+    <None Include="Resources\crescimento-económico-48.png" />
+    <None Include="Resources\gasolina-48.png" />
+    <None Include="Resources\bookmark-64.png" />
+    <None Include="Resources\handcart-48.png" />
     <None Include="Resources\amigos-48.png" />
     <None Include="Resources\rotas-48.png" />
     <None Include="Resources\ônibus-48.png" />

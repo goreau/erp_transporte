@@ -27,39 +27,24 @@ namespace ERP_Transporte.Views
         {
             this.dados = dd;
             dgConsulta.DataSource = this.dados;
+            dgConsulta.Columns[0].Visible = false;
         }
 
         private void frmConsulta_Load(object sender, EventArgs e)
         {
             this.Width = Screen.PrimaryScreen.Bounds.Width;
-            /*DataGridViewButtonColumn btedit = new DataGridViewButtonColumn();
-            btedit.Name = "colBtedit";
-            btedit.Text = "Editar";
-            int idx = dgConsulta.ColumnCount;
-            int columnIndex = idx;
-            if (dgConsulta.Columns["colBtedit"] == null)
-            {
-                dgConsulta.Columns.Insert(columnIndex, btedit);
-            }*/
+            this.Left = 0;
+            this.Top = 0;
         }
 
-        
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void dgConsulta_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            /*if (e.ColumnIndex == dgConsulta.Columns["colBtedit"].Index)
-            {
-                MessageBox.Show("Editar");
-            }*/
-        }
 
         private void dgConsulta_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
-            idSelecionado = Convert.ToInt32(dgConsulta.Rows[e.RowIndex].Cells[0].Value.ToString());
+            if (this.dados.Rows.Count > 0)
+            {
+                idSelecionado = Convert.ToInt32(dgConsulta.Rows[e.RowIndex].Cells[0].Value.ToString());
+            }
+            
         }
 
         private void btEdit_Click(object sender, EventArgs e)
@@ -69,6 +54,36 @@ namespace ERP_Transporte.Views
             {
                 case 1:
                     fEdit = new frmEstudante(idSelecionado);
+                    break;
+                case 2:
+                    fEdit = new frmVeiculo(idSelecionado);
+                    break;
+                case 3:
+                    fEdit = new frmRota(idSelecionado);
+                    break;
+                case 4:
+                    fEdit = new frmFornecedor(idSelecionado);
+                    break;
+                case 5:
+                    fEdit = new frmTrafego(idSelecionado);
+                    break;
+                case 6:
+                    fEdit = new frmPagamento(idSelecionado);
+                    break;
+                case 7:
+                    fEdit = new frmRecebimento(idSelecionado);
+                    break;
+                case 8:
+                    fEdit = new frmColaborador(idSelecionado);
+                    break;
+                case 9:
+                    fEdit = new frmDias(idSelecionado);
+                    break;
+                case 10:
+                    fEdit = new frmManutencao(idSelecionado);
+                    break;
+                case 11:
+                    fEdit = new frmAbastecimento(idSelecionado);
                     break;
                 default:
                     fEdit = new frmEscola(idSelecionado);
@@ -87,6 +102,46 @@ namespace ERP_Transporte.Views
                 case 1:
                     Estudante est = new Estudante();
                     dd = est.Consulta();
+                    break;
+                case 2:
+                    Veiculo vei = new Veiculo();
+                    dd = vei.Consulta();
+                    break;
+                case 3:
+                    Rota rt = new Rota();
+                    dd = rt.Consulta();
+                    break;
+                case 4:
+                    Fornecedor frn = new Fornecedor();
+                    dd = frn.Consulta();
+                    break;
+                case 5:
+                    Trafego tfg = new Trafego();
+                    dd = tfg.Consulta();
+                    break;
+                case 6:
+                    Pagamento pg = new Pagamento();
+                    dd = pg.Consulta();
+                    break;
+                case 7:
+                    Recebimento rec = new Recebimento();
+                    dd = rec.Consulta();
+                    break;
+                case 8:
+                    Colaborador col = new Colaborador();
+                    dd = col.Consulta();
+                    break;
+                case 9:
+                    Dias dias = new Dias();
+                    dd = dias.Consulta();
+                    break;
+                case 10:
+                    Manutencao man = new Manutencao();
+                    dd = man.Consulta();
+                    break;
+                case 11:
+                    Abastecimento ab = new Abastecimento();
+                    dd = ab.Consulta();
                     break;
             }
 

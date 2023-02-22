@@ -30,11 +30,12 @@ namespace ERP_Transporte.Views
             Escola escola = new Escola();
             int result = 0;
 
-            if(id == 0)
+            if (id == 0)
             {
                 result = escola.Add(this);
                 if (result > 0)
                 {
+                    this.Limpa();
                     MessageBox.Show("Registro inserido!");
                 }
             } else
@@ -47,8 +48,8 @@ namespace ERP_Transporte.Views
                     this.Dispose();
                 }
             }
-            
-            
+
+
         }
 
         private void rbManha_CheckedChanged(object sender, EventArgs e)
@@ -79,7 +80,7 @@ namespace ERP_Transporte.Views
             if (dr["periodo"].ToString() == "1")
             {
                 rbManha.Checked = true;
-            } 
+            }
             else if (dr["periodo"].ToString() == "2")
             {
                 rbTarde.Checked = true;
@@ -88,11 +89,46 @@ namespace ERP_Transporte.Views
             {
                 rbIntegral.Checked = true;
             }
-            
+
 
             txtEntrada.Text = dr["entrada"].ToString();
             txtSaida.Text = dr["saida"].ToString();
-            Label12.Text = dr["especial"].ToString();
+            txtEspecial.Text = dr["especial"].ToString();
         }
+
+        private void Limpa()
+        {
+            foreach (Control ctrl in this.Controls)
+            {
+                TextBox tb = ctrl as TextBox;
+                if (tb != null)
+                {
+                    tb.Text = "";
+                }
+                //for combobox
+                ComboBox cb = ctrl as ComboBox;
+                if (cb != null)
+                {
+                    cb.ResetText();
+                    cb.Text = null;
+                }
+                //for rich textbox
+                RichTextBox rtxtbox = ctrl as RichTextBox;
+                if (rtxtbox != null)
+                {
+                    rtxtbox.Clear();
+                }
+                //for radio button
+                if (ctrl is RadioButton)
+                {
+                    RadioButton rb = ctrl as RadioButton;
+                    if (rb.Checked == true)
+                    {
+                        rb.Checked = false;
+                    }
+                }
+            }
+        }
+
     }
 }

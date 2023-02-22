@@ -27,3 +27,15 @@ C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Debug\ERP_Transporte.Vi
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Debug\ERP_Transporte.Views.frmConsulta.resources
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Debug\ERP_Transporte.Views.frmEstudante.resources
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Debug\ERP_Transporte.frmMain.resources
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Debug\ERP_Transporte.Views.frmVeiculo.resources
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Debug\ERP_Transporte.Views.frmRota.resources
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Debug\ERP_Transporte.Views.frmFornecedor.resources
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Debug\ERP_Transporte.Views.frmAuxiliar.resources
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Debug\ERP_Transporte.Views.frmTrafego.resources
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Debug\ERP_Transporte.Views.frmPagamento.resources
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Debug\ERP_Transporte.Views.frmRecebimento.resources
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Debug\ERP_Transporte.Views.frmColaborador.resources
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Debug\ERP_Transporte.Auxiliares.frmSplash.resources
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Debug\ERP_Transporte.Views.frmAbastecimento.resources
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Debug\ERP_Transporte.Views.frmDias.resources
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Debug\ERP_Transporte.Views.frmManutencao.resources
