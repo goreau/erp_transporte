@@ -142,17 +142,29 @@
   <data name="rotas-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rotas-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="file-preview-20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\file-preview-20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="handcart-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\handcart-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="documentos-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\documentos-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="escolan" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\escolan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="aluna-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\aluna-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="print-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\print-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="gasolina-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gasolina-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="documentos-481" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\documentos-481.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="amigos-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\amigos-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -163,7 +175,7 @@
   <data name="calendario-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\calendario-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="escolan" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\escolan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="image-20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\image-20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

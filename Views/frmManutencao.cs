@@ -31,18 +31,18 @@ namespace ERP_Transporte.Views
 
             Veiculo obj = new Veiculo();
 
-            DataSet ds = obj.Combo();
+            DataTable dt = obj.Combo();
 
-            cmbVeiculo.DataSource = ds.Tables[0];
+            cmbVeiculo.DataSource = dt;
             cmbVeiculo.DisplayMember = "nome";
             cmbVeiculo.ValueMember = "id";
             cmbVeiculo.SelectedIndex = 0;
 
             Fornecedor obj2 = new Fornecedor();
 
-            ds = obj2.Combo();
+            dt = obj2.Combo();
 
-            cmbFornecedor.DataSource = ds.Tables[0];
+            cmbFornecedor.DataSource = dt;
             cmbFornecedor.DisplayMember = "nome";
             cmbFornecedor.ValueMember = "id";
             cmbFornecedor.SelectedIndex = 0;
@@ -51,15 +51,11 @@ namespace ERP_Transporte.Views
         private void button1_Click(object sender, EventArgs e)
         {
             OpenFileDialog dialog = new OpenFileDialog();
-            dialog.Filter = "Text files | *.txt"; // file types, that will be allowed to upload
+            dialog.Filter = "Files | *.jpg;*.jpeg;*.png;*.pdf"; // file types, that will be allowed to upload
             dialog.Multiselect = false; // allow/deny user to upload more than one file at a time
             if (dialog.ShowDialog() == DialogResult.OK) // if user clicked OK
             {
-                String path = dialog.FileName; // get name of file
-            //    using (StreamReader reader = new StreamReader(new FileStream(path, FileMode.Open), new UTF8Encoding())) // do anything you want, e.g. read it
-          //      {
-                    // ...
-          //      }
+                txtArquivo.Text = dialog.FileName;
             }
         }
 
@@ -137,10 +133,10 @@ namespace ERP_Transporte.Views
 
             txtId.Text = dr["id"].ToString();
 
-            cmbVeiculo.SelectedValue = dr["veiculo"].ToString();
+            cmbVeiculo.SelectedValue = dr["id_veiculo"].ToString();
             txtKm.Text = dr["km"].ToString();
 
-            cmbFornecedor.SelectedValue = dr["fornecedor"].ToString();
+            cmbFornecedor.SelectedValue = dr["id_fornecedor"].ToString();
             txtValor.Text = dr["valor"].ToString();
 
             txtPagamento.Text = dr["pagamento"].ToString();
@@ -162,6 +158,8 @@ namespace ERP_Transporte.Views
 
             txtDescricao.Text = dr["descricao"].ToString();
             txtArquivo.Text = dr["arquivo"].ToString();
+
+            btPreview.Visible = dr["arquivo"].ToString() != "";
              
         }
 
@@ -211,6 +209,24 @@ namespace ERP_Transporte.Views
             }
             txt.Text = x;
             txt.SelectAll();
+        }
+
+        private void btPreview_Click(object sender, EventArgs e)
+        {
+            using (Form form = new Form())
+            {
+                Bitmap img = new Bitmap(txtArquivo.Text);
+
+                form.StartPosition = FormStartPosition.CenterScreen;
+                form.ClientSize = img.Size;
+
+                PictureBox pb = new PictureBox();
+                pb.Dock = DockStyle.Fill;
+                pb.Image = img;
+
+                form.Controls.Add(pb);
+                form.ShowDialog();
+            }
         }
     }
 }

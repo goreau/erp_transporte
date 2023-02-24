@@ -54,6 +54,9 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.cadastrarToolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarManutAbastToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripSeparator();
+            this.cadastrarAbastecimentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultarAbastecimentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastrarToolStripMenuItem7 = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarPagamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -66,12 +69,12 @@
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
             this.cadastrarAuxiliaresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.relatórioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listaDeAlunosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listaDeEscolasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ajudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripSeparator();
-            this.cadastrarAbastecimentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.consultarAbastecimentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.createDBToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -293,6 +296,25 @@
             this.consultarManutAbastToolStripMenuItem.Text = "Consultar Manutenção";
             this.consultarManutAbastToolStripMenuItem.Click += new System.EventHandler(this.consultarManutAbastToolStripMenuItem_Click);
             // 
+            // toolStripMenuItem5
+            // 
+            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(310, 6);
+            // 
+            // cadastrarAbastecimentoToolStripMenuItem
+            // 
+            this.cadastrarAbastecimentoToolStripMenuItem.Name = "cadastrarAbastecimentoToolStripMenuItem";
+            this.cadastrarAbastecimentoToolStripMenuItem.Size = new System.Drawing.Size(313, 34);
+            this.cadastrarAbastecimentoToolStripMenuItem.Text = "Cadastrar Abastecimento";
+            this.cadastrarAbastecimentoToolStripMenuItem.Click += new System.EventHandler(this.cadastrarAbastecimentoToolStripMenuItem_Click);
+            // 
+            // consultarAbastecimentoToolStripMenuItem
+            // 
+            this.consultarAbastecimentoToolStripMenuItem.Name = "consultarAbastecimentoToolStripMenuItem";
+            this.consultarAbastecimentoToolStripMenuItem.Size = new System.Drawing.Size(313, 34);
+            this.consultarAbastecimentoToolStripMenuItem.Text = "Consultar Abastecimento";
+            this.consultarAbastecimentoToolStripMenuItem.Click += new System.EventHandler(this.consultarAbastecimentoToolStripMenuItem_Click);
+            // 
             // contaToolStripMenuItem
             // 
             this.contaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -379,15 +401,33 @@
             // 
             // relatórioToolStripMenuItem
             // 
+            this.relatórioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.listaDeAlunosToolStripMenuItem,
+            this.listaDeEscolasToolStripMenuItem});
             this.relatórioToolStripMenuItem.Image = global::ERP_Transporte.Properties.Resources.documentos_48;
             this.relatórioToolStripMenuItem.Name = "relatórioToolStripMenuItem";
             this.relatórioToolStripMenuItem.Size = new System.Drawing.Size(122, 29);
             this.relatórioToolStripMenuItem.Text = "Relatório";
             // 
+            // listaDeAlunosToolStripMenuItem
+            // 
+            this.listaDeAlunosToolStripMenuItem.Name = "listaDeAlunosToolStripMenuItem";
+            this.listaDeAlunosToolStripMenuItem.Size = new System.Drawing.Size(236, 34);
+            this.listaDeAlunosToolStripMenuItem.Text = "Lista de Alunos";
+            this.listaDeAlunosToolStripMenuItem.Click += new System.EventHandler(this.listaDeAlunosToolStripMenuItem_Click);
+            // 
+            // listaDeEscolasToolStripMenuItem
+            // 
+            this.listaDeEscolasToolStripMenuItem.Name = "listaDeEscolasToolStripMenuItem";
+            this.listaDeEscolasToolStripMenuItem.Size = new System.Drawing.Size(236, 34);
+            this.listaDeEscolasToolStripMenuItem.Text = "Lista de Escolas";
+            this.listaDeEscolasToolStripMenuItem.Click += new System.EventHandler(this.listaDeEscolasToolStripMenuItem_Click);
+            // 
             // ajudaToolStripMenuItem
             // 
             this.ajudaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.sobreToolStripMenuItem});
+            this.sobreToolStripMenuItem,
+            this.createDBToolStripMenuItem});
             this.ajudaToolStripMenuItem.Image = global::ERP_Transporte.Properties.Resources.ajuda_64;
             this.ajudaToolStripMenuItem.Name = "ajudaToolStripMenuItem";
             this.ajudaToolStripMenuItem.Size = new System.Drawing.Size(98, 29);
@@ -396,7 +436,7 @@
             // sobreToolStripMenuItem
             // 
             this.sobreToolStripMenuItem.Name = "sobreToolStripMenuItem";
-            this.sobreToolStripMenuItem.Size = new System.Drawing.Size(161, 34);
+            this.sobreToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.sobreToolStripMenuItem.Text = "Sobre";
             this.sobreToolStripMenuItem.Click += new System.EventHandler(this.sobreToolStripMenuItem_Click);
             // 
@@ -406,24 +446,12 @@
             this.toolStripMenuItem4.Size = new System.Drawing.Size(98, 29);
             this.toolStripMenuItem4.Text = "              ";
             // 
-            // toolStripMenuItem5
+            // createDBToolStripMenuItem
             // 
-            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(310, 6);
-            // 
-            // cadastrarAbastecimentoToolStripMenuItem
-            // 
-            this.cadastrarAbastecimentoToolStripMenuItem.Name = "cadastrarAbastecimentoToolStripMenuItem";
-            this.cadastrarAbastecimentoToolStripMenuItem.Size = new System.Drawing.Size(313, 34);
-            this.cadastrarAbastecimentoToolStripMenuItem.Text = "Cadastrar Abastecimento";
-            this.cadastrarAbastecimentoToolStripMenuItem.Click += new System.EventHandler(this.cadastrarAbastecimentoToolStripMenuItem_Click);
-            // 
-            // consultarAbastecimentoToolStripMenuItem
-            // 
-            this.consultarAbastecimentoToolStripMenuItem.Name = "consultarAbastecimentoToolStripMenuItem";
-            this.consultarAbastecimentoToolStripMenuItem.Size = new System.Drawing.Size(313, 34);
-            this.consultarAbastecimentoToolStripMenuItem.Text = "Consultar Abastecimento";
-            this.consultarAbastecimentoToolStripMenuItem.Click += new System.EventHandler(this.consultarAbastecimentoToolStripMenuItem_Click);
+            this.createDBToolStripMenuItem.Name = "createDBToolStripMenuItem";
+            this.createDBToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.createDBToolStripMenuItem.Text = "CreateDB";
+            this.createDBToolStripMenuItem.Click += new System.EventHandler(this.createDBToolStripMenuItem_Click);
             // 
             // frmMain
             // 
@@ -435,7 +463,7 @@
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMain";
-            this.Text = "          ";
+            this.Text = "ERP Transporte";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -489,5 +517,8 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem5;
         private System.Windows.Forms.ToolStripMenuItem cadastrarAbastecimentoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultarAbastecimentoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listaDeAlunosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listaDeEscolasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem createDBToolStripMenuItem;
     }
 }

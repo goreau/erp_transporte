@@ -179,7 +179,11 @@ namespace ERP_Transporte.Views
         private void txtValor_Leave(object sender, EventArgs e)
         {
             TextBox txt = (sender as TextBox);
-            txt.Text = Convert.ToDouble(txt.Text).ToString("F");
+            if (txt.Text != "")
+            {
+                txt.Text = Convert.ToDouble(txt.Text).ToString("F");
+            }
+            
         }
     }
 }

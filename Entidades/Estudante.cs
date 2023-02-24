@@ -15,9 +15,6 @@ namespace ERP_Transporte.Entidades
     {
         MySqlConnection conn = Database.conn;
 
-        private String id, nome, logradouro, numero, bairro, ra_rg, dt_nascimento, pai, tel_pai, mae, tel_mae, responsavel, resp_qualif, tel_resp, naturalidade, nacionalidade, rg, cpf, obs;
-        private int id_escola, est_civil, id_rota, periodo;
-
         public Estudante()
         {
             if (conn.State != ConnectionState.Open)
@@ -48,7 +45,7 @@ namespace ERP_Transporte.Entidades
             //drv.Row["FleetID"].ToString()
 
 
-            cmd.Parameters.AddWithValue("@id_escola", cmb.SelectedIndex);
+            cmd.Parameters.AddWithValue("@id_escola", cmb.SelectedValue);
 
             cmd.Parameters.AddWithValue("@periodo", form.Controls["txtPeriodo"].Text);
             cmd.Parameters.AddWithValue("@ra_rg", form.Controls["txtRa_rg"].Text);
@@ -72,12 +69,19 @@ namespace ERP_Transporte.Entidades
             cmd.Parameters.AddWithValue("@cpf", form.Controls["txtCpf"].Text);
 
             cmb = form.Controls.OfType<ComboBox>().FirstOrDefault(r => r.Name == "cmbId_rota");
-            cmd.Parameters.AddWithValue("@id_rota", cmb.SelectedIndex);
+            cmd.Parameters.AddWithValue("@id_rota", cmb.SelectedValue);
             cmb = form.Controls.OfType<ComboBox>().FirstOrDefault(r => r.Name == "cmbEst_civil");
             cmd.Parameters.AddWithValue("@est_civil", cmb.SelectedIndex);
             cmd.Parameters.AddWithValue("@obs", form.Controls["txtObs"].Text);
 
-            return cmd.ExecuteNonQuery();
+            try
+            {
+                return cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
         }
 
         public int Edit(frmEstudante form)
@@ -122,12 +126,19 @@ namespace ERP_Transporte.Entidades
 
 
             cmb = form.Controls.OfType<ComboBox>().FirstOrDefault(r => r.Name == "cmbId_rota");
-            cmd.Parameters.AddWithValue("@id_rota", cmb.SelectedIndex);
+            cmd.Parameters.AddWithValue("@id_rota", cmb.SelectedValue);
             cmb = form.Controls.OfType<ComboBox>().FirstOrDefault(r => r.Name == "cmbEst_civil");
             cmd.Parameters.AddWithValue("@est_civil", cmb.SelectedIndex);
             cmd.Parameters.AddWithValue("@obs", form.Controls["txtObs"].Text);
 
-            return cmd.ExecuteNonQuery();
+            try
+            {
+                return cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
         }
 
         public DataTable Delete(int id)

@@ -103,13 +103,11 @@ namespace ERP_Transporte.Views
 
         private void populaCombos()
         {
-
-
             Rota rt = new Rota();
-            DataSet ds = rt.Combo();
+            DataTable dt = rt.Combo();
 
 
-            cmbRota.DataSource = ds.Tables[0];
+            cmbRota.DataSource = dt;
             cmbRota.DisplayMember = "nome";
             cmbRota.ValueMember = "id";
             cmbRota.SelectedIndex = 0;

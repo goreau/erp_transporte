@@ -30,18 +30,18 @@ namespace ERP_Transporte.Views
         {
             Veiculo obj = new Veiculo();
 
-            DataSet ds = obj.Combo();
+            DataTable dt = obj.Combo();
 
-            cmbVeiculo.DataSource = ds.Tables[0];
+            cmbVeiculo.DataSource = dt;
             cmbVeiculo.DisplayMember = "nome";
             cmbVeiculo.ValueMember = "id";
             cmbVeiculo.SelectedIndex = 0;
 
             Fornecedor forn = new Fornecedor();
 
-            ds = forn.Combo();
+            dt = forn.Combo();
 
-            cmbFornecedor.DataSource = ds.Tables[0];
+            cmbFornecedor.DataSource = dt;
             cmbFornecedor.DisplayMember = "nome";
             cmbFornecedor.ValueMember = "id";
             cmbFornecedor.SelectedIndex = 0;
@@ -49,9 +49,9 @@ namespace ERP_Transporte.Views
 
             Auxiliar aux = new Auxiliar();
 
-            ds = aux.Combo(4);
+            dt = aux.Combo(4);
 
-            cmbMotivo.DataSource = ds.Tables[0];
+            cmbMotivo.DataSource = dt;
             cmbMotivo.DisplayMember = "nome";
             cmbMotivo.ValueMember = "id";
             cmbMotivo.SelectedIndex = 0;
@@ -66,8 +66,8 @@ namespace ERP_Transporte.Views
 
             txtId.Text = dr["id"].ToString();
 
-            cmbVeiculo.SelectedValue = dr["veiculo"].ToString();
-            cmbFornecedor.SelectedValue = dr["fornecedor"].ToString();
+            cmbVeiculo.SelectedValue = dr["id_veiculo"].ToString();
+            cmbFornecedor.SelectedValue = dr["id_fornecedor"].ToString();
             cmbMotivo.SelectedValue = dr["motivo"].ToString();
 
             txtData.Text = dr["data"].ToString();

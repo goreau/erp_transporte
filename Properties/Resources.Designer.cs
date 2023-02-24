@@ -143,6 +143,16 @@ namespace ERP_Transporte.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap documentos_481 {
+            get {
+                object obj = ResourceManager.GetObject("documentos-481", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap edite_24 {
             get {
                 object obj = ResourceManager.GetObject("edite-24", resourceCulture);
@@ -173,6 +183,16 @@ namespace ERP_Transporte.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap file_preview_20 {
+            get {
+                object obj = ResourceManager.GetObject("file-preview-20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap gasolina_48 {
             get {
                 object obj = ResourceManager.GetObject("gasolina-48", resourceCulture);
@@ -193,9 +213,29 @@ namespace ERP_Transporte.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap image_20 {
+            get {
+                object obj = ResourceManager.GetObject("image-20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ônibus_48 {
             get {
                 object obj = ResourceManager.GetObject("ônibus-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap print_24 {
+            get {
+                object obj = ResourceManager.GetObject("print-24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -15,9 +15,6 @@ namespace ERP_Transporte.Entidades
     {
         MySqlConnection conn = Database.conn;
 
-        private String id, nome, logradouro, numero, bairro, ra_rg, dt_nascimento, pai, tel_pai, mae, tel_mae, responsavel, resp_qualif, tel_resp, naturalidade, nacionalidade, rg, cpf, obs;
-        private int id_escola, est_civil, id_rota, periodo;
-
         public Rota()
         {
             if (conn.State != ConnectionState.Open)
@@ -29,7 +26,7 @@ namespace ERP_Transporte.Entidades
 
         public int Add(frmRota form)
         {
-            string sql = "INSERT INTO `rota`(`nome`, `escola`, `km`, `valor_km`) " +
+            string sql = "INSERT INTO `rota`(`nome`, `id_escola`, `km`, `valor_km`) " +
                 "VALUES (@nome, @escola, @km, @valor_km)";
 
             MySqlCommand cmd = new MySqlCommand(sql, conn);
@@ -45,12 +42,19 @@ namespace ERP_Transporte.Entidades
             cmd.Parameters.AddWithValue("@km", form.Controls["txtKm"].Text);
             cmd.Parameters.AddWithValue("@valor_km", form.Controls["txtValor_km"].Text.Replace(".", "").Replace(",", "."));
 
-            return cmd.ExecuteNonQuery();
+            try
+            {
+                return cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
         }
 
         public int Edit(frmRota form)
         {
-            string sql = "UPDATE `rota` SET `nome`= @nome, `escola`= @escola, `km`= @km, `valor_km`= @valor_km, `updated_at` = CURRENT_TIMESTAMP() " +
+            string sql = "UPDATE `rota` SET `nome`= @nome, `id_escola`= @escola, `km`= @km, `valor_km`= @valor_km, `updated_at` = CURRENT_TIMESTAMP() " +
                 " WHERE id = @id";
 
             MySqlCommand cmd = new MySqlCommand(sql, conn);
@@ -69,7 +73,14 @@ namespace ERP_Transporte.Entidades
             cmd.Parameters.AddWithValue("@valor_km", form.Controls["txtValor_km"].Text.Replace(".", "").Replace(",", "."));
 
 
-            return cmd.ExecuteNonQuery();
+            try
+            {
+                return cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
         }
 
         public DataTable Delete(int id)
@@ -116,19 +127,28 @@ namespace ERP_Transporte.Entidades
             return dt.Rows[0];
         }
 
-        public DataSet Combo()
+        public DataTable Combo()
         {
-            string sql = "SELECT id, nome FROM rota";
+            string sql = "SELECT id, nome FROM rota ORDER BY nome";
 
             MySqlCommand cmd = new MySqlCommand(sql, conn);
 
             MySqlDataAdapter da = new MySqlDataAdapter(cmd);
 
-            DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
 
-            da.Fill(ds);
+            da.Fill(dt);
 
-            return ds;
+            DataRow dr = dt.NewRow();
+            dr["id"] = 0;
+            dr["nome"] = "-- Selecione --";
+            dt.Rows.Add(dr);
+
+            dt.DefaultView.Sort = "id";
+            dt = dt.DefaultView.ToTable();
+
+
+            return dt;
         }
     }
 }

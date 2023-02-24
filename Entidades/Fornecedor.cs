@@ -15,9 +15,6 @@ namespace ERP_Transporte.Entidades
     {
         MySqlConnection conn = Database.conn;
 
-        private String id, nome, telefone;
-        private int categoria;
-
         public Fornecedor()
         {
             if (conn.State != ConnectionState.Open)
@@ -43,9 +40,16 @@ namespace ERP_Transporte.Entidades
             cmd.Parameters.AddWithValue("@categoria", sel);
 
             cmd.Parameters.AddWithValue("@telefone", form.Controls["txtTelefone"].Text);
-            
 
-            return cmd.ExecuteNonQuery();
+
+            try
+            {
+                return cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
         }
 
         public int Edit(frmFornecedor form)
@@ -67,7 +71,14 @@ namespace ERP_Transporte.Entidades
 
             cmd.Parameters.AddWithValue("@telefone", form.Controls["txtTelefone"].Text);
 
-            return cmd.ExecuteNonQuery();
+            try
+            {
+                return cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
         }
 
         public DataTable Delete(int id)
@@ -114,19 +125,28 @@ namespace ERP_Transporte.Entidades
             return dt.Rows[0];
         }
 
-        public DataSet Combo()
+        public DataTable Combo()
         {
-            string sql = "SELECT id, nome FROM fornecedor";
+            string sql = "SELECT id, nome FROM fornecedor ORDER BY nome";
 
             MySqlCommand cmd = new MySqlCommand(sql, conn);
 
             MySqlDataAdapter da = new MySqlDataAdapter(cmd);
 
-            DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
 
-            da.Fill(ds);
+            da.Fill(dt);
 
-            return ds;
+            DataRow dr = dt.NewRow();
+            dr["id"] = 0;
+            dr["nome"] = "-- Selecione --";
+            dt.Rows.Add(dr);
+
+            dt.DefaultView.Sort = "id";
+            dt = dt.DefaultView.ToTable();
+
+
+            return dt;
         }
     }
 }

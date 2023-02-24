@@ -46,9 +46,9 @@ namespace ERP_Transporte.Views
 
             Auxiliar obj = new Auxiliar();
 
-            DataSet ds = obj.Combo(1);
+            DataTable dt = obj.Combo(1);
 
-            cmbCategoria.DataSource = ds.Tables[0];
+            cmbCategoria.DataSource = dt;
             cmbCategoria.DisplayMember = "nome";
             cmbCategoria.ValueMember = "id";
             cmbCategoria.SelectedIndex = 0;

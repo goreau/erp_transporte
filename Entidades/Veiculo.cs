@@ -14,9 +14,6 @@ namespace ERP_Transporte.Entidades
     {
         MySqlConnection conn = Database.conn;
 
-        private String id, nome, logradouro, numero, bairro, ra_rg, dt_nascimento, pai, tel_pai, mae, tel_mae, responsavel, resp_qualif, tel_resp, naturalidade, nacionalidade, rg, cpf, obs;
-        private int id_escola, est_civil, id_rota, periodo;
-
         public Veiculo()
         {
             if (conn.State != ConnectionState.Open)
@@ -65,7 +62,14 @@ namespace ERP_Transporte.Entidades
 
             cmd.Parameters.AddWithValue("@licenciamento", data);
 
-            return cmd.ExecuteNonQuery();
+            try
+            {
+                return cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
         }
 
         public int Edit(frmVeiculo form)
@@ -96,7 +100,14 @@ namespace ERP_Transporte.Entidades
             data = dt.Year.ToString() + "-" + dt.Month.ToString() + "-" + dt.Day.ToString();
             cmd.Parameters.AddWithValue("@licenciamento", data);
 
-            return cmd.ExecuteNonQuery();
+            try
+            {
+                return cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
         }
 
         public DataTable Delete(int id)
@@ -143,7 +154,7 @@ namespace ERP_Transporte.Entidades
             return dt.Rows[0];
         }
 
-        public DataSet Combo()
+        public DataTable Combo()
         {
             string sql = "SELECT id, concat(placa,'-',modelo) as nome FROM veiculo";
 
@@ -151,11 +162,20 @@ namespace ERP_Transporte.Entidades
 
             MySqlDataAdapter da = new MySqlDataAdapter(cmd);
 
-            DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
 
-            da.Fill(ds);
+            da.Fill(dt);
 
-            return ds;
+            DataRow dr = dt.NewRow();
+            dr["id"] = 0;
+            dr["nome"] = "-- Selecione --";
+            dt.Rows.Add(dr);
+
+            dt.DefaultView.Sort = "id";
+            dt = dt.DefaultView.ToTable();
+
+
+            return dt;
         }
     }
 }

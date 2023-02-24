@@ -36,7 +36,7 @@ namespace ERP_Transporte.Views
             txtId.Text = dr["id"].ToString();
 
             txtNome.Text = dr["nome"].ToString();
-            cmbEscola.SelectedValue = dr["escola"].ToString();
+            cmbEscola.SelectedValue = dr["id_escola"].ToString();
             txtKm.Text = dr["km"].ToString();
             txtValor_km.Text = dr["valor_km"].ToString();
         }
@@ -47,9 +47,9 @@ namespace ERP_Transporte.Views
 
             Escola obj = new Escola();
 
-            DataSet ds = obj.Combo();
+            DataTable dt = obj.Combo();
 
-            cmbEscola.DataSource = ds.Tables[0];
+            cmbEscola.DataSource = dt;
             cmbEscola.DisplayMember = "nome";
             cmbEscola.ValueMember = "id";
             cmbEscola.SelectedIndex = 0;

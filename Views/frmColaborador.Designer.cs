@@ -78,7 +78,7 @@
             this.cmbCategoria.Location = new System.Drawing.Point(218, 133);
             this.cmbCategoria.Name = "cmbCategoria";
             this.cmbCategoria.Size = new System.Drawing.Size(316, 28);
-            this.cmbCategoria.TabIndex = 98;
+            this.cmbCategoria.TabIndex = 3;
             // 
             // txtId
             // 
@@ -96,7 +96,7 @@
             this.btSalva.Location = new System.Drawing.Point(582, 600);
             this.btSalva.Name = "btSalva";
             this.btSalva.Size = new System.Drawing.Size(297, 60);
-            this.btSalva.TabIndex = 96;
+            this.btSalva.TabIndex = 15;
             this.btSalva.Text = "Salvar";
             this.btSalva.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btSalva.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -111,7 +111,7 @@
             this.txtDt_admissao.Mask = "00/00/0000";
             this.txtDt_admissao.Name = "txtDt_admissao";
             this.txtDt_admissao.Size = new System.Drawing.Size(120, 28);
-            this.txtDt_admissao.TabIndex = 92;
+            this.txtDt_admissao.TabIndex = 4;
             this.txtDt_admissao.ValidatingType = typeof(System.DateTime);
             // 
             // label11
@@ -142,7 +142,7 @@
             this.cmbFuncao.Location = new System.Drawing.Point(666, 74);
             this.cmbFuncao.Name = "cmbFuncao";
             this.cmbFuncao.Size = new System.Drawing.Size(212, 28);
-            this.cmbFuncao.TabIndex = 90;
+            this.cmbFuncao.TabIndex = 2;
             // 
             // txtNome
             // 
@@ -151,7 +151,7 @@
             this.txtNome.Location = new System.Drawing.Point(217, 71);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(317, 28);
-            this.txtNome.TabIndex = 114;
+            this.txtNome.TabIndex = 1;
             // 
             // label12
             // 
@@ -171,7 +171,7 @@
             this.txtCpf.Location = new System.Drawing.Point(218, 263);
             this.txtCpf.Name = "txtCpf";
             this.txtCpf.Size = new System.Drawing.Size(174, 28);
-            this.txtCpf.TabIndex = 118;
+            this.txtCpf.TabIndex = 7;
             // 
             // label13
             // 
@@ -180,7 +180,7 @@
             this.label13.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label13.Location = new System.Drawing.Point(154, 267);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(77, 33);
+            this.label13.Size = new System.Drawing.Size(51, 22);
             this.label13.TabIndex = 119;
             this.label13.Text = "CPF:";
             // 
@@ -191,7 +191,7 @@
             this.txtRg.Location = new System.Drawing.Point(217, 202);
             this.txtRg.Name = "txtRg";
             this.txtRg.Size = new System.Drawing.Size(175, 28);
-            this.txtRg.TabIndex = 116;
+            this.txtRg.TabIndex = 5;
             // 
             // label14
             // 
@@ -211,7 +211,7 @@
             this.txtDt_expedicao.Mask = "00/00/0000";
             this.txtDt_expedicao.Name = "txtDt_expedicao";
             this.txtDt_expedicao.Size = new System.Drawing.Size(120, 28);
-            this.txtDt_expedicao.TabIndex = 120;
+            this.txtDt_expedicao.TabIndex = 6;
             this.txtDt_expedicao.ValidatingType = typeof(System.DateTime);
             // 
             // label15
@@ -232,7 +232,7 @@
             this.txtCnh.Location = new System.Drawing.Point(218, 321);
             this.txtCnh.Name = "txtCnh";
             this.txtCnh.Size = new System.Drawing.Size(174, 28);
-            this.txtCnh.TabIndex = 122;
+            this.txtCnh.TabIndex = 8;
             // 
             // label16
             // 
@@ -252,7 +252,7 @@
             this.txtCnh_categoria.Location = new System.Drawing.Point(516, 322);
             this.txtCnh_categoria.Name = "txtCnh_categoria";
             this.txtCnh_categoria.Size = new System.Drawing.Size(50, 28);
-            this.txtCnh_categoria.TabIndex = 124;
+            this.txtCnh_categoria.TabIndex = 9;
             // 
             // label17
             // 
@@ -272,7 +272,7 @@
             this.txtDt_validade.Mask = "00/00/0000";
             this.txtDt_validade.Name = "txtDt_validade";
             this.txtDt_validade.Size = new System.Drawing.Size(120, 28);
-            this.txtDt_validade.TabIndex = 126;
+            this.txtDt_validade.TabIndex = 10;
             this.txtDt_validade.ValidatingType = typeof(System.DateTime);
             // 
             // label18
@@ -293,7 +293,7 @@
             this.txtMae.Location = new System.Drawing.Point(217, 448);
             this.txtMae.Name = "txtMae";
             this.txtMae.Size = new System.Drawing.Size(458, 28);
-            this.txtMae.TabIndex = 130;
+            this.txtMae.TabIndex = 12;
             // 
             // label2
             // 
@@ -313,7 +313,7 @@
             this.txtPai.Location = new System.Drawing.Point(218, 385);
             this.txtPai.Name = "txtPai";
             this.txtPai.Size = new System.Drawing.Size(457, 28);
-            this.txtPai.TabIndex = 128;
+            this.txtPai.TabIndex = 11;
             // 
             // label3
             // 
@@ -333,7 +333,7 @@
             this.txtDt_nascimento.Mask = "00/00/0000";
             this.txtDt_nascimento.Name = "txtDt_nascimento";
             this.txtDt_nascimento.Size = new System.Drawing.Size(120, 28);
-            this.txtDt_nascimento.TabIndex = 132;
+            this.txtDt_nascimento.TabIndex = 13;
             this.txtDt_nascimento.ValidatingType = typeof(System.DateTime);
             // 
             // label4
@@ -365,7 +365,7 @@
             this.txtRemuneracao.Location = new System.Drawing.Point(558, 502);
             this.txtRemuneracao.Name = "txtRemuneracao";
             this.txtRemuneracao.Size = new System.Drawing.Size(117, 28);
-            this.txtRemuneracao.TabIndex = 136;
+            this.txtRemuneracao.TabIndex = 14;
             this.txtRemuneracao.Enter += new System.EventHandler(this.txtRemuneracao_Enter);
             this.txtRemuneracao.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRemuneracao_KeyPress);
             // 

@@ -27,7 +27,7 @@ namespace ERP_Transporte.Entidades
 
         public int Add(frmDias form)
         {
-            string sql = "INSERT INTO `dias_letivos`( `rota`, `ano`, `mes`, `dias`) " +
+            string sql = "INSERT INTO `dias_letivos`( `id_rota`, `ano`, `mes`, `dias`) " +
                 "VALUES (@rota, @ano, @mes, @dias)";
 
             MySqlCommand cmd = new MySqlCommand(sql, conn);
@@ -41,14 +41,21 @@ namespace ERP_Transporte.Entidades
             cmd.Parameters.AddWithValue("@ano", form.Controls["txtAno"].Text);
             cmd.Parameters.AddWithValue("@mes", form.Controls["txtMes"].Text);
             cmd.Parameters.AddWithValue("@dias", form.Controls["txtDias"].Text);
-            
 
-            return cmd.ExecuteNonQuery();
+
+            try
+            {
+                return cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
         }
 
         public int Edit(frmDias form)
         {
-            string sql = "UPDATE `dias_letivos` SET `rota`=@rota,`ano`=@ano,`mes`=@mes,`dias`=@dias, `updated_at` = CURRENT_TIMESTAMP() " +
+            string sql = "UPDATE `dias_letivos` SET `id_rota`=@rota,`ano`=@ano,`mes`=@mes,`dias`=@dias, `updated_at` = CURRENT_TIMESTAMP() " +
                 " WHERE id = @id";
 
             MySqlCommand cmd = new MySqlCommand(sql, conn);
@@ -66,7 +73,14 @@ namespace ERP_Transporte.Entidades
             cmd.Parameters.AddWithValue("@dias", form.Controls["txtDias"].Text);
 
 
-            return cmd.ExecuteNonQuery();
+            try
+            {
+                return cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
         }
 
         public DataTable Delete(int id)

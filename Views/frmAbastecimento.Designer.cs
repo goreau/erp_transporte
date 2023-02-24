@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAbastecimento));
-            this.txtArquivo = new System.Windows.Forms.TextBox();
             this.btArquivo = new System.Windows.Forms.Button();
             this.txtVencimento = new System.Windows.Forms.MaskedTextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -47,7 +46,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.cmbFornecedor = new System.Windows.Forms.ComboBox();
             this.txtId = new System.Windows.Forms.TextBox();
-            this.btSalva = new System.Windows.Forms.Button();
             this.txtCombustivel = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rbFlex = new System.Windows.Forms.RadioButton();
@@ -56,26 +54,24 @@
             this.rbAlcool = new System.Windows.Forms.RadioButton();
             this.txtLitros = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btSalva = new System.Windows.Forms.Button();
+            this.txtArquivo = new System.Windows.Forms.Label();
+            this.btPreview = new System.Windows.Forms.Button();
             this.groupBox4.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // txtArquivo
-            // 
-            this.txtArquivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtArquivo.Location = new System.Drawing.Point(399, 525);
-            this.txtArquivo.Name = "txtArquivo";
-            this.txtArquivo.Size = new System.Drawing.Size(573, 28);
-            this.txtArquivo.TabIndex = 157;
-            // 
             // btArquivo
             // 
             this.btArquivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btArquivo.Location = new System.Drawing.Point(255, 522);
+            this.btArquivo.Image = global::ERP_Transporte.Properties.Resources.image_20;
+            this.btArquivo.Location = new System.Drawing.Point(255, 510);
             this.btArquivo.Name = "btArquivo";
-            this.btArquivo.Size = new System.Drawing.Size(138, 34);
+            this.btArquivo.Size = new System.Drawing.Size(138, 46);
             this.btArquivo.TabIndex = 156;
             this.btArquivo.Text = "Arquivo";
+            this.btArquivo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btArquivo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btArquivo.UseVisualStyleBackColor = true;
             this.btArquivo.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -256,21 +252,6 @@
             this.txtId.TabIndex = 141;
             this.txtId.Visible = false;
             // 
-            // btSalva
-            // 
-            this.btSalva.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btSalva.Image = global::ERP_Transporte.Properties.Resources.selecionado_24;
-            this.btSalva.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btSalva.Location = new System.Drawing.Point(606, 610);
-            this.btSalva.Name = "btSalva";
-            this.btSalva.Size = new System.Drawing.Size(297, 60);
-            this.btSalva.TabIndex = 140;
-            this.btSalva.Text = "Salvar";
-            this.btSalva.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btSalva.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btSalva.UseVisualStyleBackColor = true;
-            this.btSalva.Click += new System.EventHandler(this.btSalva_Click);
-            // 
             // txtCombustivel
             // 
             this.txtCombustivel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -373,16 +354,51 @@
             this.label1.TabIndex = 161;
             this.label1.Text = "Litros:";
             // 
+            // btSalva
+            // 
+            this.btSalva.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btSalva.Image = global::ERP_Transporte.Properties.Resources.selecionado_24;
+            this.btSalva.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btSalva.Location = new System.Drawing.Point(606, 610);
+            this.btSalva.Name = "btSalva";
+            this.btSalva.Size = new System.Drawing.Size(297, 60);
+            this.btSalva.TabIndex = 140;
+            this.btSalva.Text = "Salvar";
+            this.btSalva.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btSalva.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btSalva.UseVisualStyleBackColor = true;
+            this.btSalva.Click += new System.EventHandler(this.btSalva_Click);
+            // 
+            // txtArquivo
+            // 
+            this.txtArquivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtArquivo.Location = new System.Drawing.Point(408, 521);
+            this.txtArquivo.Name = "txtArquivo";
+            this.txtArquivo.Size = new System.Drawing.Size(384, 35);
+            this.txtArquivo.TabIndex = 163;
+            // 
+            // btPreview
+            // 
+            this.btPreview.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btPreview.Image = global::ERP_Transporte.Properties.Resources.file_preview_20;
+            this.btPreview.Location = new System.Drawing.Point(807, 510);
+            this.btPreview.Name = "btPreview";
+            this.btPreview.Size = new System.Drawing.Size(92, 46);
+            this.btPreview.TabIndex = 162;
+            this.btPreview.UseVisualStyleBackColor = false;
+            this.btPreview.Click += new System.EventHandler(this.btPreview_Click);
+            // 
             // frmAbastecimento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1056, 727);
+            this.Controls.Add(this.txtArquivo);
+            this.Controls.Add(this.btPreview);
             this.Controls.Add(this.txtLitros);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtCombustivel);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.txtArquivo);
             this.Controls.Add(this.btArquivo);
             this.Controls.Add(this.txtVencimento);
             this.Controls.Add(this.label11);
@@ -401,7 +417,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmAbastecimento";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "   ";
+            this.Text = "   Abastecimento";
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -412,8 +428,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtArquivo;
         private System.Windows.Forms.Button btArquivo;
         private System.Windows.Forms.MaskedTextBox txtVencimento;
         private System.Windows.Forms.Label label11;
@@ -440,5 +454,7 @@
         private System.Windows.Forms.RadioButton rbAlcool;
         private System.Windows.Forms.TextBox txtLitros;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label txtArquivo;
+        private System.Windows.Forms.Button btPreview;
     }
 }

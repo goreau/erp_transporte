@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmManutencao));
             this.txtPagamento = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.rbCheque = new System.Windows.Forms.RadioButton();
             this.rbDinheiro = new System.Windows.Forms.RadioButton();
             this.rbCartao = new System.Windows.Forms.RadioButton();
             this.txtKm = new System.Windows.Forms.TextBox();
@@ -42,14 +43,14 @@
             this.txtId = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.cmbVeiculo = new System.Windows.Forms.ComboBox();
-            this.rbCheque = new System.Windows.Forms.RadioButton();
             this.txtVencimento = new System.Windows.Forms.MaskedTextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.txtDescricao = new System.Windows.Forms.TextBox();
+            this.btPreview = new System.Windows.Forms.Button();
             this.btArquivo = new System.Windows.Forms.Button();
-            this.txtArquivo = new System.Windows.Forms.TextBox();
             this.btSalva = new System.Windows.Forms.Button();
+            this.txtArquivo = new System.Windows.Forms.Label();
             this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,6 +75,20 @@
             this.groupBox4.TabIndex = 127;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Pagamento";
+            // 
+            // rbCheque
+            // 
+            this.rbCheque.AutoSize = true;
+            this.rbCheque.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.rbCheque.Location = new System.Drawing.Point(288, 35);
+            this.rbCheque.Name = "rbCheque";
+            this.rbCheque.Size = new System.Drawing.Size(98, 26);
+            this.rbCheque.TabIndex = 4;
+            this.rbCheque.TabStop = true;
+            this.rbCheque.Tag = "3";
+            this.rbCheque.Text = "Cheque";
+            this.rbCheque.UseVisualStyleBackColor = true;
+            this.rbCheque.CheckedChanged += new System.EventHandler(this.rbManha_CheckedChanged);
             // 
             // rbDinheiro
             // 
@@ -195,20 +210,6 @@
             this.cmbVeiculo.Size = new System.Drawing.Size(342, 30);
             this.cmbVeiculo.TabIndex = 132;
             // 
-            // rbCheque
-            // 
-            this.rbCheque.AutoSize = true;
-            this.rbCheque.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.rbCheque.Location = new System.Drawing.Point(288, 35);
-            this.rbCheque.Name = "rbCheque";
-            this.rbCheque.Size = new System.Drawing.Size(98, 26);
-            this.rbCheque.TabIndex = 4;
-            this.rbCheque.TabStop = true;
-            this.rbCheque.Tag = "3";
-            this.rbCheque.Text = "Cheque";
-            this.rbCheque.UseVisualStyleBackColor = true;
-            this.rbCheque.CheckedChanged += new System.EventHandler(this.rbManha_CheckedChanged);
-            // 
             // txtVencimento
             // 
             this.txtVencimento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -251,24 +252,30 @@
             this.txtDescricao.Size = new System.Drawing.Size(648, 67);
             this.txtDescricao.TabIndex = 136;
             // 
+            // btPreview
+            // 
+            this.btPreview.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btPreview.Image = global::ERP_Transporte.Properties.Resources.file_preview_20;
+            this.btPreview.Location = new System.Drawing.Point(776, 509);
+            this.btPreview.Name = "btPreview";
+            this.btPreview.Size = new System.Drawing.Size(92, 46);
+            this.btPreview.TabIndex = 140;
+            this.btPreview.UseVisualStyleBackColor = false;
+            this.btPreview.Click += new System.EventHandler(this.btPreview_Click);
+            // 
             // btArquivo
             // 
             this.btArquivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btArquivo.Location = new System.Drawing.Point(220, 521);
+            this.btArquivo.Image = global::ERP_Transporte.Properties.Resources.image_20;
+            this.btArquivo.Location = new System.Drawing.Point(204, 509);
             this.btArquivo.Name = "btArquivo";
-            this.btArquivo.Size = new System.Drawing.Size(138, 34);
+            this.btArquivo.Size = new System.Drawing.Size(154, 46);
             this.btArquivo.TabIndex = 138;
             this.btArquivo.Text = "Arquivo";
+            this.btArquivo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btArquivo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btArquivo.UseVisualStyleBackColor = true;
             this.btArquivo.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // txtArquivo
-            // 
-            this.txtArquivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtArquivo.Location = new System.Drawing.Point(364, 524);
-            this.txtArquivo.Name = "txtArquivo";
-            this.txtArquivo.Size = new System.Drawing.Size(504, 28);
-            this.txtArquivo.TabIndex = 139;
             // 
             // btSalva
             // 
@@ -285,12 +292,21 @@
             this.btSalva.UseVisualStyleBackColor = true;
             this.btSalva.Click += new System.EventHandler(this.btSalva_Click);
             // 
+            // txtArquivo
+            // 
+            this.txtArquivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtArquivo.Location = new System.Drawing.Point(377, 520);
+            this.txtArquivo.Name = "txtArquivo";
+            this.txtArquivo.Size = new System.Drawing.Size(384, 35);
+            this.txtArquivo.TabIndex = 141;
+            // 
             // frmManutencao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1074, 733);
             this.Controls.Add(this.txtArquivo);
+            this.Controls.Add(this.btPreview);
             this.Controls.Add(this.btArquivo);
             this.Controls.Add(this.label22);
             this.Controls.Add(this.txtDescricao);
@@ -341,6 +357,7 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.TextBox txtDescricao;
         private System.Windows.Forms.Button btArquivo;
-        private System.Windows.Forms.TextBox txtArquivo;
+        private System.Windows.Forms.Button btPreview;
+        private System.Windows.Forms.Label txtArquivo;
     }
 }

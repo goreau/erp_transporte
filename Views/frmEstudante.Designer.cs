@@ -664,7 +664,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmEstudante";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmEstudante";
+            this.Text = "Estudante";
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.ResumeLayout(false);

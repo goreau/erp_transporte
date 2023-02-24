@@ -15,9 +15,7 @@ namespace ERP_Transporte.Entidades
     {
         MySqlConnection conn = Database.conn;
 
-        private String id, nome, logradouro, numero, bairro, ra_rg, dt_nascimento, pai, tel_pai, mae, tel_mae, responsavel, resp_qualif, tel_resp, naturalidade, nacionalidade, rg, cpf, obs;
-        private int id_escola, est_civil, id_trafego, periodo;
-
+     
         public Trafego()
         {
             if (conn.State != ConnectionState.Open)
@@ -29,7 +27,7 @@ namespace ERP_Transporte.Entidades
 
         public int Add(frmTrafego form)
         {
-            string sql = "INSERT INTO `trafego`(`veiculo`, `data`, `motivo`, `partida`, `km_partida`, `chegada`, `km_chegada`, `fornecedor`, `valor`, `km`, `litros`) " +
+            string sql = "INSERT INTO `trafego`(`id_veiculo`, `data`, `motivo`, `partida`, `km_partida`, `chegada`, `km_chegada`, `id_fornecedor`, `valor`, `km`, `litros`) " +
                 "VALUES (@veiculo, @data, @motivo, @partida, @km_partida, @chegada, @km_chegada, @fornecedor, @valor, @km, @litros)";
 
             MySqlCommand cmd = new MySqlCommand(sql, conn);
@@ -68,14 +66,21 @@ namespace ERP_Transporte.Entidades
             cmd.Parameters.AddWithValue("@valor", form.Controls["txtValor"].Text.Replace(".", "").Replace(",", "."));
             cmd.Parameters.AddWithValue("@km", form.Controls["txtKm"].Text);
             cmd.Parameters.AddWithValue("@litros", form.Controls["txtLitros"].Text.Replace(".", "").Replace(",", "."));
-
-            return cmd.ExecuteNonQuery();
+            try
+            {
+                return cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
+            
         }
 
         public int Edit(frmTrafego form)
         {
-            string sql = "UPDATE `trafego` SET `veiculo`=@veiculo,`data`=@data,`motivo`=@motivo,`partida`=@partida,`km_partida`=@km_partida," +
-                "`chegada`=@chegada,`km_chegada`=@km_chegada,`fornecedor`=@fornecedor,`valor`=@valor,`km`=@km,`litros`=@litros, `updated_at` = CURRENT_TIMESTAMP() " +
+            string sql = "UPDATE `trafego` SET `id_veiculo`=@veiculo,`data`=@data,`motivo`=@motivo,`partida`=@partida,`km_partida`=@km_partida," +
+                "`chegada`=@chegada,`km_chegada`=@km_chegada,`id_fornecedor`=@fornecedor,`valor`=@valor,`km`=@km,`litros`=@litros, `updated_at` = CURRENT_TIMESTAMP() " +
                 " WHERE id = @id";
 
             MySqlCommand cmd = new MySqlCommand(sql, conn);
@@ -118,7 +123,14 @@ namespace ERP_Transporte.Entidades
             cmd.Parameters.AddWithValue("@litros", form.Controls["txtLitros"].Text.Replace(".", "").Replace(",", "."));
 
 
-            return cmd.ExecuteNonQuery();
+            try
+            {
+                return cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
         }
 
         public DataTable Delete(int id)

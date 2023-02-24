@@ -32,7 +32,15 @@ namespace ERP_Transporte.Auxiliares
         }
         public void UpdateProgress(int progress)
         {
-            this.Invoke(del, progress);
+            try
+            {
+                this.Invoke(del, progress);
+            }
+            catch (Exception ex)
+            {
+                
+            }
+            
         }
     }
 }

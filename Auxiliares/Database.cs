@@ -10,13 +10,24 @@ namespace ERP_Transporte.Auxiliares
 {
     internal class Database
     {
-        private static string host = "localhost";
+        /*private static string host = "200.144.1.23";
+        private static string porta = "3306";
+        private static string user = "root";
+        private static string senha = "SUCen2012";
+        private static string banco = "apitransporte";*/
+
+        private static string host = "us-cdbr-east-06.cleardb.net";
+        private static string porta = "3306";
+        private static string user = "be7fd4530ceee1";
+        private static string senha = "055bc913";
+        private static string banco = "heroku_606251ee1e39dd1";
+        /*private static string host = "localhost";
         private static string porta = "3306";
         private static string user = "root";
         private static string senha = "";
-        private static string banco = "apitransporte";
+        private static string banco = "apitransporte";*/
 
-        public static string connstring = String.Format("server={0};Port={1};uid={2};pwd={3};database={4};Convert Zero Datetime=True",
+        public static string connstring = String.Format("server={0};Port={1};uid={2};pwd={3};database={4};Convert Zero Datetime=True;Connection Timeout=60",
                     host, porta, user, senha, banco);
 
         public static MySqlConnection conn = new MySqlConnection(connstring);

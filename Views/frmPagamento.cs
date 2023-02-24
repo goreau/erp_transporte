@@ -51,7 +51,7 @@ namespace ERP_Transporte.Views
 
 
             cmbCategoria.SelectedValue = dr["categoria"].ToString();
-            cmbFornecedor.SelectedValue = dr["fornecedor"].ToString();
+            cmbFornecedor.SelectedValue = dr["id_fornecedor"].ToString();
             recorrente.Checked = dr["recorrente"].ToString() == "True";
 
         }
@@ -121,11 +121,11 @@ namespace ERP_Transporte.Views
            
             
             Fornecedor forn = new Fornecedor();
-            DataSet ds = forn.Combo();
+            DataTable dt = forn.Combo();
 
-            ds = forn.Combo();
+            dt = forn.Combo();
 
-            cmbFornecedor.DataSource = ds.Tables[0];
+            cmbFornecedor.DataSource = dt;
             cmbFornecedor.DisplayMember = "nome";
             cmbFornecedor.ValueMember = "id";
             cmbFornecedor.SelectedIndex = 0;
@@ -133,9 +133,9 @@ namespace ERP_Transporte.Views
 
             Auxiliar aux = new Auxiliar();
 
-            ds = aux.Combo(4);
+            dt = aux.Combo(4);
 
-            cmbCategoria.DataSource = ds.Tables[0];
+            cmbCategoria.DataSource = dt;
             cmbCategoria.DisplayMember = "nome";
             cmbCategoria.ValueMember = "id";
             cmbCategoria.SelectedIndex = 0;

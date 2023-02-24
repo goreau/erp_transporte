@@ -63,7 +63,7 @@
             this.txtData.Mask = "00/00/0000";
             this.txtData.Name = "txtData";
             this.txtData.Size = new System.Drawing.Size(120, 28);
-            this.txtData.TabIndex = 64;
+            this.txtData.TabIndex = 3;
             this.txtData.ValidatingType = typeof(System.DateTime);
             // 
             // label11
@@ -94,7 +94,7 @@
             this.cmbVeiculo.Location = new System.Drawing.Point(214, 71);
             this.cmbVeiculo.Name = "cmbVeiculo";
             this.cmbVeiculo.Size = new System.Drawing.Size(316, 28);
-            this.cmbVeiculo.TabIndex = 61;
+            this.cmbVeiculo.TabIndex = 1;
             // 
             // txtKm_partida
             // 
@@ -103,7 +103,7 @@
             this.txtKm_partida.Location = new System.Drawing.Point(370, 203);
             this.txtKm_partida.Name = "txtKm_partida";
             this.txtKm_partida.Size = new System.Drawing.Size(160, 28);
-            this.txtKm_partida.TabIndex = 63;
+            this.txtKm_partida.TabIndex = 5;
             // 
             // label5
             // 
@@ -123,7 +123,7 @@
             this.btSalva.Location = new System.Drawing.Point(468, 537);
             this.btSalva.Name = "btSalva";
             this.btSalva.Size = new System.Drawing.Size(297, 60);
-            this.btSalva.TabIndex = 69;
+            this.btSalva.TabIndex = 12;
             this.btSalva.Text = "Salvar";
             this.btSalva.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btSalva.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -169,7 +169,7 @@
             this.cmbMotivo.Location = new System.Drawing.Point(214, 138);
             this.cmbMotivo.Name = "cmbMotivo";
             this.cmbMotivo.Size = new System.Drawing.Size(316, 28);
-            this.cmbMotivo.TabIndex = 73;
+            this.cmbMotivo.TabIndex = 2;
             // 
             // label2
             // 
@@ -189,7 +189,7 @@
             this.txtPartida.Mask = "90:00";
             this.txtPartida.Name = "txtPartida";
             this.txtPartida.Size = new System.Drawing.Size(66, 28);
-            this.txtPartida.TabIndex = 77;
+            this.txtPartida.TabIndex = 4;
             this.txtPartida.ValidatingType = typeof(System.DateTime);
             // 
             // txtChegada
@@ -199,7 +199,7 @@
             this.txtChegada.Mask = "90:00";
             this.txtChegada.Name = "txtChegada";
             this.txtChegada.Size = new System.Drawing.Size(66, 28);
-            this.txtChegada.TabIndex = 81;
+            this.txtChegada.TabIndex = 6;
             this.txtChegada.ValidatingType = typeof(System.DateTime);
             // 
             // label3
@@ -220,7 +220,7 @@
             this.txtKm_chegada.Location = new System.Drawing.Point(370, 266);
             this.txtKm_chegada.Name = "txtKm_chegada";
             this.txtKm_chegada.Size = new System.Drawing.Size(160, 28);
-            this.txtKm_chegada.TabIndex = 78;
+            this.txtKm_chegada.TabIndex = 7;
             // 
             // label4
             // 
@@ -250,7 +250,7 @@
             this.cmbFornecedor.Location = new System.Drawing.Point(214, 335);
             this.cmbFornecedor.Name = "cmbFornecedor";
             this.cmbFornecedor.Size = new System.Drawing.Size(316, 28);
-            this.cmbFornecedor.TabIndex = 82;
+            this.cmbFornecedor.TabIndex = 8;
             // 
             // txtValor
             // 
@@ -259,7 +259,7 @@
             this.txtValor.Location = new System.Drawing.Point(644, 332);
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(120, 28);
-            this.txtValor.TabIndex = 84;
+            this.txtValor.TabIndex = 9;
             this.txtValor.Enter += new System.EventHandler(this.txtValor_Enter);
             this.txtValor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValor_KeyPress);
             this.txtValor.Leave += new System.EventHandler(this.txtValor_Leave);
@@ -282,7 +282,7 @@
             this.txtKm.Location = new System.Drawing.Point(214, 402);
             this.txtKm.Name = "txtKm";
             this.txtKm.Size = new System.Drawing.Size(120, 28);
-            this.txtKm.TabIndex = 86;
+            this.txtKm.TabIndex = 10;
             // 
             // label9
             // 
@@ -302,7 +302,7 @@
             this.txtLitros.Location = new System.Drawing.Point(446, 402);
             this.txtLitros.Name = "txtLitros";
             this.txtLitros.Size = new System.Drawing.Size(85, 28);
-            this.txtLitros.TabIndex = 88;
+            this.txtLitros.TabIndex = 11;
             this.txtLitros.Enter += new System.EventHandler(this.txtValor_Enter);
             this.txtLitros.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValor_KeyPress);
             this.txtLitros.Leave += new System.EventHandler(this.txtValor_Leave);

@@ -29,16 +29,16 @@ namespace ERP_Transporte.Views
         private void populaCombos()
         {
             Auxiliar obj = new Auxiliar();
-            DataSet ds = obj.Combo(2);
+            DataTable dt = obj.Combo(2);
 
-            cmbFuncao.DataSource = ds.Tables[0];
+            cmbFuncao.DataSource = dt;
             cmbFuncao.DisplayMember = "nome";
             cmbFuncao.ValueMember = "id";
             cmbFuncao.SelectedIndex = 0;
 
-            ds = obj.Combo(3);
+            dt = obj.Combo(3);
 
-            cmbCategoria.DataSource = ds.Tables[0];
+            cmbCategoria.DataSource = dt;
             cmbCategoria.DisplayMember = "nome";
             cmbCategoria.ValueMember = "id";
             cmbCategoria.SelectedIndex = 0;
@@ -131,7 +131,15 @@ namespace ERP_Transporte.Views
         private void btSalva_Leave(object sender, EventArgs e)
         {
             TextBox txt = (sender as TextBox);
-            txt.Text = Convert.ToDouble(txt.Text).ToString("F");
+            try
+            {
+                txt.Text = Convert.ToDouble(txt.Text).ToString("F");
+            }
+            catch (Exception)
+            {
+                txt.Text = "";
+            }
+            
         }
 
         private void txtRemuneracao_KeyPress(object sender, KeyPressEventArgs e)

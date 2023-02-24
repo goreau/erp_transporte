@@ -26,7 +26,7 @@ namespace ERP_Transporte.Entidades
 
         public int Add(frmRecebimento form)
         {
-            string sql = "INSERT INTO `recebimento`(`rota`, `ano`, `mes`, `valor`) " +
+            string sql = "INSERT INTO `recebimento`(`id_rota`, `ano`, `mes`, `valor`) " +
                 "VALUES (@rota, @ano, @mes, @valor)";
 
             MySqlCommand cmd = new MySqlCommand(sql, conn);
@@ -41,12 +41,19 @@ namespace ERP_Transporte.Entidades
             String sel = drv.Row["id"].ToString();
             cmd.Parameters.AddWithValue("@rota", sel);
 
-            return cmd.ExecuteNonQuery();
+            try
+            {
+                return cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
         }
 
         public int Edit(frmRecebimento form)
         {
-            string sql = "UPDATE `recebimento` SET `rota`=@rota,`ano`=@ano,`mes`=@mes,`valor`=@valor,`updated_at` = CURRENT_TIMESTAMP() " +
+            string sql = "UPDATE `recebimento` SET `id_rota`=@rota,`ano`=@ano,`mes`=@mes,`valor`=@valor,`updated_at` = CURRENT_TIMESTAMP() " +
                 " WHERE id = @id";
 
             MySqlCommand cmd = new MySqlCommand(sql, conn);
@@ -61,7 +68,14 @@ namespace ERP_Transporte.Entidades
             String sel = drv.Row["id"].ToString();
             cmd.Parameters.AddWithValue("@rota", sel);
 
-            return cmd.ExecuteNonQuery();
+            try
+            {
+                return cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
         }
 
         public DataTable Delete(int id)

@@ -37,16 +37,20 @@ namespace ERP_Transporte.Views
 
             Escola obj = new Escola();
 
-            DataSet ds = obj.Combo();
+            DataTable dt = obj.Combo();
 
-            cmbEscola.DataSource = ds.Tables[0];
+            cmbEscola.DataSource = dt;
             cmbEscola.DisplayMember = "nome";
             cmbEscola.ValueMember = "id";
             cmbEscola.SelectedIndex = 0;
 
-            cmbId_rota.Items.Insert(0, "-- Selecione --");
-            cmbId_rota.Items.Insert(1, "rota 1");
-            cmbId_rota.Items.Insert(2, "rota 2");
+            Rota rt = new Rota();
+
+            dt = rt.Combo();
+
+            cmbId_rota.DataSource = dt;
+            cmbId_rota.DisplayMember = "nome";
+            cmbId_rota.ValueMember = "id";
             cmbId_rota.SelectedIndex = 0;
         }
 
@@ -164,7 +168,7 @@ namespace ERP_Transporte.Views
             txtRg.Text = dr["rg"].ToString();
             txtCpf.Text = dr["cpf"].ToString();
 
-            cmbId_rota.SelectedIndex = Convert.ToInt16(dr["id_rota"].ToString());
+            cmbId_rota.SelectedValue = Convert.ToInt16(dr["id_rota"].ToString());
             cmbEst_civil.SelectedIndex = Convert.ToInt16(dr["est_civil"].ToString());
 
             txtObs.Text = dr["obs"].ToString();

@@ -4,6 +4,7 @@ using MySqlConnector;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,9 +25,34 @@ namespace ERP_Transporte.Entidades
 
         }
 
+        public string saveFile(string file)
+        {
+            try
+            {
+                string path = System.AppDomain.CurrentDomain.BaseDirectory + "Uploads\\";
+                if (!Directory.Exists(path))
+                    Directory.CreateDirectory(path);
+
+                string destFile = Path.Combine(path, Path.GetFileName(file));
+                File.Copy(file, destFile, true);
+                return destFile;
+            }
+            catch (Exception)
+            {
+                return "";
+            }
+            
+        }
+
         public int Add(frmAbastecimento form)
-        {       
-            string sql = "INSERT INTO `abastecimento`( `veiculo`, `km`, `fornecedor`, `litros`, `valor_litro`, `pagamento`, `vencimento`, `combustivel`, `arquivo`) " +
+        {
+            string arquivo = form.Controls["txtArquivo"].Text;
+            if (arquivo != "")
+            {
+                arquivo=this.saveFile(arquivo);
+            }
+
+            string sql = "INSERT INTO `abastecimento`( `id_veiculo`, `km`, `id_fornecedor`, `litros`, `valor_litro`, `pagamento`, `vencimento`, `combustivel`, `arquivo`) " +
                 "VALUES (@veiculo, @km, @fornecedor, @litros, @valor_litro, @pagamento, @vencimento, @combustivel,  @arquivo)";
 
             MySqlCommand cmd = new MySqlCommand(sql, conn);
@@ -57,15 +83,28 @@ namespace ERP_Transporte.Entidades
 
             cmd.Parameters.AddWithValue("@pagamento", form.Controls["txtPagamento"].Text);
             cmd.Parameters.AddWithValue("@combustivel", form.Controls["txtCombustivel"].Text);
-            cmd.Parameters.AddWithValue("@arquivo", form.Controls["txtArquivo"].Text);
+            cmd.Parameters.AddWithValue("@arquivo", arquivo);
 
 
-            return cmd.ExecuteNonQuery();
+            try
+            {
+                return cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
         }
 
         public int Edit(frmAbastecimento form)
         {
-            string sql = "UPDATE `abastecimento` SET `veiculo`=@veiculo,`km`=@km,`fornecedor`=@fornecedor,`litros`=@litros, `valor_litro`=@valor_litro, " +
+            string arquivo = form.Controls["txtArquivo"].Text;
+            if (arquivo != "")
+            {
+                arquivo = this.saveFile(arquivo);
+            }
+
+            string sql = "UPDATE `abastecimento` SET `id_veiculo`=@veiculo,`km`=@km,`id_fornecedor`=@fornecedor,`litros`=@litros, `valor_litro`=@valor_litro, " +
                 "`pagamento`=@pagamento,`vencimento`=@vencimento,`combustivel`=@combustivel,`arquivo`=@arquivo, `updated_at` = CURRENT_TIMESTAMP() " +
                 " WHERE id = @id";
 
@@ -99,9 +138,16 @@ namespace ERP_Transporte.Entidades
 
             cmd.Parameters.AddWithValue("@pagamento", form.Controls["txtPagamento"].Text);
             cmd.Parameters.AddWithValue("@combustivel", form.Controls["txtCombustivel"].Text);
-            cmd.Parameters.AddWithValue("@arquivo", form.Controls["txtArquivo"].Text);
+            cmd.Parameters.AddWithValue("@arquivo", arquivo);
 
-            return cmd.ExecuteNonQuery();
+            try
+            {
+                return cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
         }
 
         public DataTable Delete(int id)

@@ -15,9 +15,6 @@ namespace ERP_Transporte.Entidades
     {
         MySqlConnection conn = Database.conn;
 
-        private String id, nome, logradouro, numero, bairro, ra_rg, dt_nascimento, pai, tel_pai, mae, tel_mae, responsavel, resp_qualif, tel_resp, naturalidade, nacionalidade, rg, cpf, obs;
-        private int id_escola, est_civil, id_rota, periodo;
-
         public Pagamento()
         {
             if (conn.State != ConnectionState.Open)
@@ -29,7 +26,7 @@ namespace ERP_Transporte.Entidades
 
         public int Add(frmPagamento form)
         {
-            string sql = "INSERT INTO `pagamento`(`dia_vencimento`, `fornecedor`, `categoria`, `vinculo`, `valor`, `recorrente`) " +
+            string sql = "INSERT INTO `pagamento`(`dia_vencimento`, `id_fornecedor`, `categoria`, `vinculo`, `valor`, `recorrente`) " +
                 "VALUES (@dia_vencimento, @fornecedor, @categoria, @vinculo, @valor, @recorrente)";
 
             MySqlCommand cmd = new MySqlCommand(sql, conn);
@@ -53,12 +50,19 @@ namespace ERP_Transporte.Entidades
             var check = form.Controls.OfType<CheckBox>().FirstOrDefault(r => r.Name == "recorrente");
             cmd.Parameters.AddWithValue("@recorrente", check.Checked);
 
-            return cmd.ExecuteNonQuery();
+            try
+            {
+                return cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
         }
 
         public int Edit(frmPagamento form)
         {
-            string sql = "UPDATE `pagamento` SET `dia_vencimento`=@dia_vencimento,`fornecedor`=@fornecedor,`categoria`=@categoria," +
+            string sql = "UPDATE `pagamento` SET `dia_vencimento`=@dia_vencimento,`id_fornecedor`=@fornecedor,`categoria`=@categoria," +
                 "`vinculo`=@vinculo,`valor`=@valor,`recorrente`=@recorrente,`updated_at` = CURRENT_TIMESTAMP() " +
                 " WHERE id = @id";
 
@@ -84,7 +88,14 @@ namespace ERP_Transporte.Entidades
             var check = form.Controls.OfType<CheckBox>().FirstOrDefault(r => r.Name == "recorrente");
             cmd.Parameters.AddWithValue("@recorrente", check.Checked);
 
-            return cmd.ExecuteNonQuery();
+            try
+            {
+                return cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
         }
 
         public DataTable Delete(int id)

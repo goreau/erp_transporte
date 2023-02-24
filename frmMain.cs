@@ -1,5 +1,6 @@
 ﻿using ERP_Transporte.Auxiliares;
 using ERP_Transporte.Entidades;
+using ERP_Transporte.Relatorios;
 using ERP_Transporte.Views;
 using System;
 using System.Collections.Generic;
@@ -305,6 +306,33 @@ namespace ERP_Transporte
 
             form.MdiParent = this;
             form.Show();
+        }
+
+        private void listaDeAlunosToolStripMenuItem_Click(object sender, EventArgs e)
+        {           
+            frmRelatorio form = new frmRelatorio(1);
+            form.MdiParent = this;
+            form.Show();
+        }
+
+        private void listaDeEscolasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmRelatorio form = new frmRelatorio(2);
+            form.MdiParent = this;
+            form.Show();
+        }
+
+        private void createDBToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CreateDB dB = new CreateDB();
+            if (dB.createTables())
+            {
+                MessageBox.Show("Tudo certo");
+            }
+            else
+            {
+                MessageBox.Show("Erro no comando");
+            }
         }
     }
 }

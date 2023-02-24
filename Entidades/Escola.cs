@@ -15,9 +15,7 @@ namespace ERP_Transporte.Entidades
     {
         MySqlConnection conn = Database.conn;
 
-        private String nome, logradouro, numero, bairro, telefone, telefone2, entrada, saida, especial, link;
-        private int periodo;
-
+     
         public Escola()
         {
             if (conn.State != ConnectionState.Open)
@@ -49,7 +47,14 @@ namespace ERP_Transporte.Entidades
             cmd.Parameters.AddWithValue("@especial", form.Controls["txtEspecial"].Text);
             cmd.Parameters.AddWithValue("@link", form.Controls["txtLink"].Text);
 
-            return cmd.ExecuteNonQuery();
+            try
+            {
+                return cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
         }
 
         public int Edit(frmEscola form)
@@ -74,7 +79,14 @@ namespace ERP_Transporte.Entidades
             cmd.Parameters.AddWithValue("@especial", form.Controls["txtEspecial"].Text);
             cmd.Parameters.AddWithValue("@link", form.Controls["txtLink"].Text);
 
-            return cmd.ExecuteNonQuery();
+            try
+            {
+                return cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
         }
 
         public DataTable Delete(int id)
@@ -104,19 +116,28 @@ namespace ERP_Transporte.Entidades
             return dt;
         }
 
-        public DataSet Combo()
+        public DataTable Combo()
         {
-            string sql = "SELECT id, nome FROM escola";
+            string sql = "SELECT id, nome FROM escola ORDER BY nome";
 
             MySqlCommand cmd = new MySqlCommand(sql, conn);
 
             MySqlDataAdapter da = new MySqlDataAdapter(cmd);
 
-            DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
 
-            da.Fill(ds);
+            da.Fill(dt);
 
-            return ds;
+            DataRow dr = dt.NewRow();
+            dr["id"] = 0;
+            dr["nome"] = "-- Selecione --";
+            dt.Rows.Add(dr);
+
+            dt.DefaultView.Sort = "id";
+            dt = dt.DefaultView.ToTable();
+
+
+            return dt;
         }
 
         public DataRow Get(int id)
