@@ -322,19 +322,6 @@ namespace ERP_Transporte
             form.Show();
         }
 
-        private void createDBToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            CreateDB dB = new CreateDB();
-            if (dB.createTables())
-            {
-                MessageBox.Show("Tudo certo");
-            }
-            else
-            {
-                MessageBox.Show("Erro no comando");
-            }
-        }
-
         private void abastecimentosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmRelatorio form = new frmRelatorio(3);
