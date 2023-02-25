@@ -57,6 +57,8 @@ namespace ERP_Transporte.Views
             if (dialog.ShowDialog() == DialogResult.OK) // if user clicked OK
             {
                 txtArquivo.Text = dialog.FileName;
+                txtOldArq.Text = dialog.FileName;
+                txtNewFile.Text = "1";
             }
         }
 
@@ -154,7 +156,7 @@ namespace ERP_Transporte.Views
             {
                 rbCheque.Checked = true;
             }
-            
+
             txtVencimento.Text = dr["vencimento"].ToString();
 
             txtDescricao.Text = dr["descricao"].ToString();
@@ -164,10 +166,12 @@ namespace ERP_Transporte.Views
 
             txtArquivo.Text = partes.Last();
 
+            txtOldArq.Text = arq;
+
             txtData.Text = dr["data"].ToString();
 
             btPreview.Visible = dr["arquivo"].ToString() != "";
-             
+
         }
 
         private void txtValor_KeyPress(object sender, KeyPressEventArgs e)
@@ -220,13 +224,24 @@ namespace ERP_Transporte.Views
 
         private void btPreview_Click(object sender, EventArgs e)
         {
+            
+            
             using (Form form = new Form())
             {
-                string path = System.AppDomain.CurrentDomain.BaseDirectory + "Uploads\\";
-                Bitmap img = new Bitmap(Path.Combine(path, txtArquivo.Text));
+                Bitmap img = new Bitmap(txtOldArq.Text);
 
                 form.StartPosition = FormStartPosition.CenterScreen;
+                if (img.Size.Height > 400)
+                {
+                    int fator = img.Size.Height / 400;
+                    Size sz = new Size(img.Size.Width / fator, img.Size.Height / fator);
+                    img = new Bitmap(img, sz);
+                }
                 form.ClientSize = img.Size;
+                form.ShowIcon = false;
+                form.FormBorderStyle = FormBorderStyle.FixedDialog;
+                form.MinimizeBox = false;
+                form.MaximizeBox = false;
 
                 PictureBox pb = new PictureBox();
                 pb.Dock = DockStyle.Fill;
@@ -235,6 +250,8 @@ namespace ERP_Transporte.Views
                 form.Controls.Add(pb);
                 form.ShowDialog();
             }
+
         }
     }
+
 }

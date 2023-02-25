@@ -51,8 +51,10 @@
             this.btArquivo = new System.Windows.Forms.Button();
             this.btSalva = new System.Windows.Forms.Button();
             this.txtArquivo = new System.Windows.Forms.Label();
-            this.txtData = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.txtData = new System.Windows.Forms.DateTimePicker();
+            this.txtOldArq = new System.Windows.Forms.TextBox();
+            this.txtNewFile = new System.Windows.Forms.TextBox();
             this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -302,16 +304,6 @@
             this.txtArquivo.Size = new System.Drawing.Size(384, 35);
             this.txtArquivo.TabIndex = 141;
             // 
-            // txtData
-            // 
-            this.txtData.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtData.Location = new System.Drawing.Point(241, 42);
-            this.txtData.Mask = "00/00/0000";
-            this.txtData.Name = "txtData";
-            this.txtData.Size = new System.Drawing.Size(120, 28);
-            this.txtData.TabIndex = 166;
-            this.txtData.ValidatingType = typeof(System.DateTime);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -323,11 +315,39 @@
             this.label2.TabIndex = 167;
             this.label2.Text = "Data:";
             // 
+            // txtData
+            // 
+            this.txtData.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtData.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txtData.Location = new System.Drawing.Point(241, 39);
+            this.txtData.Name = "txtData";
+            this.txtData.Size = new System.Drawing.Size(172, 28);
+            this.txtData.TabIndex = 168;
+            // 
+            // txtOldArq
+            // 
+            this.txtOldArq.Location = new System.Drawing.Point(120, 562);
+            this.txtOldArq.Name = "txtOldArq";
+            this.txtOldArq.Size = new System.Drawing.Size(72, 26);
+            this.txtOldArq.TabIndex = 173;
+            this.txtOldArq.Visible = false;
+            // 
+            // txtNewFile
+            // 
+            this.txtNewFile.Location = new System.Drawing.Point(67, 562);
+            this.txtNewFile.Name = "txtNewFile";
+            this.txtNewFile.Size = new System.Drawing.Size(47, 26);
+            this.txtNewFile.TabIndex = 172;
+            this.txtNewFile.Text = "0";
+            this.txtNewFile.Visible = false;
+            // 
             // frmManutencao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1049, 750);
+            this.ClientSize = new System.Drawing.Size(1043, 750);
+            this.Controls.Add(this.txtOldArq);
+            this.Controls.Add(this.txtNewFile);
             this.Controls.Add(this.txtData);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtArquivo);
@@ -384,7 +404,9 @@
         private System.Windows.Forms.Button btArquivo;
         private System.Windows.Forms.Button btPreview;
         private System.Windows.Forms.Label txtArquivo;
-        private System.Windows.Forms.MaskedTextBox txtData;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker txtData;
+        private System.Windows.Forms.TextBox txtOldArq;
+        private System.Windows.Forms.TextBox txtNewFile;
     }
 }

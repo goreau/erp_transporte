@@ -115,6 +115,12 @@
   <ItemGroup>
     <Compile Include="Auxiliares\CreateDB.cs" />
     <Compile Include="Auxiliares\Database.cs" />
+    <Compile Include="Auxiliares\frmSobre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Auxiliares\frmSobre.Designer.cs">
+      <DependentUpon>frmSobre.cs</DependentUpon>
+    </Compile>
     <Compile Include="Auxiliares\frmSplash.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -228,12 +234,6 @@
     <Compile Include="Views\frmRota.Designer.cs">
       <DependentUpon>frmRota.cs</DependentUpon>
     </Compile>
-    <Compile Include="Auxiliares\frmSobre.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Auxiliares\frmSobre.Designer.cs">
-      <DependentUpon>frmSobre.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\frmTrafego.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -246,6 +246,9 @@
     <Compile Include="Views\frmVeiculo.Designer.cs">
       <DependentUpon>frmVeiculo.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Auxiliares\frmSobre.resx">
+      <DependentUpon>frmSobre.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Auxiliares\frmSplash.resx">
       <DependentUpon>frmSplash.cs</DependentUpon>
     </EmbeddedResource>
@@ -334,6 +337,7 @@
     <None Include="Resources\print-24.png" />
     <None Include="Resources\file-preview-20.png" />
     <None Include="Resources\image-20.png" />
+    <None Include="Resources\escolat.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

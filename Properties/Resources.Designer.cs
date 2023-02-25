@@ -183,6 +183,16 @@ namespace ERP_Transporte.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap escolat {
+            get {
+                object obj = ResourceManager.GetObject("escolat", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap file_preview_20 {
             get {
                 object obj = ResourceManager.GetObject("file-preview-20", resourceCulture);

@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 // conjunto de atributos. Altere estes valores de atributo para modificar as informações
 // associadas a um assembly.
 [assembly: AssemblyTitle("ERP Transporte")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Sistema para gestão de transporte escolar")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Antonio Henrique (goreau@terra.com.br)")]
 [assembly: AssemblyProduct("ERP Transporte")]
 [assembly: AssemblyCopyright("Copyright ©  2023")]
 [assembly: AssemblyTrademark("")]

@@ -106,14 +106,22 @@ namespace ERP_Transporte.Entidades
 
         public int Edit(frmAbastecimento form)
         {
-            string arquivo = form.Controls["txtArquivo"].Text;
-            if (arquivo != "")
+            string sqlArquivo = "";
+            string arquivo = "";
+
+            if (form.Controls["txtNewFile"].Text == "1")
             {
-                arquivo = this.saveFile(arquivo);
+                arquivo = form.Controls["txtArquivo"].Text;
+                if (arquivo != "")
+                {
+                    arquivo = this.saveFile(arquivo);
+                }
+                sqlArquivo = "`arquivo`=@arquivo, ";
             }
 
+
             string sql = "UPDATE `abastecimento` SET `id_veiculo`=@veiculo,`km`=@km,`id_fornecedor`=@fornecedor,`litros`=@litros, `valor_litro`=@valor_litro, " +
-                "`pagamento`=@pagamento,`vencimento`=@vencimento,`combustivel`=@combustivel,`arquivo`=@arquivo, `data`=@data, `updated_at` = CURRENT_TIMESTAMP() " +
+                "`pagamento`=@pagamento,`vencimento`=@vencimento,`combustivel`=@combustivel,"+ sqlArquivo +" `data`=@data, `updated_at` = CURRENT_TIMESTAMP() " +
                 " WHERE id = @id";
 
             MySqlCommand cmd = new MySqlCommand(sql, conn);
@@ -146,7 +154,10 @@ namespace ERP_Transporte.Entidades
 
             cmd.Parameters.AddWithValue("@pagamento", form.Controls["txtPagamento"].Text);
             cmd.Parameters.AddWithValue("@combustivel", form.Controls["txtCombustivel"].Text);
-            cmd.Parameters.AddWithValue("@arquivo", arquivo);
+            if (form.Controls["txtNewFile"].Text == "1")
+            {
+                cmd.Parameters.AddWithValue("@arquivo", arquivo);
+            }
 
             data = "";
             success = DateTime.TryParse(form.Controls["txtData"].Text, out dt);
