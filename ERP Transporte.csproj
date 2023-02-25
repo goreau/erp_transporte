@@ -259,11 +259,14 @@
     <EmbeddedResource Include="Relatorios\frmRelatorio.resx">
       <DependentUpon>frmRelatorio.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\rptAbastecimento.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Relatorios\rptListaAlunos.rdlc">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Relatorios\rptListaEscola.rdlc">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\frmAbastecimento.resx">
       <DependentUpon>frmAbastecimento.cs</DependentUpon>
@@ -309,6 +312,7 @@
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\ERP_Transporte.Relatorios.Escolas.datasource" />
+    <None Include="Properties\DataSources\ERP_Transporte.Relatorios.ListaAbastecimento.datasource" />
     <None Include="Properties\DataSources\ERP_Transporte.Relatorios.ListaAluno.datasource" />
     <None Include="Properties\DataSources\ERP_Transporte.Relatorios.ListaEscolas.datasource" />
     <None Include="Properties\Settings.settings">

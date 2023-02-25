@@ -334,5 +334,12 @@ namespace ERP_Transporte
                 MessageBox.Show("Erro no comando");
             }
         }
+
+        private void abastecimentosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmRelatorio form = new frmRelatorio(3);
+            form.MdiParent = this;
+            form.Show();
+        }
     }
 }

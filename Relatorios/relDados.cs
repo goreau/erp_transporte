@@ -62,10 +62,53 @@ namespace ERP_Transporte.Relatorios
             }
 
             string sql = "SELECT " +
-                "e.nome, " +
-                "concat(e.logradouro, ', ', e.numero, ' - ', e.`bairro`) as endereco, " +
-                "e.telefone " +
-                "FROM escola e " + filt;
+                "p.nome, " +
+                "concat(p.logradouro, ', ', p.numero, ' - ', p.`bairro`) as endereco, " +
+                "p.telefone " +
+                "FROM escola p " + filt;
+
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+            DataTable dt = new DataTable();
+
+            da.Fill(dt);
+            return dt;
+
+        }
+    }
+
+    internal class ListaAbastecimento
+    {
+        public string Veiculo { get; set; }
+        public string Km { get; set; }
+        public string Combustivel { get; set; }
+        public string Data { get; set; }
+        public Double Litros { get; set; }
+        public Double Unitario { get; set; }
+        public Double Total { get; set; }
+
+
+        public DataTable getDados(string filt)
+        {
+            MySqlConnection conn = Database.conn;
+
+            if (conn.State != ConnectionState.Open)
+            {
+                conn.Open();
+            }
+
+            string sql = "SELECT " +
+                "modelo as veiculo, " +
+                "km, " +
+                "case p.combustivel when 1 then 'Etanol' when 2 then 'Gasolina' else 'Diesel' end as combustivel, " +
+                "DATE_FORMAT(p.data, '%d/%m/%Y') as data, " +
+                "litros, " +
+                "valor_litro as unitario, " +
+                "CAST(litros * valor_litro as decimal(10,2)) as total " +
+                "FROM `abastecimento` p join veiculo v on p.id_veiculo=v.id" + filt +
+                " ORDER BY veiculo, data";
 
             MySqlCommand cmd = new MySqlCommand(sql, conn);
 

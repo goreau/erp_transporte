@@ -52,8 +52,8 @@ namespace ERP_Transporte.Entidades
                 arquivo = this.saveFile(arquivo);
             }
 
-            string sql = "INSERT INTO `manutencao`( `id_veiculo`, `km`, `id_fornecedor`, `valor`, `pagamento`, `vencimento`, `descricao`, `arquivo`) " +
-                "VALUES (@veiculo, @km, @fornecedor, @valor, @pagamento, @vencimento, @descricao,  @arquivo)";
+            string sql = "INSERT INTO `manutencao`( `id_veiculo`, `km`, `id_fornecedor`, `valor`, `pagamento`, `vencimento`, `descricao`, `arquivo`, `data`) " +
+                "VALUES (@veiculo, @km, @fornecedor, @valor, @pagamento, @vencimento, @descricao,  @arquivo, @data)";
 
             MySqlCommand cmd = new MySqlCommand(sql, conn);
 
@@ -84,6 +84,14 @@ namespace ERP_Transporte.Entidades
             cmd.Parameters.AddWithValue("@descricao", form.Controls["txtDescricao"].Text);
             cmd.Parameters.AddWithValue("@arquivo", arquivo);
 
+            data = "";
+            success = DateTime.TryParse(form.Controls["txtData"].Text, out dt);
+            if (success)
+            {
+                data = dt.Year.ToString() + "-" + dt.Month.ToString() + "-" + dt.Day.ToString();
+            }
+            cmd.Parameters.AddWithValue("@data", data);
+
 
             try
             {
@@ -103,7 +111,7 @@ namespace ERP_Transporte.Entidades
                 arquivo = this.saveFile(arquivo);
             }
             string sql = "UPDATE `manutencao` SET `id_veiculo`=@veiculo,`km`=@km,`id_fornecedor`=@fornecedor,`valor`=@valor," +
-                "`pagamento`=@pagamento,`vencimento`=@vencimento,`descricao`=@descricao,`arquivo`=@arquivo, `updated_at` = CURRENT_TIMESTAMP() " +
+                "`pagamento`=@pagamento,`vencimento`=@vencimento,`descricao`=@descricao,`arquivo`=@arquivo, `data`=@data, `updated_at` = CURRENT_TIMESTAMP() " +
                 " WHERE id = @id";
 
             MySqlCommand cmd = new MySqlCommand(sql, conn);
@@ -136,6 +144,14 @@ namespace ERP_Transporte.Entidades
             cmd.Parameters.AddWithValue("@pagamento", form.Controls["txtPagamento"].Text);
             cmd.Parameters.AddWithValue("@descricao", form.Controls["txtDescricao"].Text);
             cmd.Parameters.AddWithValue("@arquivo", arquivo);
+
+            data = "";
+            success = DateTime.TryParse(form.Controls["txtData"].Text, out dt);
+            if (success)
+            {
+                data = dt.Year.ToString() + "-" + dt.Month.ToString() + "-" + dt.Day.ToString();
+            }
+            cmd.Parameters.AddWithValue("@data", data);
 
             try
             {

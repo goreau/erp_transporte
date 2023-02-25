@@ -114,5 +114,6 @@ C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Debug\ru\Microsoft.Repo
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Debug\ERP_Transporte.Relatorios.frmRelatorio.resources
-C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Debug\Relatorios\rptListaAlunos.rdlc
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Debug\Relatorios\rptListaEscola.rdlc
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Debug\Relatorios\rptAbastecimento.rdlc
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Debug\Relatorios\rptListaAlunos.rdlc

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -155,8 +156,12 @@ namespace ERP_Transporte.Views
             }
 
             txtVencimento.Text = dr["vencimento"].ToString();
+            string arq = dr["arquivo"].ToString();
+            string[] partes = arq.Split('/');
+            
+            txtArquivo.Text = partes.Last();
+            txtData.Text = dr["data"].ToString();
 
-            txtArquivo.Text = dr["arquivo"].ToString();
             btPreview.Visible = dr["arquivo"].ToString() != "";
 
         }
@@ -239,7 +244,8 @@ namespace ERP_Transporte.Views
         {
             using (Form form = new Form())
             {
-                Bitmap img = new Bitmap(txtArquivo.Text);
+                string path = System.AppDomain.CurrentDomain.BaseDirectory + "Uploads\\";
+                Bitmap img = new Bitmap(Path.Combine(path,txtArquivo.Text));
 
                 form.StartPosition = FormStartPosition.CenterScreen;
                 form.ClientSize = img.Size;

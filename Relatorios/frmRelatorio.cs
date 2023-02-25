@@ -50,9 +50,9 @@ namespace ERP_Transporte.Relatorios
 
             int[] arrEscola = { 1 };
             int[] arrRota = { 99 };
-            int[] arrVeiculo = { 99 };
-            int[] arrFornecedor = { 99 };
-            int[] arrPeriodo = { 99 };
+            int[] arrVeiculo = { 3 };
+            int[] arrFornecedor = { 3 };
+            int[] arrPeriodo = { 3 };
 
             cmbEscola.Enabled = arrEscola.Contains(this.tipo);
             cmbRota.Enabled = arrRota.Contains(this.tipo);
@@ -120,6 +120,9 @@ namespace ERP_Transporte.Relatorios
                     break;
                 case 2:
                     reportPath = @"Relatorios\rptListaEscola.rdlc";
+                    break;
+                case 3:
+                    reportPath = @"Relatorios\rptAbastecimento.rdlc";
                     break;
             }
         }
@@ -213,7 +216,12 @@ namespace ERP_Transporte.Relatorios
                 case 2:
                     ListaEscolas rel2 = new ListaEscolas();
 
-                    DataTable dt = rel2.getDados(filt);
+                    this.dt = rel2.getDados(filt);
+                    break;
+                case 3:
+                    ListaAbastecimento rel3 = new ListaAbastecimento();
+
+                    this.dt = rel3.getDados(filt);
                     break;
             }
 

@@ -52,8 +52,8 @@ namespace ERP_Transporte.Entidades
                 arquivo=this.saveFile(arquivo);
             }
 
-            string sql = "INSERT INTO `abastecimento`( `id_veiculo`, `km`, `id_fornecedor`, `litros`, `valor_litro`, `pagamento`, `vencimento`, `combustivel`, `arquivo`) " +
-                "VALUES (@veiculo, @km, @fornecedor, @litros, @valor_litro, @pagamento, @vencimento, @combustivel,  @arquivo)";
+            string sql = "INSERT INTO `abastecimento`( `id_veiculo`, `km`, `id_fornecedor`, `litros`, `valor_litro`, `pagamento`, `vencimento`, `combustivel`, `arquivo`, `data`) " +
+                "VALUES (@veiculo, @km, @fornecedor, @litros, @valor_litro, @pagamento, @vencimento, @combustivel,  @arquivo, @data)";
 
             MySqlCommand cmd = new MySqlCommand(sql, conn);
 
@@ -85,6 +85,14 @@ namespace ERP_Transporte.Entidades
             cmd.Parameters.AddWithValue("@combustivel", form.Controls["txtCombustivel"].Text);
             cmd.Parameters.AddWithValue("@arquivo", arquivo);
 
+            data = "";
+            success = DateTime.TryParse(form.Controls["txtData"].Text, out dt);
+            if (success)
+            {
+                data = dt.Year.ToString() + "-" + dt.Month.ToString() + "-" + dt.Day.ToString();
+            }
+            cmd.Parameters.AddWithValue("@data", data);
+
 
             try
             {
@@ -105,7 +113,7 @@ namespace ERP_Transporte.Entidades
             }
 
             string sql = "UPDATE `abastecimento` SET `id_veiculo`=@veiculo,`km`=@km,`id_fornecedor`=@fornecedor,`litros`=@litros, `valor_litro`=@valor_litro, " +
-                "`pagamento`=@pagamento,`vencimento`=@vencimento,`combustivel`=@combustivel,`arquivo`=@arquivo, `updated_at` = CURRENT_TIMESTAMP() " +
+                "`pagamento`=@pagamento,`vencimento`=@vencimento,`combustivel`=@combustivel,`arquivo`=@arquivo, `data`=@data, `updated_at` = CURRENT_TIMESTAMP() " +
                 " WHERE id = @id";
 
             MySqlCommand cmd = new MySqlCommand(sql, conn);
@@ -139,6 +147,14 @@ namespace ERP_Transporte.Entidades
             cmd.Parameters.AddWithValue("@pagamento", form.Controls["txtPagamento"].Text);
             cmd.Parameters.AddWithValue("@combustivel", form.Controls["txtCombustivel"].Text);
             cmd.Parameters.AddWithValue("@arquivo", arquivo);
+
+            data = "";
+            success = DateTime.TryParse(form.Controls["txtData"].Text, out dt);
+            if (success)
+            {
+                data = dt.Year.ToString() + "-" + dt.Month.ToString() + "-" + dt.Day.ToString();
+            }
+            cmd.Parameters.AddWithValue("@data", data);
 
             try
             {

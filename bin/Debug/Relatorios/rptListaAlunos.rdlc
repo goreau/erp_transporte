@@ -476,6 +476,7 @@
                       <Value>Sistema ERP Transporte</Value>
                       <Style>
                         <FontSize>20pt</FontSize>
+                        <FontWeight>SemiBold</FontWeight>
                         <Color>DarkBlue</Color>
                       </Style>
                     </TextRun>
@@ -486,9 +487,9 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
-              <Left>0.27023cm</Left>
+              <Left>0.64536cm</Left>
               <Height>0.98806cm</Height>
-              <Width>25.64222cm</Width>
+              <Width>25.26709cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -509,6 +510,7 @@
                       <Value>Relação de Alunos</Value>
                       <Style>
                         <FontSize>14pt</FontSize>
+                        <FontWeight>SemiBold</FontWeight>
                       </Style>
                     </TextRun>
                   </TextRuns>

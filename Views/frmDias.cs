@@ -34,7 +34,7 @@ namespace ERP_Transporte.Views
 
             txtId.Text = dr["id"].ToString();
 
-            cmbRota.SelectedValue = dr["rota"].ToString();
+            cmbRota.SelectedValue = dr["id_rota"].ToString();
 
             txtAno.Text = dr["ano"].ToString();
             txtMes.Text = dr["mes"].ToString();
