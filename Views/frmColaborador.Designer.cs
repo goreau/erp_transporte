@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmColaborador));
             this.label1 = new System.Windows.Forms.Label();
             this.cmbCategoria = new System.Windows.Forms.ComboBox();
@@ -59,6 +60,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtRemuneracao = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -79,6 +82,7 @@
             this.cmbCategoria.Name = "cmbCategoria";
             this.cmbCategoria.Size = new System.Drawing.Size(316, 28);
             this.cmbCategoria.TabIndex = 3;
+            this.cmbCategoria.Validating += new System.ComponentModel.CancelEventHandler(this.cmbCategoria_Validating);
             // 
             // txtId
             // 
@@ -113,6 +117,7 @@
             this.txtDt_admissao.Size = new System.Drawing.Size(120, 28);
             this.txtDt_admissao.TabIndex = 4;
             this.txtDt_admissao.ValidatingType = typeof(System.DateTime);
+            this.txtDt_admissao.Validating += new System.ComponentModel.CancelEventHandler(this.txtDt_admissao_Validating);
             // 
             // label11
             // 
@@ -143,6 +148,7 @@
             this.cmbFuncao.Name = "cmbFuncao";
             this.cmbFuncao.Size = new System.Drawing.Size(212, 28);
             this.cmbFuncao.TabIndex = 2;
+            this.cmbFuncao.Validating += new System.ComponentModel.CancelEventHandler(this.cmbFuncao_Validating);
             // 
             // txtNome
             // 
@@ -152,6 +158,7 @@
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(317, 28);
             this.txtNome.TabIndex = 1;
+            this.txtNome.Validating += new System.ComponentModel.CancelEventHandler(this.txtNome_Validating);
             // 
             // label12
             // 
@@ -213,6 +220,7 @@
             this.txtDt_expedicao.Size = new System.Drawing.Size(120, 28);
             this.txtDt_expedicao.TabIndex = 6;
             this.txtDt_expedicao.ValidatingType = typeof(System.DateTime);
+            this.txtDt_expedicao.Validating += new System.ComponentModel.CancelEventHandler(this.txtDt_expedicao_Validating);
             // 
             // label15
             // 
@@ -274,6 +282,7 @@
             this.txtDt_validade.Size = new System.Drawing.Size(120, 28);
             this.txtDt_validade.TabIndex = 10;
             this.txtDt_validade.ValidatingType = typeof(System.DateTime);
+            this.txtDt_validade.Validating += new System.ComponentModel.CancelEventHandler(this.txtDt_validade_Validating);
             // 
             // label18
             // 
@@ -335,6 +344,7 @@
             this.txtDt_nascimento.Size = new System.Drawing.Size(120, 28);
             this.txtDt_nascimento.TabIndex = 13;
             this.txtDt_nascimento.ValidatingType = typeof(System.DateTime);
+            this.txtDt_nascimento.Validating += new System.ComponentModel.CancelEventHandler(this.txtDt_nascimento_Validating);
             // 
             // label4
             // 
@@ -368,6 +378,12 @@
             this.txtRemuneracao.TabIndex = 14;
             this.txtRemuneracao.Enter += new System.EventHandler(this.txtRemuneracao_Enter);
             this.txtRemuneracao.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRemuneracao_KeyPress);
+            this.txtRemuneracao.Leave += new System.EventHandler(this.txtRemuneracao_Leave);
+            this.txtRemuneracao.Validating += new System.ComponentModel.CancelEventHandler(this.txtRemuneracao_Validating);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // frmColaborador
             // 
@@ -409,6 +425,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "                                                                                 " +
     "                                                        ";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -445,5 +462,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtRemuneracao;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRecebimento));
             this.txtAno = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -39,6 +40,8 @@
             this.btSalva = new System.Windows.Forms.Button();
             this.txtMes = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtAno
@@ -49,6 +52,7 @@
             this.txtAno.Name = "txtAno";
             this.txtAno.Size = new System.Drawing.Size(85, 28);
             this.txtAno.TabIndex = 124;
+            this.txtAno.Validating += new System.ComponentModel.CancelEventHandler(this.txtAno_Validating);
             // 
             // label10
             // 
@@ -72,6 +76,7 @@
             this.txtValor.Enter += new System.EventHandler(this.txtValor_Enter);
             this.txtValor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValor_KeyPress);
             this.txtValor.Leave += new System.EventHandler(this.txtValor_Leave);
+            this.txtValor.Validating += new System.ComponentModel.CancelEventHandler(this.txtValor_Validating);
             // 
             // label8
             // 
@@ -103,6 +108,7 @@
             this.cmbRota.Name = "cmbRota";
             this.cmbRota.Size = new System.Drawing.Size(340, 30);
             this.cmbRota.TabIndex = 120;
+            this.cmbRota.Validating += new System.ComponentModel.CancelEventHandler(this.cmbRota_Validating);
             // 
             // txtId
             // 
@@ -136,6 +142,7 @@
             this.txtMes.Name = "txtMes";
             this.txtMes.Size = new System.Drawing.Size(85, 28);
             this.txtMes.TabIndex = 128;
+            this.txtMes.Validating += new System.ComponentModel.CancelEventHandler(this.txtMes_Validating);
             // 
             // label1
             // 
@@ -147,6 +154,10 @@
             this.label1.Size = new System.Drawing.Size(48, 22);
             this.label1.TabIndex = 129;
             this.label1.Text = "Mês:";
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // frmRecebimento
             // 
@@ -167,6 +178,7 @@
             this.Name = "frmRecebimento";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Recebimento";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -183,5 +195,6 @@
         private System.Windows.Forms.Button btSalva;
         private System.Windows.Forms.TextBox txtMes;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

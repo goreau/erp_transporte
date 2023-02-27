@@ -142,6 +142,19 @@ namespace ERP_Transporte.Views
             
         }
 
+        private void txtRemuneracao_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                TextBox txt = (sender as TextBox);
+                txt.Text = Convert.ToDouble(txt.Text).ToString("F");
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
         private void txtRemuneracao_KeyPress(object sender, KeyPressEventArgs e)
         {
             TextBox txt = (sender as TextBox);
@@ -183,5 +196,238 @@ namespace ERP_Transporte.Views
             txt.Text = x;
             txt.SelectAll();
         }
+
+        #region regionValidate
+        private void txtNome_Validating(object sender, CancelEventArgs e)
+        {
+            validateName();
+        }
+
+        private bool validateName()
+        {
+            bool bStatus = true;
+            if (txtNome.Text == "")
+            {
+                errorProvider1.SetError(txtNome, "Favor informar o nome");
+                bStatus = false;
+            }
+            else
+                errorProvider1.SetError(txtNome, "");
+            return bStatus;
+        }
+
+        private void cmbFuncao_Validating(object sender, CancelEventArgs e)
+        {
+            validateFuncao();
+        }
+
+        private bool validateFuncao()
+        {
+
+            bool bStatus = true;
+
+            if (cmbFuncao.SelectedValue != null && cmbFuncao.SelectedValue.ToString() != "0")
+            {
+                errorProvider1.SetError(cmbFuncao, "");
+            }
+            else
+            {
+                errorProvider1.SetError(cmbFuncao, "É necessário informar a função exercida pelo colaborador.");
+                bStatus = false;
+            }
+
+            return bStatus;
+        }
+
+        private void cmbCategoria_Validating(object sender, CancelEventArgs e)
+        {
+            validateCategoria();
+        }
+
+        private bool validateCategoria()
+        {
+
+            bool bStatus = true;
+
+            if (cmbCategoria.SelectedValue != null && cmbCategoria.SelectedValue.ToString() != "0")
+            {
+                errorProvider1.SetError(cmbCategoria, "");
+            }
+            else
+            {
+                errorProvider1.SetError(cmbCategoria, "É necessário informar onde foi feito o abastecimento.");
+                bStatus = false;
+            }
+
+            return bStatus;
+        }
+
+        private void txtDt_admissao_Validating(object sender, CancelEventArgs e)
+        {
+            validateAdmissao();
+        }
+
+        private bool validateAdmissao()
+        {
+            bool bStatus = true;
+            string data = "";
+            DateTime dt;
+            bool success = DateTime.TryParse(txtDt_admissao.Text, out dt);
+            if (success)
+            {
+                if (dt > DateTime.Now)
+                {
+                    errorProvider1.SetError(txtDt_admissao, "A data não pode ser superior à data atual.");
+                    bStatus = false;
+                }
+                else
+                {
+                    errorProvider1.SetError(txtDt_admissao, "");
+                }
+            }
+            else
+            {
+                errorProvider1.SetError(txtDt_admissao, "Informe uma data válida");
+                bStatus = false;
+            }
+
+            return bStatus;
+        }
+
+        private void txtDt_expedicao_Validating(object sender, CancelEventArgs e)
+        {
+            validateExpedicao();
+        }
+
+        private bool validateExpedicao()
+        {
+            bool bStatus = true;
+
+            txtDt_expedicao.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            if (txtDt_expedicao.Text == "")
+            {
+                errorProvider1.SetError(txtDt_expedicao, "");
+            }
+            else
+            {
+                txtDt_nascimento.TextMaskFormat = MaskFormat.IncludeLiterals;
+                string data = "";
+                DateTime dt;
+                bool success = DateTime.TryParse(txtDt_expedicao.Text, out dt);
+                if (success)
+                {
+                    errorProvider1.SetError(txtDt_expedicao, "");
+                }
+                else
+                {
+                    errorProvider1.SetError(txtDt_expedicao, "Informe uma data válida");
+                    bStatus = false;
+                }
+            }
+
+            return bStatus;
+        }
+
+        private void txtDt_validade_Validating(object sender, CancelEventArgs e)
+        {
+            validateValidade();
+        }
+
+        private bool validateValidade()
+        {
+            bool bStatus = true;
+
+            txtDt_validade.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            if (txtDt_validade.Text == "")
+            {
+                errorProvider1.SetError(txtDt_validade, "");
+            }
+            else
+            {
+                txtDt_nascimento.TextMaskFormat = MaskFormat.IncludeLiterals;
+                string data = "";
+                DateTime dt;
+                txtDt_validade.TextMaskFormat = MaskFormat.IncludeLiterals;
+
+                bool success = DateTime.TryParse(txtDt_validade.Text, out dt);
+                if (success)
+                {
+                    errorProvider1.SetError(txtDt_validade, "");
+                }
+                else
+                {
+                    errorProvider1.SetError(txtDt_validade, "Informe uma data válida");
+                    bStatus = false;
+                }
+            }
+
+            return bStatus;
+        }
+
+        private void txtDt_nascimento_Validating(object sender, CancelEventArgs e)
+        {
+            validateNascimento();
+        }
+
+        private bool validateNascimento()
+        {
+            bool bStatus = true;
+
+            txtDt_nascimento.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            if (txtDt_nascimento.Text == "")
+            {
+                errorProvider1.SetError(txtDt_nascimento, "");
+            }
+            else
+            {
+                txtDt_nascimento.TextMaskFormat = MaskFormat.IncludeLiterals;
+                string data = "";
+                DateTime dt;
+                bool success = DateTime.TryParse(txtDt_nascimento.Text, out dt);
+                if (success)
+                {
+                    errorProvider1.SetError(txtDt_nascimento, "");
+                }
+                else
+                {
+                    errorProvider1.SetError(txtDt_nascimento, "Informe uma data válida");
+                    bStatus = false;
+                }
+            }
+
+            return bStatus;
+        }
+
+        private void txtRemuneracao_Validating(object sender, CancelEventArgs e)
+        {
+            validaRemuneracao();
+        }
+
+        private bool validaRemuneracao()
+        {
+            bool bStatus = true;
+            if (txtRemuneracao.Text == "")
+            {
+                errorProvider1.SetError(txtRemuneracao, "Favor informar o valor da remuneração mensal");
+                bStatus = false;
+            }
+            else
+            {
+                double lt;
+                bool ok = Double.TryParse(txtRemuneracao.Text, out lt);
+                if (ok)
+                {
+                    errorProvider1.SetError(txtRemuneracao, "");
+                }
+                else
+                {
+                    errorProvider1.SetError(txtRemuneracao, "Favor informar um valor válido");
+                    bStatus = false;
+                }
+            }
+
+            return bStatus;
+        } 
+        #endregion
     }
 }

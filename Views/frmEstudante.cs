@@ -174,5 +174,187 @@ namespace ERP_Transporte.Views
             txtObs.Text = dr["obs"].ToString();
         }
 
+        #region regionValidate
+        private void txtNome_Validating(object sender, CancelEventArgs e)
+        {
+            validateName();
+        }
+
+        private bool validateName()
+        {
+            bool bStatus = true;
+            if (txtNome.Text == "")
+            {
+                errorProvider1.SetError(txtNome, "Favor informar o nome");
+                bStatus = false;
+            }
+            else
+                errorProvider1.SetError(txtNome, "");
+            return bStatus;
+        }
+
+        private void txtLogradouro_Validating(object sender, CancelEventArgs e)
+        {
+            validateLogradouro();
+        }
+
+        private bool validateLogradouro()
+        {
+            bool bStatus = true;
+            if (txtLogradouro.Text == "")
+            {
+                errorProvider1.SetError(txtLogradouro, "Favor informar o logradouro");
+                bStatus = false;
+            }
+            else
+                errorProvider1.SetError(txtLogradouro, "");
+            return bStatus;
+        }
+
+        private void txtNumero_Validating(object sender, CancelEventArgs e)
+        {
+            validateNumero();
+        }
+
+        private bool validateNumero()
+        {
+            bool bStatus = true;
+            if (txtNumero.Text == "")
+            {
+                errorProvider1.SetError(txtNumero, "Favor informar o número do imóvel");
+                bStatus = false;
+            }
+            else
+                errorProvider1.SetError(txtNumero, "");
+            return bStatus;
+        }
+
+        private void txtBairro_Validating(object sender, CancelEventArgs e)
+        {
+            validateBairro();
+        }
+
+        private bool validateBairro()
+        {
+            bool bStatus = true;
+            if (txtBairro.Text == "")
+            {
+                errorProvider1.SetError(txtBairro, "Favor informar o bairro");
+                bStatus = false;
+            }
+            else
+                errorProvider1.SetError(txtBairro, "");
+            return bStatus;
+        }
+
+        private void cmbEscola_Validating(object sender, CancelEventArgs e)
+        {
+            validateEscola();
+        }
+
+        private bool validateEscola()
+        {
+
+            bool bStatus = true;
+
+            if (cmbEscola.SelectedValue != null && cmbEscola.SelectedValue.ToString() != "0")
+            {
+                errorProvider1.SetError(cmbEscola, "");
+            }
+            else
+            {
+                errorProvider1.SetError(cmbEscola, "É necessário informar a escola.");
+                bStatus = false;
+            }
+
+            return bStatus;
+        }
+
+        private void groupBox4_Validating(object sender, CancelEventArgs e)
+        {
+            validatePeriodo();
+        }
+
+        private bool validatePeriodo()
+        {
+            bool bStatus = true;
+            int _checked = 0;
+            foreach (Control c in groupBox4.Controls)
+            {
+                if (c is RadioButton)
+                {
+                    if ((c as RadioButton).Checked == true) { _checked++; }
+                }
+            }
+            if (_checked == 0)
+            {
+                errorProvider1.SetError(groupBox4, "Favor informar o período de estudo.");
+                bStatus = false;
+            }
+            else
+            {
+                errorProvider1.SetError(groupBox4, "");
+            }
+
+            return bStatus;
+        }
+
+        private void txtDt_nascimento_Validating(object sender, CancelEventArgs e)
+        {
+            validateNascimento();
+        }
+
+        private bool validateNascimento()
+        {
+            bool bStatus = true;
+
+            txtDt_nascimento.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            if (txtDt_nascimento.Text == "")
+            {
+                errorProvider1.SetError(txtDt_nascimento, "");
+            }
+            else
+            {
+                txtDt_nascimento.TextMaskFormat = MaskFormat.IncludeLiterals;
+                string data = "";
+                DateTime dt;
+                bool success = DateTime.TryParse(txtDt_nascimento.Text, out dt);
+                if (success)
+                {
+                    errorProvider1.SetError(txtDt_nascimento, "");
+                }
+                else
+                {
+                    errorProvider1.SetError(txtDt_nascimento, "Informe uma data válida");
+                    bStatus = false;
+                }
+            }
+
+            return bStatus;
+        }
+
+        private void cmbId_rota_Validating(object sender, CancelEventArgs e)
+        {
+            validateRota();
+        }
+
+        private bool validateRota()
+        {
+
+            bool bStatus = true;
+
+            if (cmbId_rota.SelectedValue != null && cmbId_rota.SelectedValue.ToString() != "0")
+            {
+                errorProvider1.SetError(cmbId_rota, "");
+            }
+            else
+            {
+                errorProvider1.SetError(cmbId_rota, "É necessário informar o trajeto do aluno.");
+                bStatus = false;
+            }
+
+            return bStatus;
+        } 
+        #endregion
     }
 }

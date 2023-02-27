@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmManutencao));
             this.txtPagamento = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -55,7 +56,9 @@
             this.txtData = new System.Windows.Forms.DateTimePicker();
             this.txtOldArq = new System.Windows.Forms.TextBox();
             this.txtNewFile = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtPagamento
@@ -79,6 +82,7 @@
             this.groupBox4.TabIndex = 127;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Pagamento";
+            this.groupBox4.Validating += new System.ComponentModel.CancelEventHandler(this.groupBox4_Validating);
             // 
             // rbCheque
             // 
@@ -130,6 +134,7 @@
             this.txtKm.Name = "txtKm";
             this.txtKm.Size = new System.Drawing.Size(120, 28);
             this.txtKm.TabIndex = 125;
+            this.txtKm.Validating += new System.ComponentModel.CancelEventHandler(this.txtKm_Validating);
             // 
             // label10
             // 
@@ -153,6 +158,7 @@
             this.txtValor.Enter += new System.EventHandler(this.txtValor_Enter);
             this.txtValor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValor_KeyPress);
             this.txtValor.Leave += new System.EventHandler(this.txtValor_Leave);
+            this.txtValor.Validating += new System.ComponentModel.CancelEventHandler(this.txtValor_Validating);
             // 
             // label8
             // 
@@ -184,6 +190,7 @@
             this.cmbFornecedor.Name = "cmbFornecedor";
             this.cmbFornecedor.Size = new System.Drawing.Size(340, 30);
             this.cmbFornecedor.TabIndex = 121;
+            this.cmbFornecedor.Validating += new System.ComponentModel.CancelEventHandler(this.cmbFornecedor_Validating);
             // 
             // txtId
             // 
@@ -213,6 +220,7 @@
             this.cmbVeiculo.Name = "cmbVeiculo";
             this.cmbVeiculo.Size = new System.Drawing.Size(342, 30);
             this.cmbVeiculo.TabIndex = 132;
+            this.cmbVeiculo.Validating += new System.ComponentModel.CancelEventHandler(this.cmbVeiculo_Validating);
             // 
             // txtVencimento
             // 
@@ -223,6 +231,7 @@
             this.txtVencimento.Size = new System.Drawing.Size(120, 28);
             this.txtVencimento.TabIndex = 134;
             this.txtVencimento.ValidatingType = typeof(System.DateTime);
+            this.txtVencimento.Validating += new System.ComponentModel.CancelEventHandler(this.txtVencimento_Validating);
             // 
             // label11
             // 
@@ -323,6 +332,7 @@
             this.txtData.Name = "txtData";
             this.txtData.Size = new System.Drawing.Size(172, 28);
             this.txtData.TabIndex = 168;
+            this.txtData.Validating += new System.ComponentModel.CancelEventHandler(this.txtData_Validating);
             // 
             // txtOldArq
             // 
@@ -340,6 +350,10 @@
             this.txtNewFile.TabIndex = 172;
             this.txtNewFile.Text = "0";
             this.txtNewFile.Visible = false;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // frmManutencao
             // 
@@ -375,6 +389,7 @@
             this.Text = "Manutencao";
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -408,5 +423,6 @@
         private System.Windows.Forms.DateTimePicker txtData;
         private System.Windows.Forms.TextBox txtOldArq;
         private System.Windows.Forms.TextBox txtNewFile;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

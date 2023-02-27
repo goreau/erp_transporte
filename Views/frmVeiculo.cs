@@ -185,5 +185,288 @@ namespace ERP_Transporte.Views
             }
             
         }
+
+        private void txtModelo_Validating(object sender, CancelEventArgs e)
+        {
+            validateModelo();
+        }
+
+        private bool validateModelo()
+        {
+            bool bStatus = true;
+            if (txtModelo.Text == "")
+            {
+                errorProvider1.SetError(txtModelo, "Favor informar o modelo do veículo");
+                bStatus = false;
+            }
+            else
+                errorProvider1.SetError(txtModelo, "");
+            return bStatus;
+        }
+
+        private void txtPlaca_Validating(object sender, CancelEventArgs e)
+        {
+            validatePlaca();
+        }
+
+        private bool validatePlaca()
+        {
+            bool bStatus = true;
+            if (txtPlaca.Text == "")
+            {
+                errorProvider1.SetError(txtPlaca, "Favor informar a placa do veículo");
+                bStatus = false;
+            }
+            else
+                errorProvider1.SetError(txtPlaca, "");
+            return bStatus;
+        }
+
+        private void txtAno_Validating(object sender, CancelEventArgs e)
+        {
+            validaAno();
+        }
+
+        private bool validaAno()
+        {
+            bool bStatus = true;
+            if (txtAno.Text == "")
+            {
+                errorProvider1.SetError(txtAno, "Favor informar o ano");
+                bStatus = false;
+            }
+            else
+            {
+                int val;
+                bool ok = int.TryParse(txtAno.Text, out val);
+                if (ok)
+                {
+                    errorProvider1.SetError(txtAno, "");
+                }
+                else
+                {
+                    errorProvider1.SetError(txtAno, "Favor informar um ano válido");
+                    bStatus = false;
+                }
+            }
+
+            return bStatus;
+        }
+
+        private void txtRenavam_Validating(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void groupBox4_Validating(object sender, CancelEventArgs e)
+        {
+            validateCombustivel();
+        }
+
+        private bool validateCombustivel()
+        {
+            bool bStatus = true;
+            int _checked = 0;
+            foreach (Control c in groupBox4.Controls)
+            {
+                if (c is RadioButton)
+                {
+                    if ((c as RadioButton).Checked == true) { _checked++; }
+                }
+            }
+            if (_checked == 0)
+            {
+                errorProvider1.SetError(groupBox4, "Favor informar o tipo de combustível.");
+                bStatus = false;
+            }
+            else
+            {
+                errorProvider1.SetError(groupBox4, "");
+            }
+
+            return bStatus;
+        }
+
+        private void txtCapacidade_Validating(object sender, CancelEventArgs e)
+        {
+            validaCapacidade();
+        }
+
+        private bool validaCapacidade()
+        {
+            bool bStatus = true;
+            if (txtCapacidade.Text == "")
+            {
+                errorProvider1.SetError(txtCapacidade, "Favor informar a capacidade do veículo");
+                bStatus = false;
+            }
+            else
+            {
+                int val;
+                bool ok = int.TryParse(txtCapacidade.Text, out val);
+                if (ok)
+                {
+                    errorProvider1.SetError(txtCapacidade, "");
+                }
+                else
+                {
+                    errorProvider1.SetError(txtCapacidade, "Favor informar um número válido");
+                    bStatus = false;
+                }
+            }
+
+            return bStatus;
+        }
+
+        private void txtValor_Validating(object sender, CancelEventArgs e)
+        {
+            validaValor();
+        }
+
+        private bool validaValor()
+        {
+            bool bStatus = true;
+            if (txtValor.Text == "")
+            {
+                errorProvider1.SetError(txtValor, "Favor informar o valor do veículo.");
+                bStatus = false;
+            }
+            else
+            {
+                double lt;
+                bool ok = Double.TryParse(txtValor.Text, out lt);
+                if (ok)
+                {
+                    errorProvider1.SetError(txtValor, "");
+                }
+                else
+                {
+                    errorProvider1.SetError(txtValor, "Favor informar um valor válido");
+                    bStatus = false;
+                }
+            }
+
+            return bStatus;
+        }
+
+        private void txtEntrada_Validating(object sender, CancelEventArgs e)
+        {
+            validateEntrada();
+        }
+
+        private bool validateEntrada()
+        {
+            bool bStatus = true;
+            string data = "";
+            DateTime dt;
+            bool success = DateTime.TryParse(txtEntrada.Text, out dt);
+            if (success)
+            {
+                errorProvider1.SetError(txtEntrada, "");
+            }
+            else
+            {
+                errorProvider1.SetError(txtEntrada, "Informe uma data de entrada válida");
+                bStatus = false;
+            }
+
+            return bStatus;
+        }
+
+        private void txtOleo_Validating(object sender, CancelEventArgs e)
+        {
+            validaOleo();
+        }
+
+        private bool validaOleo()
+        {
+            bool bStatus = true;
+            if (txtOleo.Text == "")
+            {
+                errorProvider1.SetError(txtOleo, "Favor informar a quilometragem da troca de óleo");
+                bStatus = false;
+            }
+            else
+            {
+                int lt;
+                bool ok = int.TryParse(txtOleo.Text, out lt);
+                if (ok)
+                {
+                    errorProvider1.SetError(txtOleo, "");
+                }
+                else
+                {
+                    errorProvider1.SetError(txtOleo, "Favor informar uma quilometragem válida");
+                    bStatus = false;
+                }
+            }
+
+            return bStatus;
+        }
+
+        private void txtLicenciamento_Validating(object sender, CancelEventArgs e)
+        {
+            validateLicenciamento();
+        }
+
+        private bool validateLicenciamento()
+        {
+            bool bStatus = true;
+            txtLicenciamento.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            if (txtLicenciamento.Text == "")
+            {
+                errorProvider1.SetError(txtLicenciamento, "");
+            }
+            else
+            {
+                txtLicenciamento.TextMaskFormat = MaskFormat.IncludeLiterals;
+                
+                string data = "";
+                DateTime dt;
+                bool success = DateTime.TryParse(txtLicenciamento.Text, out dt);
+                if (success)
+                {
+                    errorProvider1.SetError(txtLicenciamento, "");
+                }
+                else
+                {
+                    errorProvider1.SetError(txtLicenciamento, "Informe uma data prevista para o licenciamento");
+                    bStatus = false;
+                }
+
+            }
+            return bStatus;
+        }
+
+        private void txtFiltros_Validating(object sender, CancelEventArgs e)
+        {
+            validaFiltro();
+        }
+
+        private bool validaFiltro()
+        {
+            bool bStatus = true;
+            if (txtFiltros.Text == "")
+            {
+                errorProvider1.SetError(txtFiltros, "Favor informar a quilometragem da troca de óleo");
+                bStatus = false;
+            }
+            else
+            {
+                int lt;
+                bool ok = int.TryParse(txtFiltros.Text, out lt);
+                if (ok)
+                {
+                    errorProvider1.SetError(txtFiltros, "");
+                }
+                else
+                {
+                    errorProvider1.SetError(txtFiltros, "Favor informar uma quilometragem válida");
+                    bStatus = false;
+                }
+            }
+
+            return bStatus;
+        }
     }
 }

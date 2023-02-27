@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEstudante));
             this.txtTel_pai = new System.Windows.Forms.MaskedTextBox();
             this.txtId = new System.Windows.Forms.TextBox();
             this.txtPeriodo = new System.Windows.Forms.TextBox();
@@ -79,7 +81,9 @@
             this.label21 = new System.Windows.Forms.Label();
             this.txtObs = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtTel_pai
@@ -116,7 +120,7 @@
             this.txtRa_rg.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.txtRa_rg.Location = new System.Drawing.Point(189, 306);
             this.txtRa_rg.Name = "txtRa_rg";
-            this.txtRa_rg.Size = new System.Drawing.Size(199, 28);
+            this.txtRa_rg.Size = new System.Drawing.Size(153, 28);
             this.txtRa_rg.TabIndex = 6;
             // 
             // label5
@@ -138,6 +142,7 @@
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(349, 28);
             this.txtBairro.TabIndex = 3;
+            this.txtBairro.Validating += new System.ComponentModel.CancelEventHandler(this.txtBairro_Validating);
             // 
             // label4
             // 
@@ -158,6 +163,7 @@
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(96, 28);
             this.txtNumero.TabIndex = 2;
+            this.txtNumero.Validating += new System.ComponentModel.CancelEventHandler(this.txtNumero_Validating);
             // 
             // label3
             // 
@@ -178,6 +184,7 @@
             this.txtLogradouro.Name = "txtLogradouro";
             this.txtLogradouro.Size = new System.Drawing.Size(349, 28);
             this.txtLogradouro.TabIndex = 1;
+            this.txtLogradouro.Validating += new System.ComponentModel.CancelEventHandler(this.txtLogradouro_Validating);
             // 
             // label2
             // 
@@ -201,6 +208,7 @@
             this.groupBox4.TabIndex = 5;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Período";
+            this.groupBox4.Validating += new System.ComponentModel.CancelEventHandler(this.groupBox4_Validating);
             // 
             // rbIntegral
             // 
@@ -263,6 +271,7 @@
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(506, 28);
             this.txtNome.TabIndex = 0;
+            this.txtNome.Validating += new System.ComponentModel.CancelEventHandler(this.txtNome_Validating);
             // 
             // label1
             // 
@@ -282,6 +291,7 @@
             this.cmbEscola.Name = "cmbEscola";
             this.cmbEscola.Size = new System.Drawing.Size(506, 28);
             this.cmbEscola.TabIndex = 4;
+            this.cmbEscola.Validating += new System.ComponentModel.CancelEventHandler(this.cmbEscola_Validating);
             // 
             // label6
             // 
@@ -297,19 +307,20 @@
             // txtDt_nascimento
             // 
             this.txtDt_nascimento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.txtDt_nascimento.Location = new System.Drawing.Point(538, 309);
+            this.txtDt_nascimento.Location = new System.Drawing.Point(600, 303);
             this.txtDt_nascimento.Mask = "00/00/0000";
             this.txtDt_nascimento.Name = "txtDt_nascimento";
             this.txtDt_nascimento.Size = new System.Drawing.Size(154, 28);
             this.txtDt_nascimento.TabIndex = 7;
             this.txtDt_nascimento.ValidatingType = typeof(System.DateTime);
+            this.txtDt_nascimento.Validating += new System.ComponentModel.CancelEventHandler(this.txtDt_nascimento_Validating);
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.label11.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label11.Location = new System.Drawing.Point(440, 312);
+            this.label11.Location = new System.Drawing.Point(486, 306);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(109, 22);
             this.label11.TabIndex = 60;
@@ -469,6 +480,7 @@
             this.cmbId_rota.Name = "cmbId_rota";
             this.cmbId_rota.Size = new System.Drawing.Size(506, 28);
             this.cmbId_rota.TabIndex = 21;
+            this.cmbId_rota.Validating += new System.ComponentModel.CancelEventHandler(this.cmbId_rota_Validating);
             // 
             // txtNaturalidade
             // 
@@ -609,6 +621,10 @@
             this.label22.TabIndex = 88;
             this.label22.Text = "Obs:";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // frmEstudante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -662,11 +678,13 @@
             this.Controls.Add(this.btSalva);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmEstudante";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Estudante";
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -724,5 +742,6 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox txtObs;
         private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTrafego));
             this.txtData = new System.Windows.Forms.MaskedTextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -54,6 +55,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txtLitros = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtData
@@ -65,6 +68,7 @@
             this.txtData.Size = new System.Drawing.Size(120, 28);
             this.txtData.TabIndex = 3;
             this.txtData.ValidatingType = typeof(System.DateTime);
+            this.txtData.Validating += new System.ComponentModel.CancelEventHandler(this.txtData_Validating);
             // 
             // label11
             // 
@@ -95,6 +99,7 @@
             this.cmbVeiculo.Name = "cmbVeiculo";
             this.cmbVeiculo.Size = new System.Drawing.Size(316, 28);
             this.cmbVeiculo.TabIndex = 1;
+            this.cmbVeiculo.Validating += new System.ComponentModel.CancelEventHandler(this.cmbVeiculo_Validating);
             // 
             // txtKm_partida
             // 
@@ -104,6 +109,7 @@
             this.txtKm_partida.Name = "txtKm_partida";
             this.txtKm_partida.Size = new System.Drawing.Size(160, 28);
             this.txtKm_partida.TabIndex = 5;
+            this.txtKm_partida.Validating += new System.ComponentModel.CancelEventHandler(this.txtKm_partida_Validating);
             // 
             // label5
             // 
@@ -170,6 +176,7 @@
             this.cmbMotivo.Name = "cmbMotivo";
             this.cmbMotivo.Size = new System.Drawing.Size(316, 28);
             this.cmbMotivo.TabIndex = 2;
+            this.cmbMotivo.Validating += new System.ComponentModel.CancelEventHandler(this.cmbMotivo_Validating);
             // 
             // label2
             // 
@@ -191,6 +198,7 @@
             this.txtPartida.Size = new System.Drawing.Size(66, 28);
             this.txtPartida.TabIndex = 4;
             this.txtPartida.ValidatingType = typeof(System.DateTime);
+            this.txtPartida.Validating += new System.ComponentModel.CancelEventHandler(this.txtPartida_Validating);
             // 
             // txtChegada
             // 
@@ -201,6 +209,7 @@
             this.txtChegada.Size = new System.Drawing.Size(66, 28);
             this.txtChegada.TabIndex = 6;
             this.txtChegada.ValidatingType = typeof(System.DateTime);
+            this.txtChegada.Validating += new System.ComponentModel.CancelEventHandler(this.txtChegada_Validating);
             // 
             // label3
             // 
@@ -221,6 +230,7 @@
             this.txtKm_chegada.Name = "txtKm_chegada";
             this.txtKm_chegada.Size = new System.Drawing.Size(160, 28);
             this.txtKm_chegada.TabIndex = 7;
+            this.txtKm_chegada.Validating += new System.ComponentModel.CancelEventHandler(this.txtKm_chegada_Validating);
             // 
             // label4
             // 
@@ -251,6 +261,7 @@
             this.cmbFornecedor.Name = "cmbFornecedor";
             this.cmbFornecedor.Size = new System.Drawing.Size(316, 28);
             this.cmbFornecedor.TabIndex = 8;
+            this.cmbFornecedor.Validating += new System.ComponentModel.CancelEventHandler(this.cmbFornecedor_Validating);
             // 
             // txtValor
             // 
@@ -263,6 +274,7 @@
             this.txtValor.Enter += new System.EventHandler(this.txtValor_Enter);
             this.txtValor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValor_KeyPress);
             this.txtValor.Leave += new System.EventHandler(this.txtValor_Leave);
+            this.txtValor.Validating += new System.ComponentModel.CancelEventHandler(this.txtValor_Validating);
             // 
             // label8
             // 
@@ -283,6 +295,7 @@
             this.txtKm.Name = "txtKm";
             this.txtKm.Size = new System.Drawing.Size(120, 28);
             this.txtKm.TabIndex = 10;
+            this.txtKm.Validating += new System.ComponentModel.CancelEventHandler(this.txtKm_Validating);
             // 
             // label9
             // 
@@ -306,6 +319,7 @@
             this.txtLitros.Enter += new System.EventHandler(this.txtValor_Enter);
             this.txtLitros.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValor_KeyPress);
             this.txtLitros.Leave += new System.EventHandler(this.txtValor_Leave);
+            this.txtLitros.Validating += new System.ComponentModel.CancelEventHandler(this.txtLitros_Validating);
             // 
             // label10
             // 
@@ -317,6 +331,10 @@
             this.label10.Size = new System.Drawing.Size(59, 22);
             this.label10.TabIndex = 89;
             this.label10.Text = "Litros:";
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // frmTrafego
             // 
@@ -353,6 +371,7 @@
             this.Name = "frmTrafego";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tráfego";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -385,5 +404,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtLitros;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAbastecimento));
             this.btArquivo = new System.Windows.Forms.Button();
             this.txtVencimento = new System.Windows.Forms.MaskedTextBox();
@@ -61,8 +62,10 @@
             this.txtData = new System.Windows.Forms.DateTimePicker();
             this.txtNewFile = new System.Windows.Forms.TextBox();
             this.txtOldArq = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox4.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // btArquivo
@@ -86,8 +89,9 @@
             this.txtVencimento.Mask = "00/00/0000";
             this.txtVencimento.Name = "txtVencimento";
             this.txtVencimento.Size = new System.Drawing.Size(120, 28);
-            this.txtVencimento.TabIndex = 152;
+            this.txtVencimento.TabIndex = 7;
             this.txtVencimento.ValidatingType = typeof(System.DateTime);
+            this.txtVencimento.Validating += new System.ComponentModel.CancelEventHandler(this.txtVencimento_Validating);
             // 
             // label11
             // 
@@ -118,7 +122,8 @@
             this.cmbVeiculo.Location = new System.Drawing.Point(276, 121);
             this.cmbVeiculo.Name = "cmbVeiculo";
             this.cmbVeiculo.Size = new System.Drawing.Size(342, 30);
-            this.cmbVeiculo.TabIndex = 150;
+            this.cmbVeiculo.TabIndex = 2;
+            this.cmbVeiculo.Validating += new System.ComponentModel.CancelEventHandler(this.cmbVeiculo_Validating);
             // 
             // txtPagamento
             // 
@@ -138,9 +143,10 @@
             this.groupBox4.Location = new System.Drawing.Point(190, 283);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(426, 87);
-            this.groupBox4.TabIndex = 148;
+            this.groupBox4.TabIndex = 6;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Pagamento";
+            this.groupBox4.Validating += new System.ComponentModel.CancelEventHandler(this.groupBox4_Validating);
             // 
             // rbCheque
             // 
@@ -191,7 +197,7 @@
             this.txtKm.Location = new System.Drawing.Point(859, 124);
             this.txtKm.Name = "txtKm";
             this.txtKm.Size = new System.Drawing.Size(120, 28);
-            this.txtKm.TabIndex = 146;
+            this.txtKm.TabIndex = 3;
             // 
             // label10
             // 
@@ -211,10 +217,11 @@
             this.txtValor.Location = new System.Drawing.Point(859, 441);
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(120, 28);
-            this.txtValor.TabIndex = 144;
+            this.txtValor.TabIndex = 9;
             this.txtValor.Enter += new System.EventHandler(this.txtValor_Enter);
             this.txtValor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValor_KeyPress);
             this.txtValor.Leave += new System.EventHandler(this.txtValor_Leave);
+            this.txtValor.Validating += new System.ComponentModel.CancelEventHandler(this.txtValor_Validating);
             // 
             // label8
             // 
@@ -245,7 +252,8 @@
             this.cmbFornecedor.Location = new System.Drawing.Point(276, 202);
             this.cmbFornecedor.Name = "cmbFornecedor";
             this.cmbFornecedor.Size = new System.Drawing.Size(340, 30);
-            this.cmbFornecedor.TabIndex = 142;
+            this.cmbFornecedor.TabIndex = 4;
+            this.cmbFornecedor.Validating += new System.ComponentModel.CancelEventHandler(this.cmbFornecedor_Validating);
             // 
             // txtId
             // 
@@ -272,18 +280,19 @@
             this.groupBox1.Controls.Add(this.rbGasolina);
             this.groupBox1.Controls.Add(this.rbAlcool);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(189, 417);
+            this.groupBox1.Location = new System.Drawing.Point(189, 405);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(525, 77);
-            this.groupBox1.TabIndex = 158;
+            this.groupBox1.Size = new System.Drawing.Size(525, 101);
+            this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Combustível";
+            this.groupBox1.Validating += new System.ComponentModel.CancelEventHandler(this.groupBox1_Validating);
             // 
             // rbFlex
             // 
             this.rbFlex.AutoSize = true;
             this.rbFlex.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.rbFlex.Location = new System.Drawing.Point(434, 25);
+            this.rbFlex.Location = new System.Drawing.Point(434, 41);
             this.rbFlex.Name = "rbFlex";
             this.rbFlex.Size = new System.Drawing.Size(69, 26);
             this.rbFlex.TabIndex = 4;
@@ -297,7 +306,7 @@
             // 
             this.rbDiesel.AutoSize = true;
             this.rbDiesel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.rbDiesel.Location = new System.Drawing.Point(314, 25);
+            this.rbDiesel.Location = new System.Drawing.Point(314, 41);
             this.rbDiesel.Name = "rbDiesel";
             this.rbDiesel.Size = new System.Drawing.Size(85, 26);
             this.rbDiesel.TabIndex = 3;
@@ -311,7 +320,7 @@
             // 
             this.rbGasolina.AutoSize = true;
             this.rbGasolina.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.rbGasolina.Location = new System.Drawing.Point(172, 25);
+            this.rbGasolina.Location = new System.Drawing.Point(172, 41);
             this.rbGasolina.Name = "rbGasolina";
             this.rbGasolina.Size = new System.Drawing.Size(106, 26);
             this.rbGasolina.TabIndex = 2;
@@ -325,7 +334,7 @@
             // 
             this.rbAlcool.AutoSize = true;
             this.rbAlcool.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.rbAlcool.Location = new System.Drawing.Point(44, 25);
+            this.rbAlcool.Location = new System.Drawing.Point(44, 41);
             this.rbAlcool.Name = "rbAlcool";
             this.rbAlcool.Size = new System.Drawing.Size(84, 26);
             this.rbAlcool.TabIndex = 1;
@@ -342,10 +351,11 @@
             this.txtLitros.Location = new System.Drawing.Point(859, 202);
             this.txtLitros.Name = "txtLitros";
             this.txtLitros.Size = new System.Drawing.Size(120, 28);
-            this.txtLitros.TabIndex = 160;
+            this.txtLitros.TabIndex = 5;
             this.txtLitros.Enter += new System.EventHandler(this.txtValor_Enter);
             this.txtLitros.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValor_KeyPress);
             this.txtLitros.Leave += new System.EventHandler(this.txtValor_Leave);
+            this.txtLitros.Validating += new System.ComponentModel.CancelEventHandler(this.txtLitros_Validating);
             // 
             // label1
             // 
@@ -366,7 +376,7 @@
             this.btSalva.Location = new System.Drawing.Point(613, 631);
             this.btSalva.Name = "btSalva";
             this.btSalva.Size = new System.Drawing.Size(297, 60);
-            this.btSalva.TabIndex = 140;
+            this.btSalva.TabIndex = 10;
             this.btSalva.Text = "Salvar";
             this.btSalva.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btSalva.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -410,7 +420,8 @@
             this.txtData.Location = new System.Drawing.Point(276, 42);
             this.txtData.Name = "txtData";
             this.txtData.Size = new System.Drawing.Size(212, 28);
-            this.txtData.TabIndex = 166;
+            this.txtData.TabIndex = 1;
+            this.txtData.Validating += new System.ComponentModel.CancelEventHandler(this.txtData_Validating);
             // 
             // txtNewFile
             // 
@@ -428,6 +439,10 @@
             this.txtOldArq.Size = new System.Drawing.Size(72, 26);
             this.txtOldArq.TabIndex = 171;
             this.txtOldArq.Visible = false;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // frmAbastecimento
             // 
@@ -467,6 +482,7 @@
             this.groupBox4.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -505,5 +521,6 @@
         private System.Windows.Forms.DateTimePicker txtData;
         private System.Windows.Forms.TextBox txtNewFile;
         private System.Windows.Forms.TextBox txtOldArq;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

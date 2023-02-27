@@ -162,5 +162,112 @@ namespace ERP_Transporte.Views
             txt.Text = x;
             txt.SelectAll();
         }
+
+        #region regionValidate
+        private void txtNome_Validating(object sender, CancelEventArgs e)
+        {
+            validateName();
+        }
+
+        private bool validateName()
+        {
+            bool bStatus = true;
+            if (txtNome.Text == "")
+            {
+                errorProvider1.SetError(txtNome, "Favor informar o nome do trajeto");
+                bStatus = false;
+            }
+            else
+                errorProvider1.SetError(txtNome, "");
+            return bStatus;
+        }
+
+        private void cmbEscola_Validating(object sender, CancelEventArgs e)
+        {
+            validateEscola();
+        }
+
+        private bool validateEscola()
+        {
+
+            bool bStatus = true;
+
+            if (cmbEscola.SelectedValue != null && cmbEscola.SelectedValue.ToString() != "0")
+            {
+                errorProvider1.SetError(cmbEscola, "");
+            }
+            else
+            {
+                errorProvider1.SetError(cmbEscola, "É necessário informar a escola.");
+                bStatus = false;
+            }
+
+            return bStatus;
+        }
+
+        private void txtKm_Validating(object sender, CancelEventArgs e)
+        {
+            validaKm();
+        }
+
+
+
+        private bool validaKm()
+        {
+            bool bStatus = true;
+            if (txtKm.Text == "")
+            {
+                errorProvider1.SetError(txtKm, "Favor informar a quilometragem");
+                bStatus = false;
+            }
+            else
+            {
+                int lt;
+                bool ok = int.TryParse(txtKm.Text, out lt);
+                if (ok)
+                {
+                    errorProvider1.SetError(txtKm, "");
+                }
+                else
+                {
+                    errorProvider1.SetError(txtKm, "Favor informar uma quilometragem válida");
+                    bStatus = false;
+                }
+            }
+
+            return bStatus;
+        }
+
+        private void txtValor_km_Validating(object sender, CancelEventArgs e)
+        {
+            validaValor();
+        }
+
+        private bool validaValor()
+        {
+            bool bStatus = true;
+            if (txtValor_km.Text == "")
+            {
+                errorProvider1.SetError(txtValor_km, "Favor informar o valor do serviço.");
+                bStatus = false;
+            }
+            else
+            {
+                double lt;
+                bool ok = Double.TryParse(txtValor_km.Text, out lt);
+                if (ok)
+                {
+                    errorProvider1.SetError(txtValor_km, "");
+                }
+                else
+                {
+                    errorProvider1.SetError(txtValor_km, "Favor informar um valor válido");
+                    bStatus = false;
+                }
+            }
+
+            return bStatus;
+        } 
+        #endregion
     }
 }

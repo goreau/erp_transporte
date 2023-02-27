@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDias));
             this.txtMes = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -39,6 +40,8 @@
             this.cmbRota = new System.Windows.Forms.ComboBox();
             this.txtId = new System.Windows.Forms.TextBox();
             this.btSalva = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtMes
@@ -49,6 +52,7 @@
             this.txtMes.Name = "txtMes";
             this.txtMes.Size = new System.Drawing.Size(85, 28);
             this.txtMes.TabIndex = 138;
+            this.txtMes.Validating += new System.ComponentModel.CancelEventHandler(this.txtMes_Validating);
             // 
             // label1
             // 
@@ -69,6 +73,7 @@
             this.txtAno.Name = "txtAno";
             this.txtAno.Size = new System.Drawing.Size(85, 28);
             this.txtAno.TabIndex = 136;
+            this.txtAno.Validated += new System.EventHandler(this.txtAno_Validated);
             // 
             // label10
             // 
@@ -89,6 +94,7 @@
             this.txtDias.Name = "txtDias";
             this.txtDias.Size = new System.Drawing.Size(120, 28);
             this.txtDias.TabIndex = 134;
+            this.txtDias.Validating += new System.ComponentModel.CancelEventHandler(this.txtDias_Validating);
             // 
             // label8
             // 
@@ -120,6 +126,7 @@
             this.cmbRota.Name = "cmbRota";
             this.cmbRota.Size = new System.Drawing.Size(340, 30);
             this.cmbRota.TabIndex = 132;
+            this.cmbRota.Validating += new System.ComponentModel.CancelEventHandler(this.cmbRota_Validating);
             // 
             // txtId
             // 
@@ -145,6 +152,10 @@
             this.btSalva.UseVisualStyleBackColor = true;
             this.btSalva.Click += new System.EventHandler(this.btSalva_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // frmDias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -164,6 +175,7 @@
             this.Name = "frmDias";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dias Letivos";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -181,5 +193,6 @@
         private System.Windows.Forms.ComboBox cmbRota;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Button btSalva;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

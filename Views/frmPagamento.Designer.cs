@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPagamento));
             this.txtDia_vencimento = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -44,7 +45,9 @@
             this.recorrente = new System.Windows.Forms.CheckBox();
             this.btSalva = new System.Windows.Forms.Button();
             this.txtVinculo = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtDia_vencimento
@@ -55,6 +58,7 @@
             this.txtDia_vencimento.Name = "txtDia_vencimento";
             this.txtDia_vencimento.Size = new System.Drawing.Size(85, 28);
             this.txtDia_vencimento.TabIndex = 112;
+            this.txtDia_vencimento.Validating += new System.ComponentModel.CancelEventHandler(this.txtDia_vencimento_Validating);
             // 
             // label10
             // 
@@ -78,6 +82,7 @@
             this.txtValor.Enter += new System.EventHandler(this.txtValor_Enter);
             this.txtValor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValor_KeyPress);
             this.txtValor.Leave += new System.EventHandler(this.txtValor_Leave);
+            this.txtValor.Validating += new System.ComponentModel.CancelEventHandler(this.txtValor_Validating);
             // 
             // label8
             // 
@@ -109,6 +114,7 @@
             this.cmbFornecedor.Name = "cmbFornecedor";
             this.cmbFornecedor.Size = new System.Drawing.Size(340, 30);
             this.cmbFornecedor.TabIndex = 106;
+            this.cmbFornecedor.Validating += new System.ComponentModel.CancelEventHandler(this.cmbFornecedor_Validating);
             // 
             // label1
             // 
@@ -129,6 +135,7 @@
             this.cmbCategoria.Name = "cmbCategoria";
             this.cmbCategoria.Size = new System.Drawing.Size(341, 30);
             this.cmbCategoria.TabIndex = 98;
+            this.cmbCategoria.Validating += new System.ComponentModel.CancelEventHandler(this.cmbCategoria_Validating);
             // 
             // txtId
             // 
@@ -150,6 +157,7 @@
             this.groupBox4.TabIndex = 114;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Vínculo";
+            this.groupBox4.Validating += new System.ComponentModel.CancelEventHandler(this.groupBox4_Validating);
             // 
             // rbLinha
             // 
@@ -214,6 +222,10 @@
             this.txtVinculo.TabIndex = 116;
             this.txtVinculo.Visible = false;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // frmPagamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -238,6 +250,7 @@
             this.Text = "Pagamento";
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -260,5 +273,6 @@
         private System.Windows.Forms.RadioButton rbAdministrativa;
         private System.Windows.Forms.CheckBox recorrente;
         private System.Windows.Forms.TextBox txtVinculo;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

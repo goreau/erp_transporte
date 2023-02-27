@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVeiculo));
             this.txtCombustivel = new System.Windows.Forms.TextBox();
             this.txtCapacidade = new System.Windows.Forms.TextBox();
@@ -57,7 +58,9 @@
             this.txtFiltros = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.btSalva = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtCombustivel
@@ -77,6 +80,7 @@
             this.txtCapacidade.Name = "txtCapacidade";
             this.txtCapacidade.Size = new System.Drawing.Size(96, 28);
             this.txtCapacidade.TabIndex = 5;
+            this.txtCapacidade.Validating += new System.ComponentModel.CancelEventHandler(this.txtCapacidade_Validating);
             // 
             // label4
             // 
@@ -97,6 +101,7 @@
             this.txtAno.Name = "txtAno";
             this.txtAno.Size = new System.Drawing.Size(96, 28);
             this.txtAno.TabIndex = 3;
+            this.txtAno.Validating += new System.ComponentModel.CancelEventHandler(this.txtAno_Validating);
             // 
             // label3
             // 
@@ -117,6 +122,7 @@
             this.txtRenavam.Name = "txtRenavam";
             this.txtRenavam.Size = new System.Drawing.Size(349, 28);
             this.txtRenavam.TabIndex = 4;
+            this.txtRenavam.Validating += new System.ComponentModel.CancelEventHandler(this.txtRenavam_Validating);
             // 
             // label2
             // 
@@ -142,6 +148,7 @@
             this.groupBox4.TabIndex = 6;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Combustível";
+            this.groupBox4.Validating += new System.ComponentModel.CancelEventHandler(this.groupBox4_Validating);
             // 
             // rbFlex
             // 
@@ -226,8 +233,9 @@
             this.txtPlaca.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPlaca.Mask = "AAA-0A00";
             this.txtPlaca.Name = "txtPlaca";
-            this.txtPlaca.Size = new System.Drawing.Size(130, 28);
+            this.txtPlaca.Size = new System.Drawing.Size(96, 28);
             this.txtPlaca.TabIndex = 1;
+            this.txtPlaca.Validating += new System.ComponentModel.CancelEventHandler(this.txtPlaca_Validating);
             // 
             // txtModelo
             // 
@@ -237,6 +245,7 @@
             this.txtModelo.Name = "txtModelo";
             this.txtModelo.Size = new System.Drawing.Size(349, 28);
             this.txtModelo.TabIndex = 2;
+            this.txtModelo.Validating += new System.ComponentModel.CancelEventHandler(this.txtModelo_Validating);
             // 
             // label5
             // 
@@ -260,6 +269,7 @@
             this.txtValor.Enter += new System.EventHandler(this.txtValor_Enter);
             this.txtValor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValor_KeyPress);
             this.txtValor.Leave += new System.EventHandler(this.txtValor_Leave);
+            this.txtValor.Validating += new System.ComponentModel.CancelEventHandler(this.txtValor_Validating);
             // 
             // label6
             // 
@@ -292,6 +302,7 @@
             this.txtEntrada.Size = new System.Drawing.Size(115, 28);
             this.txtEntrada.TabIndex = 8;
             this.txtEntrada.ValidatingType = typeof(System.DateTime);
+            this.txtEntrada.Validating += new System.ComponentModel.CancelEventHandler(this.txtEntrada_Validating);
             // 
             // txtLicenciamento
             // 
@@ -302,6 +313,7 @@
             this.txtLicenciamento.Size = new System.Drawing.Size(115, 28);
             this.txtLicenciamento.TabIndex = 9;
             this.txtLicenciamento.ValidatingType = typeof(System.DateTime);
+            this.txtLicenciamento.Validating += new System.ComponentModel.CancelEventHandler(this.txtLicenciamento_Validating);
             // 
             // label8
             // 
@@ -322,6 +334,7 @@
             this.txtOleo.Name = "txtOleo";
             this.txtOleo.Size = new System.Drawing.Size(96, 28);
             this.txtOleo.TabIndex = 10;
+            this.txtOleo.Validating += new System.ComponentModel.CancelEventHandler(this.txtOleo_Validating);
             // 
             // label9
             // 
@@ -342,6 +355,7 @@
             this.txtFiltros.Name = "txtFiltros";
             this.txtFiltros.Size = new System.Drawing.Size(96, 28);
             this.txtFiltros.TabIndex = 11;
+            this.txtFiltros.Validating += new System.ComponentModel.CancelEventHandler(this.txtFiltros_Validating);
             // 
             // label10
             // 
@@ -367,6 +381,10 @@
             this.btSalva.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btSalva.UseVisualStyleBackColor = true;
             this.btSalva.Click += new System.EventHandler(this.btSalva_Click);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // frmVeiculo
             // 
@@ -404,6 +422,7 @@
             this.Text = "Veiculo";
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -439,5 +458,6 @@
         private System.Windows.Forms.TextBox txtFiltros;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btSalva;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

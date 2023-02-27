@@ -113,7 +113,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Auxiliares\CreateDB.cs" />
     <Compile Include="Auxiliares\Database.cs" />
     <Compile Include="Auxiliares\frmSobre.cs">
       <SubType>Form</SubType>

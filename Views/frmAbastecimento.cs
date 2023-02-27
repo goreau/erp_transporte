@@ -196,8 +196,15 @@ namespace ERP_Transporte.Views
 
         private void txtValor_Leave(object sender, EventArgs e)
         {
-            TextBox txt = (sender as TextBox);
-            txt.Text = Convert.ToDouble(txt.Text).ToString("F");
+            try
+            {
+                TextBox txt = (sender as TextBox);
+                txt.Text = Convert.ToDouble(txt.Text).ToString("F");
+            }
+            catch (Exception)
+            {
+
+            }       
         }
 
         private void txtValor_Enter(object sender, EventArgs e)
@@ -272,5 +279,230 @@ namespace ERP_Transporte.Views
                 form.ShowDialog();
             }
         }
+
+        #region Validacao
+        private void txtData_Validating(object sender, CancelEventArgs e)
+        {
+            validateData();
+        }
+
+        private bool validateData()
+        {
+            bool bStatus = true;
+            string data = "";
+            DateTime dt;
+            bool success = DateTime.TryParse(txtData.Text, out dt);
+            if (success)
+            {
+                if (dt > DateTime.Now)
+                {
+                    errorProvider1.SetError(txtData, "A data não pode ser superior à data atual.");
+                    bStatus = false;
+                }
+                else
+                {
+                    errorProvider1.SetError(txtData, "");
+                }
+            }
+            else
+            {
+                errorProvider1.SetError(txtData, "Informe uma data válida");
+                bStatus = false;
+            }
+
+            return bStatus; 
+        }
+
+        private void cmbVeiculo_Validating(object sender, CancelEventArgs e)
+        {
+            validateVeiculo();
+        }
+
+        private bool validateVeiculo()
+        {
+            bool bStatus = true;
+
+            if (cmbVeiculo.SelectedValue != null && cmbVeiculo.SelectedValue.ToString() != "0")
+            {
+                errorProvider1.SetError(cmbVeiculo, "");
+            }
+            else
+            {
+                errorProvider1.SetError(cmbVeiculo, "Favor informar o veículo abastecido.");
+                bStatus = false;
+            }
+
+            return bStatus;
+        }
+
+        private void cmbFornecedor_Validating(object sender, CancelEventArgs e)
+        {
+            validateFornecedor();
+        }
+
+        private bool validateFornecedor()
+        {
+
+            bool bStatus = true;
+
+            if (cmbFornecedor.SelectedValue != null && cmbFornecedor.SelectedValue.ToString() != "0")
+            {
+                errorProvider1.SetError(cmbFornecedor, "");
+            }
+            else
+            {
+                errorProvider1.SetError(cmbFornecedor, "É necessário informar onde foi feito o abastecimento.");
+                bStatus = false;
+            }
+
+            return bStatus;
+        }
+
+        private void txtLitros_Validating(object sender, CancelEventArgs e)
+        {
+            validaLitros();
+        }
+
+        private bool validaLitros()
+        {
+            bool bStatus = true;
+            if (txtLitros.Text == "")
+            {
+                errorProvider1.SetError(txtLitros, "Favor informar a quantidade abastecida");
+                bStatus = false;
+            }
+            else
+            {
+                double lt;
+                bool ok = Double.TryParse(txtLitros.Text, out lt);
+                if (ok)
+                {
+                    errorProvider1.SetError(txtLitros, "");
+                }
+                else
+                {
+                    errorProvider1.SetError(txtLitros, "Favor informar uma quantidade válida");
+                    bStatus = false;
+                }
+            }
+
+            return bStatus;
+        }
+
+        private void groupBox4_Validating(object sender, CancelEventArgs e)
+        {
+            validateFormaPgto();
+        }
+
+        private bool validateFormaPgto()
+        {
+            bool bStatus = true;
+            int _checked = 0;
+            foreach (Control c in groupBox4.Controls)
+            {
+                if (c is RadioButton)
+                {
+                    if ((c as RadioButton).Checked == true) { _checked++; }
+                }
+            }
+            if (_checked == 0)
+            {
+                errorProvider1.SetError(groupBox4, "Favor informar a forma de pagamento.");
+                bStatus = false;
+            }
+            else
+            {
+                errorProvider1.SetError(groupBox4, "");
+            }
+
+            return bStatus;
+        }
+
+        private void txtVencimento_Validating(object sender, CancelEventArgs e)
+        {
+            validateVenc();
+        }
+
+        private bool validateVenc()
+        {
+            bool bStatus = true;
+            string data = "";
+            DateTime dt;
+            bool success = DateTime.TryParse(txtVencimento.Text, out dt);
+            if (success)
+            {
+                errorProvider1.SetError(txtVencimento, "");
+            }
+            else
+            {
+                errorProvider1.SetError(txtVencimento, "Informe uma data válida");
+                bStatus = false;
+            }
+
+            return bStatus;
+        }
+
+        private void groupBox1_Validating(object sender, CancelEventArgs e)
+        {
+            validateCombustivel();
+        }
+
+        private bool validateCombustivel()
+        {
+            bool bStatus = true;
+            int _checked = 0;
+            foreach (Control c in groupBox1.Controls)
+            {
+                if (c is RadioButton)
+                {
+                    if ((c as RadioButton).Checked == true) { _checked++; }
+                }
+            }
+            if (_checked == 0)
+            {
+                errorProvider1.SetError(groupBox1, "Favor informar o tipo de combustível abastecido.");
+                bStatus = false;
+            }
+            else
+            {
+                errorProvider1.SetError(groupBox1, "");
+            }
+
+            return bStatus;
+        }
+
+        private void txtValor_Validating(object sender, CancelEventArgs e)
+        {
+            validaUnitario();
+        }
+
+        private bool validaUnitario()
+        {
+            bool bStatus = true;
+            if (txtValor.Text == "")
+            {
+                errorProvider1.SetError(txtValor, "Favor informar o valor do litro do combustível abastecido.");
+                bStatus = false;
+            }
+            else
+            {
+                double lt;
+                bool ok = Double.TryParse(txtValor.Text, out lt);
+                if (ok)
+                {
+                    errorProvider1.SetError(txtValor, "");
+                }
+                else
+                {
+                    errorProvider1.SetError(txtValor, "Favor informar um valor válido");
+                    bStatus = false;
+                }
+            }
+
+            return bStatus;
+        }
+
+        #endregion
+
     }
 }

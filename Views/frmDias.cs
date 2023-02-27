@@ -115,5 +115,138 @@ namespace ERP_Transporte.Views
                 }
             }
         }
+        
+        #region regionValidate
+        private void cmbRota_Validating(object sender, CancelEventArgs e)
+        {
+            validateRota();
+        }
+
+        private bool validateRota()
+        {
+            bool bStatus = true;
+
+            if (cmbRota.SelectedValue != null && cmbRota.SelectedValue.ToString() != "0")
+            {
+                errorProvider1.SetError(cmbRota, "");
+            }
+            else
+            {
+                errorProvider1.SetError(cmbRota, "Favor informar o trajeto.");
+                bStatus = false;
+            }
+
+            return bStatus;
+        }
+
+        private void txtAno_Validated(object sender, EventArgs e)
+        {
+            validaAno();
+        }
+
+        private bool validaAno()
+        {
+            bool bStatus = true;
+            if (txtAno.Text == "")
+            {
+                errorProvider1.SetError(txtAno, "Favor informar o ano");
+                bStatus = false;
+            }
+            else
+            {
+                int val;
+                bool ok = int.TryParse(txtAno.Text, out val);
+                if (ok)
+                {
+                    errorProvider1.SetError(txtAno, "");
+                }
+                else
+                {
+                    errorProvider1.SetError(txtAno, "Favor informar um ano válido");
+                    bStatus = false;
+                }
+            }
+
+            return bStatus;
+        }
+
+        private void txtMes_Validating(object sender, CancelEventArgs e)
+        {
+            validaMes();
+        }
+
+        private bool validaMes()
+        {
+            bool bStatus = true;
+            if (txtMes.Text == "")
+            {
+                errorProvider1.SetError(txtMes, "Favor informar o mês");
+                bStatus = false;
+            }
+            else
+            {
+                int val;
+                bool ok = int.TryParse(txtMes.Text, out val);
+                if (ok)
+                {
+                    if (val > 12 || val < 1)
+                    {
+                        errorProvider1.SetError(txtMes, "Favor informar um mês válido");
+                        bStatus = false;
+                    }
+                    else
+                    {
+                        errorProvider1.SetError(txtMes, "");
+                    }
+                }
+                else
+                {
+                    errorProvider1.SetError(txtMes, "Favor informar um mês válido");
+                    bStatus = false;
+                }
+            }
+
+            return bStatus;
+        }
+
+        private void txtDias_Validating(object sender, CancelEventArgs e)
+        {
+            validaDias();
+        }
+
+        private bool validaDias()
+        {
+            bool bStatus = true;
+            if (txtDias.Text == "")
+            {
+                errorProvider1.SetError(txtDias, "Favor informar a quantidade de dias letivos");
+                bStatus = false;
+            }
+            else
+            {
+                int val;
+                bool ok = int.TryParse(txtDias.Text, out val);
+                if (ok)
+                {
+                    if (val > 25 || val < 1)
+                    {
+                        errorProvider1.SetError(txtDias, "Favor informar um número de dias válido");
+                        bStatus = false;
+                    }
+                    else
+                    {
+                        errorProvider1.SetError(txtDias, "");
+                    }
+                }
+                else
+                {
+                    errorProvider1.SetError(txtDias, "Favor informar um número válido");
+                    bStatus = false;
+                }
+            }
+
+            return bStatus;
+        } 
+        #endregion
     }
 }

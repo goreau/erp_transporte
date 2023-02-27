@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEscola));
             this.label1 = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
@@ -56,7 +57,9 @@
             this.txtTelefone1 = new System.Windows.Forms.MaskedTextBox();
             this.txtTelefone2 = new System.Windows.Forms.MaskedTextBox();
             this.btSalva = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -69,6 +72,7 @@
             this.txtNome.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             resources.ApplyResources(this.txtNome, "txtNome");
             this.txtNome.Name = "txtNome";
+            this.txtNome.Validating += new System.ComponentModel.CancelEventHandler(this.txtNome_Validating);
             // 
             // label7
             // 
@@ -98,6 +102,7 @@
             resources.ApplyResources(this.groupBox4, "groupBox4");
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.TabStop = false;
+            this.groupBox4.Validating += new System.ComponentModel.CancelEventHandler(this.groupBox4_Validating);
             // 
             // rbIntegral
             // 
@@ -146,6 +151,7 @@
             this.txtBairro.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             resources.ApplyResources(this.txtBairro, "txtBairro");
             this.txtBairro.Name = "txtBairro";
+            this.txtBairro.Validating += new System.ComponentModel.CancelEventHandler(this.txtBairro_Validating);
             // 
             // label4
             // 
@@ -157,6 +163,7 @@
             this.txtNumero.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             resources.ApplyResources(this.txtNumero, "txtNumero");
             this.txtNumero.Name = "txtNumero";
+            this.txtNumero.Validating += new System.ComponentModel.CancelEventHandler(this.txtNumero_Validating);
             // 
             // label3
             // 
@@ -168,6 +175,7 @@
             this.txtLogradouro.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             resources.ApplyResources(this.txtLogradouro, "txtLogradouro");
             this.txtLogradouro.Name = "txtLogradouro";
+            this.txtLogradouro.Validating += new System.ComponentModel.CancelEventHandler(this.txtLogradouro_Validating);
             // 
             // label2
             // 
@@ -189,18 +197,21 @@
             resources.ApplyResources(this.txtEntrada, "txtEntrada");
             this.txtEntrada.Name = "txtEntrada";
             this.txtEntrada.ValidatingType = typeof(System.DateTime);
+            this.txtEntrada.Validating += new System.ComponentModel.CancelEventHandler(this.txtEntrada_Validating);
             // 
             // txtSaida
             // 
             resources.ApplyResources(this.txtSaida, "txtSaida");
             this.txtSaida.Name = "txtSaida";
             this.txtSaida.ValidatingType = typeof(System.DateTime);
+            this.txtSaida.Validating += new System.ComponentModel.CancelEventHandler(this.txtSaida_Validating);
             // 
             // txtEspecial
             // 
             resources.ApplyResources(this.txtEspecial, "txtEspecial");
             this.txtEspecial.Name = "txtEspecial";
             this.txtEspecial.ValidatingType = typeof(System.DateTime);
+            this.txtEspecial.Validating += new System.ComponentModel.CancelEventHandler(this.txtEspecial_Validating);
             // 
             // txtTelefone1
             // 
@@ -221,6 +232,10 @@
             this.btSalva.Name = "btSalva";
             this.btSalva.UseVisualStyleBackColor = true;
             this.btSalva.Click += new System.EventHandler(this.btSalva_Click);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // frmEscola
             // 
@@ -253,6 +268,7 @@
             this.Name = "frmEscola";
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -287,5 +303,6 @@
         private System.Windows.Forms.MaskedTextBox txtEspecial;
         private System.Windows.Forms.MaskedTextBox txtTelefone1;
         private System.Windows.Forms.MaskedTextBox txtTelefone2;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

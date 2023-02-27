@@ -130,5 +130,209 @@ namespace ERP_Transporte.Views
             }
         }
 
+        #region regionValidate
+        private void txtNome_Validating(object sender, CancelEventArgs e)
+        {
+            validateName();
+        }
+
+        private bool validateName()
+        {
+            bool bStatus = true;
+            if (txtNome.Text == "")
+            {
+                errorProvider1.SetError(txtNome, "Favor informar o nome");
+                bStatus = false;
+            }
+            else
+                errorProvider1.SetError(txtNome, "");
+            return bStatus;
+        }
+
+        private void txtLogradouro_Validating(object sender, CancelEventArgs e)
+        {
+            validateLogradouro();
+        }
+
+        private bool validateLogradouro()
+        {
+            bool bStatus = true;
+            if (txtLogradouro.Text == "")
+            {
+                errorProvider1.SetError(txtLogradouro, "Favor informar o logradouro");
+                bStatus = false;
+            }
+            else
+                errorProvider1.SetError(txtLogradouro, "");
+            return bStatus;
+        }
+
+        private void txtNumero_Validating(object sender, CancelEventArgs e)
+        {
+            validateNumero();
+        }
+
+        private bool validateNumero()
+        {
+            bool bStatus = true;
+            if (txtNumero.Text == "")
+            {
+                errorProvider1.SetError(txtNumero, "Favor informar o número do imóvel");
+                bStatus = false;
+            }
+            else
+                errorProvider1.SetError(txtNumero, "");
+            return bStatus;
+        }
+
+        private void txtBairro_Validating(object sender, CancelEventArgs e)
+        {
+            validateBairro();
+        }
+
+        private bool validateBairro()
+        {
+            bool bStatus = true;
+            if (txtBairro.Text == "")
+            {
+                errorProvider1.SetError(txtBairro, "Favor informar o bairro");
+                bStatus = false;
+            }
+            else
+                errorProvider1.SetError(txtBairro, "");
+            return bStatus;
+        }
+
+        private void groupBox4_Validating(object sender, CancelEventArgs e)
+        {
+            validatePeriodo();
+        }
+
+        private bool validatePeriodo()
+        {
+            bool bStatus = true;
+            int _checked = 0;
+            foreach (Control c in groupBox4.Controls)
+            {
+                if (c is RadioButton)
+                {
+                    if ((c as RadioButton).Checked == true) { _checked++; }
+                }
+            }
+            if (_checked == 0)
+            {
+                errorProvider1.SetError(groupBox4, "Favor informar a forma de pagamento.");
+                bStatus = false;
+            }
+            else
+            {
+                errorProvider1.SetError(groupBox4, "");
+            }
+
+            return bStatus;
+        }
+
+        private void txtEntrada_Validating(object sender, CancelEventArgs e)
+        {
+            validaEntrada();
+        }
+
+        private bool validaEntrada()
+        {
+            bool bStatus = true;
+
+            txtEntrada.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            if (txtEntrada.Text == "")
+            {
+                errorProvider1.SetError(txtEntrada, "");
+            }
+            else
+            {
+                DateTime val;
+                txtEntrada.TextMaskFormat = MaskFormat.IncludeLiterals;
+
+                bool ok = DateTime.TryParse(txtEntrada.Text, out val);
+                if (ok)
+                {
+                    errorProvider1.SetError(txtEntrada, "");
+                }
+                else
+                {
+                    errorProvider1.SetError(txtEntrada, "Favor informar uma hora válida");
+                    bStatus = false;
+                }
+            }
+
+            return bStatus;
+        }
+
+        private void txtSaida_Validating(object sender, CancelEventArgs e)
+        {
+            validaSaida();
+        }
+
+        private bool validaSaida()
+        {
+            bool bStatus = true;
+
+            txtSaida.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            if (txtSaida.Text == "")
+            {
+                errorProvider1.SetError(txtSaida, "");
+            }
+            else
+            {
+                DateTime val;
+                txtSaida.TextMaskFormat = MaskFormat.IncludeLiterals;
+
+                bool ok = DateTime.TryParse(txtSaida.Text, out val);
+                if (ok)
+                {
+                    errorProvider1.SetError(txtSaida, "");
+                }
+                else
+                {
+                    errorProvider1.SetError(txtSaida, "Favor informar uma hora válida");
+                    bStatus = false;
+                }
+            }
+
+            return bStatus;
+        }
+
+        private void txtEspecial_Validating(object sender, CancelEventArgs e)
+        {
+            validaEspecial();
+        }
+
+        private bool validaEspecial()
+        {
+            bool bStatus = true;
+
+            txtEspecial.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            if (txtEspecial.Text == "")
+            {
+                errorProvider1.SetError(txtEspecial, "");
+            }
+            else
+            {
+                DateTime val;
+                txtEspecial.TextMaskFormat = MaskFormat.IncludeLiterals;
+
+                bool ok = DateTime.TryParse(txtEspecial.Text, out val);
+                if (ok)
+                {
+                    errorProvider1.SetError(txtEspecial, "");
+                }
+                else
+                {
+                    errorProvider1.SetError(txtEspecial, "Favor informar uma hora válida");
+                    bStatus = false;
+                }
+            }
+
+            return bStatus;
+        } 
+        #endregion
     }
 }

@@ -113,5 +113,64 @@ namespace ERP_Transporte.Views
                 }
             }
         }
+
+        private void txtNome_Validating(object sender, CancelEventArgs e)
+        {
+            validateName();
+        }
+
+        private bool validateName()
+        {
+            bool bStatus = true;
+            if (txtNome.Text == "")
+            {
+                errorProvider1.SetError(txtNome, "Favor informar o nome");
+                bStatus = false;
+            }
+            else
+                errorProvider1.SetError(txtNome, "");
+            return bStatus;
+        }
+
+        private void txtTelefone_Validating(object sender, CancelEventArgs e)
+        {
+            validateTelefone();
+        }
+
+        private bool validateTelefone()
+        {
+            bool bStatus = true;
+            if (txtTelefone.Text == "")
+            {
+                errorProvider1.SetError(txtTelefone, "Favor informar o telefone de contato do fornecedor");
+                bStatus = false;
+            }
+            else
+                errorProvider1.SetError(txtTelefone, "");
+            return bStatus;
+        }
+
+        private void cmbCategoria_Validating(object sender, CancelEventArgs e)
+        {
+            validateCategoria();
+        }
+
+        private bool validateCategoria()
+        {
+
+            bool bStatus = true;
+
+            if (cmbCategoria.SelectedValue != null && cmbCategoria.SelectedValue.ToString() != "0")
+            {
+                errorProvider1.SetError(cmbCategoria, "");
+            }
+            else
+            {
+                errorProvider1.SetError(cmbCategoria, "É necessário informar a categoria do serviço.");
+                bStatus = false;
+            }
+
+            return bStatus;
+        }
     }
 }

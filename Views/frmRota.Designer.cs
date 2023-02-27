@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRota));
             this.label6 = new System.Windows.Forms.Label();
             this.cmbEscola = new System.Windows.Forms.ComboBox();
@@ -39,6 +40,8 @@
             this.txtNome = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btSalva = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label6
@@ -59,6 +62,7 @@
             this.cmbEscola.Name = "cmbEscola";
             this.cmbEscola.Size = new System.Drawing.Size(506, 28);
             this.cmbEscola.TabIndex = 2;
+            this.cmbEscola.Validating += new System.ComponentModel.CancelEventHandler(this.cmbEscola_Validating);
             // 
             // txtId
             // 
@@ -80,6 +84,7 @@
             this.txtValor_km.Enter += new System.EventHandler(this.txtValor_km_Enter);
             this.txtValor_km.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValor_km_KeyPress);
             this.txtValor_km.Leave += new System.EventHandler(this.txtValor_km_Leave);
+            this.txtValor_km.Validating += new System.ComponentModel.CancelEventHandler(this.txtValor_km_Validating);
             // 
             // label3
             // 
@@ -100,6 +105,7 @@
             this.txtKm.Name = "txtKm";
             this.txtKm.Size = new System.Drawing.Size(164, 28);
             this.txtKm.TabIndex = 3;
+            this.txtKm.Validating += new System.ComponentModel.CancelEventHandler(this.txtKm_Validating);
             // 
             // label2
             // 
@@ -120,6 +126,7 @@
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(506, 28);
             this.txtNome.TabIndex = 1;
+            this.txtNome.Validating += new System.ComponentModel.CancelEventHandler(this.txtNome_Validating);
             // 
             // label1
             // 
@@ -146,6 +153,10 @@
             this.btSalva.UseVisualStyleBackColor = true;
             this.btSalva.Click += new System.EventHandler(this.btSalva_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // frmRota
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -166,6 +177,7 @@
             this.Name = "frmRota";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rota";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -183,5 +195,6 @@
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btSalva;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

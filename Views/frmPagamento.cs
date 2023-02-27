@@ -195,5 +195,152 @@ namespace ERP_Transporte.Views
                 }
             }
         }
+
+        #region regionValidate
+        private void txtDia_vencimento_Validating(object sender, CancelEventArgs e)
+        {
+            validaDia();
+        }
+
+        private bool validaDia()
+        {
+            bool bStatus = true;
+            if (txtDia_vencimento.Text == "")
+            {
+                errorProvider1.SetError(txtDia_vencimento, "Favor informar o dia do pagamento");
+                bStatus = false;
+            }
+            else
+            {
+                int val;
+                bool ok = int.TryParse(txtDia_vencimento.Text, out val);
+                if (ok)
+                {
+                    if (val > 31 || val < 1)
+                    {
+                        errorProvider1.SetError(txtDia_vencimento, "Favor informar um  dia válido");
+                        bStatus = false;
+                    }
+                    else
+                    {
+                        errorProvider1.SetError(txtDia_vencimento, "");
+                    }
+                }
+                else
+                {
+                    errorProvider1.SetError(txtDia_vencimento, "Favor informar um número válido");
+                    bStatus = false;
+                }
+            }
+
+            return bStatus;
+        }
+
+        private void cmbFornecedor_Validating(object sender, CancelEventArgs e)
+        {
+            validateFornecedor();
+        }
+
+        private bool validateFornecedor()
+        {
+
+            bool bStatus = true;
+
+            if (cmbFornecedor.SelectedValue != null && cmbFornecedor.SelectedValue.ToString() != "0")
+            {
+                errorProvider1.SetError(cmbFornecedor, "");
+            }
+            else
+            {
+                errorProvider1.SetError(cmbFornecedor, "É necessário informar o beneficiário do pagamento.");
+                bStatus = false;
+            }
+
+            return bStatus;
+        }
+
+        private void cmbCategoria_Validating(object sender, CancelEventArgs e)
+        {
+            validateCategoria();
+        }
+
+        private bool validateCategoria()
+        {
+
+            bool bStatus = true;
+
+            if (cmbCategoria.SelectedValue != null && cmbCategoria.SelectedValue.ToString() != "0")
+            {
+                errorProvider1.SetError(cmbCategoria, "");
+            }
+            else
+            {
+                errorProvider1.SetError(cmbCategoria, "É necessário informar a categoria da despeza.");
+                bStatus = false;
+            }
+
+            return bStatus;
+        }
+
+        private void groupBox4_Validating(object sender, CancelEventArgs e)
+        {
+            validateVinculo();
+        }
+
+        private bool validateVinculo()
+        {
+            bool bStatus = true;
+            int _checked = 0;
+            foreach (Control c in groupBox4.Controls)
+            {
+                if (c is RadioButton)
+                {
+                    if ((c as RadioButton).Checked == true) { _checked++; }
+                }
+            }
+            if (_checked == 0)
+            {
+                errorProvider1.SetError(groupBox4, "Favor informar o vínculo do pagamento.");
+                bStatus = false;
+            }
+            else
+            {
+                errorProvider1.SetError(groupBox4, "");
+            }
+
+            return bStatus;
+        }
+
+        private void txtValor_Validating(object sender, CancelEventArgs e)
+        {
+            validaValor();
+        }
+
+        private bool validaValor()
+        {
+            bool bStatus = true;
+            if (txtValor.Text == "")
+            {
+                errorProvider1.SetError(txtValor, "Favor informar o valor do pagamento.");
+                bStatus = false;
+            }
+            else
+            {
+                double lt;
+                bool ok = Double.TryParse(txtValor.Text, out lt);
+                if (ok)
+                {
+                    errorProvider1.SetError(txtValor, "");
+                }
+                else
+                {
+                    errorProvider1.SetError(txtValor, "Favor informar um valor válido");
+                    bStatus = false;
+                }
+            }
+
+            return bStatus;
+        } 
+        #endregion
     }
 }
