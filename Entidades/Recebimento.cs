@@ -26,8 +26,8 @@ namespace ERP_Transporte.Entidades
 
         public int Add(frmRecebimento form)
         {
-            string sql = "INSERT INTO `recebimento`(`id_rota`, `ano`, `mes`, `valor`) " +
-                "VALUES (@rota, @ano, @mes, @valor)";
+            string sql = "INSERT INTO `recebimento`(`id_contrato`, `ano`, `mes`, `valor`, `data`) " +
+                "VALUES (@contrato, @ano, @mes, @valor, @data)";
 
             MySqlCommand cmd = new MySqlCommand(sql, conn);
 
@@ -36,10 +36,19 @@ namespace ERP_Transporte.Entidades
             cmd.Parameters.AddWithValue("@mes", form.Controls["txtMes"].Text);
             cmd.Parameters.AddWithValue("@valor", form.Controls["txtValor"].Text.Replace(".", "").Replace(",", "."));
 
-            var cmb = form.Controls.OfType<ComboBox>().FirstOrDefault(r => r.Name == "cmbRota");
+            var cmb = form.Controls.OfType<ComboBox>().FirstOrDefault(r => r.Name == "cmbEstudante");
             DataRowView drv = cmb.SelectedItem as DataRowView;
             String sel = drv.Row["id"].ToString();
-            cmd.Parameters.AddWithValue("@rota", sel);
+            cmd.Parameters.AddWithValue("@contrato", sel);
+
+            string data = "";
+            DateTime dt;
+            bool success = DateTime.TryParse(form.Controls["txtData"].Text, out dt);
+            if (success)
+            {
+                data = dt.Year.ToString() + "-" + dt.Month.ToString() + "-" + dt.Day.ToString();
+            }
+            cmd.Parameters.AddWithValue("@data", data);
 
             try
             {
@@ -53,7 +62,7 @@ namespace ERP_Transporte.Entidades
 
         public int Edit(frmRecebimento form)
         {
-            string sql = "UPDATE `recebimento` SET `id_rota`=@rota,`ano`=@ano,`mes`=@mes,`valor`=@valor,`updated_at` = CURRENT_TIMESTAMP() " +
+            string sql = "UPDATE `recebimento` SET `id_contrato`=@contrato,`ano`=@ano,`mes`=@mes,`valor`=@valor, `data`=@data, `updated_at` = CURRENT_TIMESTAMP() " +
                 " WHERE id = @id";
 
             MySqlCommand cmd = new MySqlCommand(sql, conn);
@@ -63,10 +72,19 @@ namespace ERP_Transporte.Entidades
             cmd.Parameters.AddWithValue("@mes", form.Controls["txtMes"].Text);
             cmd.Parameters.AddWithValue("@valor", form.Controls["txtValor"].Text.Replace(".", "").Replace(",", "."));
 
-            var cmb = form.Controls.OfType<ComboBox>().FirstOrDefault(r => r.Name == "cmbRota");
+            var cmb = form.Controls.OfType<ComboBox>().FirstOrDefault(r => r.Name == "cmbEstudante");
             DataRowView drv = cmb.SelectedItem as DataRowView;
             String sel = drv.Row["id"].ToString();
-            cmd.Parameters.AddWithValue("@rota", sel);
+            cmd.Parameters.AddWithValue("@contrato", sel);
+
+            string data = "";
+            DateTime dt;
+            bool success = DateTime.TryParse(form.Controls["txtData"].Text, out dt);
+            if (success)
+            {
+                data = dt.Year.ToString() + "-" + dt.Month.ToString() + "-" + dt.Day.ToString();
+            }
+            cmd.Parameters.AddWithValue("@data", data);
 
             try
             {
@@ -107,7 +125,7 @@ namespace ERP_Transporte.Entidades
 
         public DataRow Get(int id)
         {
-            string sql = "SELECT * FROM recebimento WHERE id=@id";
+            string sql = "SELECT r.*, e.id_rota FROM recebimento r JOIN contrato c on r.id_contrato=c.id JOIN estudante e on e.id=c.id_aluno WHERE r.id=@id";
 
             MySqlCommand cmd = new MySqlCommand(sql, conn);
 
@@ -135,6 +153,24 @@ namespace ERP_Transporte.Entidades
             da.Fill(ds);
 
             return ds;
+        }
+
+        public DataRow Recibo(int id)
+        {
+            string sql = "SELECT r.valor, r.data, c.cpf, (CASE WHEN id_contratante=1 THEN e.pai WHEN id_contratante=2 THEN e.mae ELSE e.responsavel END) as pagador " +
+                "FROM recebimento r join contrato c on r.id_contrato=c.id JOIN estudante e on e.id=c.id_aluno WHERE r.id=@id";
+
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+            cmd.Parameters.AddWithValue("@id", id);
+
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+            DataTable dt = new DataTable();
+
+            da.Fill(dt);
+
+            return dt.Rows[0];
         }
     }
 }

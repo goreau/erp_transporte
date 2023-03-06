@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAuxiliar));
             this.dgDados = new System.Windows.Forms.DataGridView();
             this.txtTipo = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -48,19 +49,20 @@
             // 
             this.dgDados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgDados.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgDados.Location = new System.Drawing.Point(0, 221);
+            this.dgDados.Location = new System.Drawing.Point(0, 340);
+            this.dgDados.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgDados.Name = "dgDados";
-            this.dgDados.Size = new System.Drawing.Size(535, 229);
+            this.dgDados.RowHeadersWidth = 62;
+            this.dgDados.Size = new System.Drawing.Size(802, 352);
             this.dgDados.TabIndex = 0;
             this.dgDados.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgDados_RowEnter);
             // 
             // txtTipo
             // 
             this.txtTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTipo.Location = new System.Drawing.Point(253, 14);
-            this.txtTipo.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTipo.Location = new System.Drawing.Point(380, 22);
             this.txtTipo.Name = "txtTipo";
-            this.txtTipo.Size = new System.Drawing.Size(38, 21);
+            this.txtTipo.Size = new System.Drawing.Size(55, 28);
             this.txtTipo.TabIndex = 71;
             this.txtTipo.Visible = false;
             // 
@@ -71,11 +73,9 @@
             this.groupBox4.Controls.Add(this.rbFuncao);
             this.groupBox4.Controls.Add(this.rbRamo);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(62, 34);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox4.Location = new System.Drawing.Point(93, 52);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox4.Size = new System.Drawing.Size(401, 69);
+            this.groupBox4.Size = new System.Drawing.Size(602, 106);
             this.groupBox4.TabIndex = 1;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Tipo";
@@ -84,10 +84,9 @@
             // 
             this.rbDeslocamento.AutoSize = true;
             this.rbDeslocamento.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.rbDeslocamento.Location = new System.Drawing.Point(281, 29);
-            this.rbDeslocamento.Margin = new System.Windows.Forms.Padding(2);
+            this.rbDeslocamento.Location = new System.Drawing.Point(422, 45);
             this.rbDeslocamento.Name = "rbDeslocamento";
-            this.rbDeslocamento.Size = new System.Drawing.Size(105, 19);
+            this.rbDeslocamento.Size = new System.Drawing.Size(149, 26);
             this.rbDeslocamento.TabIndex = 4;
             this.rbDeslocamento.TabStop = true;
             this.rbDeslocamento.Tag = "4";
@@ -99,10 +98,9 @@
             // 
             this.rbCategoria.AutoSize = true;
             this.rbCategoria.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.rbCategoria.Location = new System.Drawing.Point(191, 29);
-            this.rbCategoria.Margin = new System.Windows.Forms.Padding(2);
+            this.rbCategoria.Location = new System.Drawing.Point(286, 45);
             this.rbCategoria.Name = "rbCategoria";
-            this.rbCategoria.Size = new System.Drawing.Size(78, 19);
+            this.rbCategoria.Size = new System.Drawing.Size(113, 26);
             this.rbCategoria.TabIndex = 3;
             this.rbCategoria.TabStop = true;
             this.rbCategoria.Tag = "3";
@@ -114,10 +112,9 @@
             // 
             this.rbFuncao.AutoSize = true;
             this.rbFuncao.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.rbFuncao.Location = new System.Drawing.Point(104, 29);
-            this.rbFuncao.Margin = new System.Windows.Forms.Padding(2);
+            this.rbFuncao.Location = new System.Drawing.Point(156, 45);
             this.rbFuncao.Name = "rbFuncao";
-            this.rbFuncao.Size = new System.Drawing.Size(66, 19);
+            this.rbFuncao.Size = new System.Drawing.Size(95, 26);
             this.rbFuncao.TabIndex = 2;
             this.rbFuncao.TabStop = true;
             this.rbFuncao.Tag = "2";
@@ -129,10 +126,9 @@
             // 
             this.rbRamo.AutoSize = true;
             this.rbRamo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.rbRamo.Location = new System.Drawing.Point(29, 29);
-            this.rbRamo.Margin = new System.Windows.Forms.Padding(2);
+            this.rbRamo.Location = new System.Drawing.Point(44, 45);
             this.rbRamo.Name = "rbRamo";
-            this.rbRamo.Size = new System.Drawing.Size(59, 19);
+            this.rbRamo.Size = new System.Drawing.Size(82, 26);
             this.rbRamo.TabIndex = 1;
             this.rbRamo.TabStop = true;
             this.rbRamo.Tag = "1";
@@ -144,10 +140,9 @@
             // 
             this.txtNome.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNome.Location = new System.Drawing.Point(129, 122);
-            this.txtNome.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNome.Location = new System.Drawing.Point(194, 188);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(334, 21);
+            this.txtNome.Size = new System.Drawing.Size(499, 28);
             this.txtNome.TabIndex = 2;
             // 
             // label6
@@ -155,10 +150,9 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label6.Location = new System.Drawing.Point(60, 128);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Location = new System.Drawing.Point(90, 197);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(65, 15);
+            this.label6.Size = new System.Drawing.Size(95, 22);
             this.label6.TabIndex = 79;
             this.label6.Text = "Descrição:";
             // 
@@ -167,10 +161,9 @@
             this.btSalva.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btSalva.Image = global::ERP_Transporte.Properties.Resources.selecionado_24;
             this.btSalva.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btSalva.Location = new System.Drawing.Point(62, 170);
-            this.btSalva.Margin = new System.Windows.Forms.Padding(2);
+            this.btSalva.Location = new System.Drawing.Point(93, 262);
             this.btSalva.Name = "btSalva";
-            this.btSalva.Size = new System.Drawing.Size(119, 34);
+            this.btSalva.Size = new System.Drawing.Size(178, 52);
             this.btSalva.TabIndex = 3;
             this.btSalva.Text = "Salvar";
             this.btSalva.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -183,10 +176,9 @@
             this.btEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btEdit.Image = global::ERP_Transporte.Properties.Resources.edite_24;
             this.btEdit.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btEdit.Location = new System.Drawing.Point(203, 170);
-            this.btEdit.Margin = new System.Windows.Forms.Padding(2);
+            this.btEdit.Location = new System.Drawing.Point(304, 262);
             this.btEdit.Name = "btEdit";
-            this.btEdit.Size = new System.Drawing.Size(119, 34);
+            this.btEdit.Size = new System.Drawing.Size(178, 52);
             this.btEdit.TabIndex = 82;
             this.btEdit.Text = "Editar";
             this.btEdit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -199,10 +191,9 @@
             this.btDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btDelete.Image = global::ERP_Transporte.Properties.Resources.delete_24;
             this.btDelete.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btDelete.Location = new System.Drawing.Point(344, 170);
-            this.btDelete.Margin = new System.Windows.Forms.Padding(2);
+            this.btDelete.Location = new System.Drawing.Point(516, 262);
             this.btDelete.Name = "btDelete";
-            this.btDelete.Size = new System.Drawing.Size(119, 34);
+            this.btDelete.Size = new System.Drawing.Size(178, 52);
             this.btDelete.TabIndex = 83;
             this.btDelete.Text = "Excluir";
             this.btDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -212,9 +203,9 @@
             // 
             // frmAuxiliar
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(535, 450);
+            this.ClientSize = new System.Drawing.Size(802, 692);
             this.Controls.Add(this.btDelete);
             this.Controls.Add(this.btEdit);
             this.Controls.Add(this.btSalva);
@@ -223,6 +214,8 @@
             this.Controls.Add(this.txtTipo);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.dgDados);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmAuxiliar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Auxiliar";

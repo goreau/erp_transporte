@@ -1,4 +1,5 @@
 ﻿using ERP_Transporte.Entidades;
+using ERP_Transporte.Relatorios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,6 +20,7 @@ namespace ERP_Transporte.Views
             InitializeComponent();
             this.id = id;
             this.populaCombos();
+            
 
             if (id > 0)
             {
@@ -28,13 +30,7 @@ namespace ERP_Transporte.Views
 
         private void populaCombos()
         {
-            cmbEst_civil.Items.Insert(0, "-- Selecione --");
-            cmbEst_civil.Items.Insert(1, "Solteiro");
-            cmbEst_civil.Items.Insert(2, "Casado");
-            cmbEst_civil.Items.Insert(3, "União Estável");
-            cmbEst_civil.Items.Insert(4, "Viúvo");
-            cmbEst_civil.SelectedIndex = 0;
-
+           
             Escola obj = new Escola();
 
             DataTable dt = obj.Combo();
@@ -163,13 +159,11 @@ namespace ERP_Transporte.Views
             txtTel_resp.Text = dr["tel_resp"].ToString();
             txtResp_qualif.Text = dr["resp_qualif"].ToString();
 
-            txtNaturalidade.Text = dr["naturalidade"].ToString();
-            txtNacionalidade.Text = dr["nacionalidade"].ToString();
-            txtRg.Text = dr["rg"].ToString();
-            txtCpf.Text = dr["cpf"].ToString();
+            txtSerie.Text = dr["serie"].ToString();
+
 
             cmbId_rota.SelectedValue = Convert.ToInt16(dr["id_rota"].ToString());
-            cmbEst_civil.SelectedIndex = Convert.ToInt16(dr["est_civil"].ToString());
+            
 
             txtObs.Text = dr["obs"].ToString();
         }
@@ -354,7 +348,9 @@ namespace ERP_Transporte.Views
             }
 
             return bStatus;
-        } 
+        }
         #endregion
+
+       
     }
 }

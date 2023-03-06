@@ -328,5 +328,40 @@ namespace ERP_Transporte
             form.MdiParent = this;
             form.Show();
         }
+
+        private void dadosDaEmpresaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEmpresa form = new frmEmpresa(4);
+            form.MdiParent = this;
+            form.Show();
+        }
+
+        private void contratoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPreContrato form = new frmPreContrato();
+            form.MdiParent = this;
+            form.Show();
+        }
+
+        private void manutençãoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmRelatorio form = new frmRelatorio(4);
+            form.MdiParent = this;
+            form.Show();
+        }
+
+        private void rendimentoPorRotaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmRelatorio form = new frmRelatorio(5);
+            form.MdiParent = this;
+            form.Show();
+        }
+
+        private void previsáoDeRecursosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmRelatorio form = new frmRelatorio(6);
+            form.MdiParent = this;
+            form.Show();
+        }
     }
 }

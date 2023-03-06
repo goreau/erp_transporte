@@ -23,6 +23,7 @@ namespace ERP_Transporte.Views
             if (id > 0)
             {
                 this.Edit(id);
+                this.btRecibo.Enabled = true;
             }
         }
 
@@ -35,10 +36,13 @@ namespace ERP_Transporte.Views
             txtId.Text = dr["id"].ToString();
 
             cmbRota.SelectedValue = dr["id_rota"].ToString();
+            cmbEstudante.SelectedValue = dr["id_contrato"].ToString();
 
             txtAno.Text = dr["ano"].ToString();
             txtMes.Text = dr["mes"].ToString();
             txtValor.Text = dr["valor"].ToString();
+            txtData.Text = dr["data"].ToString();
+            
         }
 
         private void btSalva_Click(object sender, EventArgs e)
@@ -284,7 +288,27 @@ namespace ERP_Transporte.Views
             }
 
             return bStatus;
-        } 
+        }
         #endregion
+
+        private void cmbRota_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int id_rota = int.Parse(cmbRota.SelectedValue.ToString());
+            Contrato et = new Contrato();
+
+            DataTable dt = et.Combo(id_rota);
+
+
+            cmbEstudante.DataSource = dt;
+            cmbEstudante.DisplayMember = "nome";
+            cmbEstudante.ValueMember = "id";
+            cmbEstudante.SelectedIndex = 0;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmRecibo frm = new frmRecibo(id);
+            frm.ShowDialog();
+        }
     }
 }

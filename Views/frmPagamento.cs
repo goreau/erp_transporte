@@ -53,7 +53,7 @@ namespace ERP_Transporte.Views
             cmbCategoria.SelectedValue = dr["categoria"].ToString();
             cmbFornecedor.SelectedValue = dr["id_fornecedor"].ToString();
             recorrente.Checked = dr["recorrente"].ToString() == "True";
-
+            txtData.Text = dr["data"].ToString();
         }
 
         private void btSalva_Click(object sender, EventArgs e)

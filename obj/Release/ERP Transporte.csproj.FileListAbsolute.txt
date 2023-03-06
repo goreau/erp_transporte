@@ -5,15 +5,38 @@ C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\SqlServerTypes\
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\Relatorios\rptAbastecimento.rdlc
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\Relatorios\rptListaAlunos.rdlc
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\Relatorios\rptListaEscola.rdlc
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\Relatorios\rptManutencao.rdlc
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\Relatorios\rptPrevRecurso.rdlc
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\Relatorios\rptReceitaRota.rdlc
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\Relatorios\relDados.cs
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\Resources\documentos-481.png
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\Resources\print-24.png
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\Resources\file-preview-20.png
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\Resources\image-20.png
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\Resources\escolat.png
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\Resources\escolan.png
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\Resources\escola.png
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\Resources\ajuda-64.png
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\Resources\documentos-48.png
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\Resources\calendario-48.png
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\Resources\crescimento-económico-48.png
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\Resources\gasolina-48.png
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\Resources\bookmark-64.png
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\Resources\handcart-48.png
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\Resources\amigos-48.png
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\Resources\rotas-48.png
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\Resources\ônibus-48.png
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\Resources\escola-48.png
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\Resources\aluna-48.png
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\Resources\selecionado-24.png
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\Resources\delete-24.png
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\Resources\edite-24.png
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\ERP Transporte.exe.config
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\ERP Transporte.exe
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\ERP Transporte.pdb
-C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\Microsoft.ReportViewer.Common.dll
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\Microsoft.ReportViewer.DataVisualization.dll
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\Microsoft.ReportViewer.Design.dll
-C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\Microsoft.ReportViewer.ProcessingObjectModel.dll
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\Microsoft.ReportViewer.WebDesign.dll
-C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\Microsoft.ReportViewer.WebForms.dll
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\Microsoft.ReportViewer.WinForms.dll
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\Microsoft.SqlServer.Types.dll
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\MySqlConnector.dll
@@ -24,7 +47,10 @@ C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\System.Numerics
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\System.Threading.Tasks.Extensions.dll
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\EnvDTE.dll
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\Microsoft.ReportViewer.WebForms.dll
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\Microsoft.ReportViewer.Common.dll
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\stdole.dll
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\Microsoft.ReportViewer.ProcessingObjectModel.dll
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\MySqlConnector.xml
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\System.Buffers.xml
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\System.Diagnostics.DiagnosticSource.xml
@@ -32,16 +58,6 @@ C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\System.Memory.x
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\System.Numerics.Vectors.xml
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\System.Threading.Tasks.Extensions.xml
-C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\de\Microsoft.ReportViewer.Common.resources.dll
-C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\es\Microsoft.ReportViewer.Common.resources.dll
-C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\fr\Microsoft.ReportViewer.Common.resources.dll
-C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\it\Microsoft.ReportViewer.Common.resources.dll
-C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\ja\Microsoft.ReportViewer.Common.resources.dll
-C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\ko\Microsoft.ReportViewer.Common.resources.dll
-C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\pt\Microsoft.ReportViewer.Common.resources.dll
-C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\ru\Microsoft.ReportViewer.Common.resources.dll
-C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
-C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\de\Microsoft.ReportViewer.DataVisualization.resources.dll
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\es\Microsoft.ReportViewer.DataVisualization.resources.dll
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
@@ -72,16 +88,6 @@ C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\pt\Microsoft.Re
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\ru\Microsoft.ReportViewer.WebDesign.resources.dll
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\zh-CHS\Microsoft.ReportViewer.WebDesign.resources.dll
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\zh-CHT\Microsoft.ReportViewer.WebDesign.resources.dll
-C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\de\Microsoft.ReportViewer.WebForms.resources.dll
-C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\es\Microsoft.ReportViewer.WebForms.resources.dll
-C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\fr\Microsoft.ReportViewer.WebForms.resources.dll
-C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\it\Microsoft.ReportViewer.WebForms.resources.dll
-C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\ja\Microsoft.ReportViewer.WebForms.resources.dll
-C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\ko\Microsoft.ReportViewer.WebForms.resources.dll
-C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\pt\Microsoft.ReportViewer.WebForms.resources.dll
-C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\ru\Microsoft.ReportViewer.WebForms.resources.dll
-C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\zh-CHS\Microsoft.ReportViewer.WebForms.resources.dll
-C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\zh-CHT\Microsoft.ReportViewer.WebForms.resources.dll
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\de\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\es\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\fr\Microsoft.ReportViewer.WinForms.resources.dll
@@ -92,8 +98,29 @@ C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\pt\Microsoft.Re
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\ru\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\de\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\es\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\fr\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\it\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\ja\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\ko\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\pt\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\ru\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\zh-CHS\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\zh-CHT\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\de\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\es\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\fr\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\it\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\ja\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\ko\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\pt\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\ru\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP Transporte.csproj.AssemblyReference.cache
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP Transporte.csproj.SuggestedBindingRedirects.cache
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.Auxiliares.frmSobre.resources
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.Auxiliares.frmSplash.resources
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.frmMain.resources
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.Properties.Resources.resources
@@ -102,13 +129,17 @@ C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.Views.frmAuxiliar.resources
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.Views.frmColaborador.resources
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.Views.frmConsulta.resources
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.Views.frmContrato.resources
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.Views.frmDias.resources
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.Views.frmEmpresa.resources
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.Views.frmEscola.resources
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.Views.frmEstudante.resources
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.Views.frmFornecedor.resources
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.Views.frmManutencao.resources
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.Views.frmPagamento.resources
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.Views.frmPreContrato.resources
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.Views.frmRecebimento.resources
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.Views.frmRecibo.resources
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.Views.frmRota.resources
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.Views.frmTrafego.resources
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.Views.frmVeiculo.resources
@@ -117,4 +148,3 @@ C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP Transporte.
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP Transporte.csproj.CopyComplete
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP Transporte.exe
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP Transporte.pdb
-C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.Auxiliares.frmSobre.resources

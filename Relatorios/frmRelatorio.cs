@@ -12,9 +12,9 @@ using System.Windows.Forms;
 /*
  * 1 - Lista Alunos
  * 2 - Lista Escolas
- * 
- * 
- * 
+ * 3 - Abastecimento
+ * 4 - Manutencao
+ * 5 - Rendimento por Rota
  * 
  * */
 
@@ -49,10 +49,10 @@ namespace ERP_Transporte.Relatorios
             }
 
             int[] arrEscola = { 1 };
-            int[] arrRota = { 99 };
-            int[] arrVeiculo = { 3 };
-            int[] arrFornecedor = { 3 };
-            int[] arrPeriodo = { 3 };
+            int[] arrRota = { 5,6 };
+            int[] arrVeiculo = { 3,4 };
+            int[] arrFornecedor = { 3,4 };
+            int[] arrPeriodo = { 3,4,5,6 };
 
             cmbEscola.Enabled = arrEscola.Contains(this.tipo);
             cmbRota.Enabled = arrRota.Contains(this.tipo);
@@ -123,6 +123,15 @@ namespace ERP_Transporte.Relatorios
                     break;
                 case 3:
                     reportPath = @"Relatorios\rptAbastecimento.rdlc";
+                    break;
+                case 4:
+                    reportPath = @"Relatorios\rptManutencao.rdlc";
+                    break;
+                case 5:
+                    reportPath = @"Relatorios\rptReceitaRota.rdlc";
+                    break;
+                case 6:
+                    reportPath = @"Relatorios\rptPrevRecurso.rdlc";
                     break;
             }
         }
@@ -222,6 +231,21 @@ namespace ERP_Transporte.Relatorios
                     ListaAbastecimento rel3 = new ListaAbastecimento();
 
                     this.dt = rel3.getDados(filt);
+                    break;
+                case 4:
+                    ManutencaoMaster rel4 = new ManutencaoMaster();
+
+                    this.dt = rel4.getDados(filt);
+                    break;
+                case 5:
+                    RendimentoRota rel5 = new RendimentoRota();
+
+                    this.dt = rel5.getDados(filt);
+                    break;
+                case 6:
+                    PrevisaoRecurso rel6 = new PrevisaoRecurso();
+
+                    this.dt = rel6.getDados(filt);
                     break;
             }
 

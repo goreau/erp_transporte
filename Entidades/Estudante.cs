@@ -27,9 +27,9 @@ namespace ERP_Transporte.Entidades
         public int Add(frmEstudante form)
         {
             string sql = "INSERT INTO `estudante`(`nome`, `logradouro`, `numero`, `bairro`, `id_escola`, `periodo`, `ra_rg`, `dt_nascimento`, `pai`, `tel_pai`, " +
-                "`mae`, `tel_mae`, `responsavel`, `resp_qualif`, `tel_resp`, `naturalidade`, `nacionalidade`, `est_civil`, `rg`, `cpf`, `id_rota`, `obs`) " +
+                "`mae`, `tel_mae`, `responsavel`, `resp_qualif`, `tel_resp`, `id_rota`, `obs`, `serie`) " +
                 "VALUES (@nome, @logradouro, @numero, @bairro, @id_escola, @periodo, @ra_rg, @dt_nascimento, @pai, @tel_pai, " +
-                "@mae, @tel_mae, @responsavel, @resp_qualif, @tel_resp, @naturalidade, @nacionalidade, @est_civil, @rg, @cpf, @id_rota, @obs)";
+                "@mae, @tel_mae, @responsavel, @resp_qualif, @tel_resp, @id_rota, @obs, @serie)";
 
             MySqlCommand cmd = new MySqlCommand(sql, conn);
 
@@ -63,15 +63,12 @@ namespace ERP_Transporte.Entidades
             cmd.Parameters.AddWithValue("@responsavel", form.Controls["txtResponsavel"].Text);
             cmd.Parameters.AddWithValue("@resp_qualif", form.Controls["txtResp_qualif"].Text);
             cmd.Parameters.AddWithValue("@tel_resp", form.Controls["txtTel_resp"].Text);
-            cmd.Parameters.AddWithValue("@naturalidade", form.Controls["txtNaturalidade"].Text);
-            cmd.Parameters.AddWithValue("@nacionalidade", form.Controls["txtNacionalidade"].Text);
-            cmd.Parameters.AddWithValue("@rg", form.Controls["txtRg"].Text);
-            cmd.Parameters.AddWithValue("@cpf", form.Controls["txtCpf"].Text);
+            cmd.Parameters.AddWithValue("@serie", form.Controls["txtSerie"].Text);
+            
 
             cmb = form.Controls.OfType<ComboBox>().FirstOrDefault(r => r.Name == "cmbId_rota");
             cmd.Parameters.AddWithValue("@id_rota", cmb.SelectedValue);
-            cmb = form.Controls.OfType<ComboBox>().FirstOrDefault(r => r.Name == "cmbEst_civil");
-            cmd.Parameters.AddWithValue("@est_civil", cmb.SelectedIndex);
+         
             cmd.Parameters.AddWithValue("@obs", form.Controls["txtObs"].Text);
 
             try
@@ -87,7 +84,7 @@ namespace ERP_Transporte.Entidades
         public int Edit(frmEstudante form)
         {
             string sql = "UPDATE `estudante` SET`nome` = @nome, `logradouro` = @logradouro, `numero` = @numero, `bairro` = @bairro, `id_escola` = @id_escola, `periodo` = @periodo, `ra_rg` = @ra_rg, `dt_nascimento` = @dt_nascimento, `pai` = @pai, `tel_pai` = @tel_pai, " +
-                "`mae` = @mae, `tel_mae` = @tel_mae, `responsavel` = @responsavel, `resp_qualif` = @resp_qualif, `tel_resp` = @tel_resp, `naturalidade` = @naturalidade, `nacionalidade` = @nacionalidade, `est_civil` = @est_civil, `rg` = @rg, `cpf` = @cpf, `id_rota` = @id_rota, `obs` = @obs, `updated_at` = CURRENT_TIMESTAMP() " +
+                "`mae` = @mae, `tel_mae` = @tel_mae, `responsavel` = @responsavel, `resp_qualif` = @resp_qualif, `tel_resp` = @tel_resp, `id_rota` = @id_rota, `obs` = @obs, `serie`=@serie, `updated_at` = CURRENT_TIMESTAMP() " +
                 " WHERE id = @id";
 
             MySqlCommand cmd = new MySqlCommand(sql, conn);
@@ -119,16 +116,12 @@ namespace ERP_Transporte.Entidades
             cmd.Parameters.AddWithValue("@responsavel", form.Controls["txtResponsavel"].Text);
             cmd.Parameters.AddWithValue("@resp_qualif", form.Controls["txtResp_qualif"].Text);
             cmd.Parameters.AddWithValue("@tel_resp", form.Controls["txtTel_resp"].Text);
-            cmd.Parameters.AddWithValue("@naturalidade", form.Controls["txtNaturalidade"].Text);
-            cmd.Parameters.AddWithValue("@nacionalidade", form.Controls["txtNacionalidade"].Text);
-            cmd.Parameters.AddWithValue("@rg", form.Controls["txtRg"].Text);
-            cmd.Parameters.AddWithValue("@cpf", form.Controls["txtCpf"].Text);
+            cmd.Parameters.AddWithValue("@serie", form.Controls["txtSerie"].Text);
 
 
             cmb = form.Controls.OfType<ComboBox>().FirstOrDefault(r => r.Name == "cmbId_rota");
             cmd.Parameters.AddWithValue("@id_rota", cmb.SelectedValue);
-            cmb = form.Controls.OfType<ComboBox>().FirstOrDefault(r => r.Name == "cmbEst_civil");
-            cmd.Parameters.AddWithValue("@est_civil", cmb.SelectedIndex);
+
             cmd.Parameters.AddWithValue("@obs", form.Controls["txtObs"].Text);
 
             try
@@ -156,7 +149,7 @@ namespace ERP_Transporte.Entidades
         public DataTable Consulta()
         {
             string sql = "SELECT e.`id`, e.`nome` as 'Nome', CONCAT(e.`logradouro`,', ', e.`numero`, ' - ', e.`bairro`) as 'Endereço', s.nome as 'Escola', (CASE e.`periodo` WHEN 1 THEN 'M' when 2 THEN 'T' ELSE 'I' END) as 'Período', `ra_rg` as 'RA/RG', `dt_nascimento` as 'Nascimento', `pai` as 'Nome Pai', `tel_pai` as 'Tel. do Pai', `mae` as 'Nome Mãe', `tel_mae` as 'Tel da Mãe', " +
-                "`responsavel` as 'Responsável', `resp_qualif` as 'Qualificação', `tel_resp` as 'Tel do Responsável', `naturalidade` as 'Naturalidade', `nacionalidade` as 'Nacionalidade', `est_civil` as 'Estado Civil', `rg` as 'RG', `cpf` as 'CPF', r.nome as 'Rota', `obs` as 'Observação', e.`updated_at` as 'Ultima Atualização' " +
+                "`responsavel` as 'Responsável', `resp_qualif` as 'Qualificação', `tel_resp` as 'Tel do Responsável', r.nome as 'Rota', `obs` as 'Observação', e.`updated_at` as 'Ultima Atualização' " +
                 "FROM `estudante` e JOIN escola s on e.id_escola=s.id JOIN rota r on e.id_rota = r.id  ORDER BY id desc";
 
             MySqlCommand cmd = new MySqlCommand(sql, conn);
@@ -168,6 +161,26 @@ namespace ERP_Transporte.Entidades
             da.Fill(dt);
 
             return dt;
+        }
+
+        public DataRow Contrato(int id)
+        {
+            string sql = "SELECT e.`id`, e.`nome` as 'Nome', s.nome as 'Escola', s.telefone as 'TelEscola', CONCAT(s.`logradouro`,', nº ', s.`numero`, ', Bairro: ', s.`bairro`) as 'EndEscola',  e.`periodo` as 'Periodo', `ra_rg` as 'RA', `dt_nascimento` as 'Nascimento', `pai` as 'NomePai', `tel_pai` as 'TelPai', `mae` as 'NomeMae', `tel_mae` as 'TelMae', " +
+                "`responsavel` as 'NomeResp', `resp_qualif` as 'Qualificacao', `tel_resp` as 'TelResp',  " +
+                "r.nome as 'Rota', e.resp_nasc as 'RespNasc', s.entrada, s.saida, e.serie " +
+                "FROM `estudante` e JOIN escola s on e.id_escola=s.id JOIN rota r on e.id_rota = r.id  WHERE e.id=@id";
+
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+            cmd.Parameters.AddWithValue("@id", id);
+
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+            DataTable dt = new DataTable();
+
+            da.Fill(dt);
+
+            return dt.Rows[0];
         }
 
         public DataRow Get(int id)
@@ -185,6 +198,56 @@ namespace ERP_Transporte.Entidades
             da.Fill(dt);
 
             return dt.Rows[0];
+        }
+
+        public DataTable Combo(int rt)
+        {
+            string sql = "SELECT id, nome FROM estudante where id_rota = @rota ORDER BY nome";
+
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+            cmd.Parameters.AddWithValue("@rota", rt);
+
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+            DataTable dt = new DataTable();
+
+            da.Fill(dt);
+
+            DataRow dr = dt.NewRow();
+            dr["id"] = 0;
+            dr["nome"] = "-- Selecione --";
+            dt.Rows.Add(dr);
+
+            dt.DefaultView.Sort = "id";
+            dt = dt.DefaultView.ToTable();
+
+
+            return dt;
+        }
+
+        public DataTable Combo()
+        {
+            string sql = "SELECT id, nome FROM estudante ORDER BY nome";
+
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+            DataTable dt = new DataTable();
+
+            da.Fill(dt);
+
+            DataRow dr = dt.NewRow();
+            dr["id"] = 0;
+            dr["nome"] = "-- Selecione --";
+            dt.Rows.Add(dr);
+
+            dt.DefaultView.Sort = "id";
+            dt = dt.DefaultView.ToTable();
+
+
+            return dt;
         }
     }
 }

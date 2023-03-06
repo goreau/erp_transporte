@@ -26,8 +26,8 @@ namespace ERP_Transporte.Entidades
 
         public int Add(frmPagamento form)
         {
-            string sql = "INSERT INTO `pagamento`(`dia_vencimento`, `id_fornecedor`, `categoria`, `vinculo`, `valor`, `recorrente`) " +
-                "VALUES (@dia_vencimento, @fornecedor, @categoria, @vinculo, @valor, @recorrente)";
+            string sql = "INSERT INTO `pagamento`(`dia_vencimento`, `id_fornecedor`, `categoria`, `vinculo`, `valor`, `recorrente`, `data`) " +
+                "VALUES (@dia_vencimento, @fornecedor, @categoria, @vinculo, @valor, @recorrente, @data)";
 
             MySqlCommand cmd = new MySqlCommand(sql, conn);
 
@@ -50,6 +50,15 @@ namespace ERP_Transporte.Entidades
             var check = form.Controls.OfType<CheckBox>().FirstOrDefault(r => r.Name == "recorrente");
             cmd.Parameters.AddWithValue("@recorrente", check.Checked);
 
+            string data = "";
+            DateTime dt;
+            bool success = DateTime.TryParse(form.Controls["txtData"].Text, out dt);
+            if (success)
+            {
+                data = dt.Year.ToString() + "-" + dt.Month.ToString() + "-" + dt.Day.ToString();
+            }
+            cmd.Parameters.AddWithValue("@data", data);
+
             try
             {
                 return cmd.ExecuteNonQuery();
@@ -63,7 +72,7 @@ namespace ERP_Transporte.Entidades
         public int Edit(frmPagamento form)
         {
             string sql = "UPDATE `pagamento` SET `dia_vencimento`=@dia_vencimento,`id_fornecedor`=@fornecedor,`categoria`=@categoria," +
-                "`vinculo`=@vinculo,`valor`=@valor,`recorrente`=@recorrente,`updated_at` = CURRENT_TIMESTAMP() " +
+                "`vinculo`=@vinculo,`valor`=@valor,`recorrente`=@recorrente, `data`=@data, `updated_at` = CURRENT_TIMESTAMP() " +
                 " WHERE id = @id";
 
             MySqlCommand cmd = new MySqlCommand(sql, conn);
@@ -87,6 +96,15 @@ namespace ERP_Transporte.Entidades
 
             var check = form.Controls.OfType<CheckBox>().FirstOrDefault(r => r.Name == "recorrente");
             cmd.Parameters.AddWithValue("@recorrente", check.Checked);
+
+            string data = "";
+            DateTime dt;
+            bool success = DateTime.TryParse(form.Controls["txtData"].Text, out dt);
+            if (success)
+            {
+                data = dt.Year.ToString() + "-" + dt.Month.ToString() + "-" + dt.Day.ToString();
+            }
+            cmd.Parameters.AddWithValue("@data", data);
 
             try
             {

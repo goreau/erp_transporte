@@ -46,6 +46,8 @@
             this.btSalva = new System.Windows.Forms.Button();
             this.txtVinculo = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.txtData = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -226,11 +228,33 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // txtData
+            // 
+            this.txtData.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtData.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txtData.Location = new System.Drawing.Point(444, 367);
+            this.txtData.Name = "txtData";
+            this.txtData.Size = new System.Drawing.Size(145, 28);
+            this.txtData.TabIndex = 166;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label2.Location = new System.Drawing.Point(385, 373);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 22);
+            this.label2.TabIndex = 167;
+            this.label2.Text = "Data:";
+            // 
             // frmPagamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(863, 641);
+            this.Controls.Add(this.txtData);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.txtVinculo);
             this.Controls.Add(this.recorrente);
             this.Controls.Add(this.groupBox4);
@@ -274,5 +298,7 @@
         private System.Windows.Forms.CheckBox recorrente;
         private System.Windows.Forms.TextBox txtVinculo;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.DateTimePicker txtData;
+        private System.Windows.Forms.Label label2;
     }
 }

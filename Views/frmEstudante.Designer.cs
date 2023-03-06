@@ -67,21 +67,11 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.cmbId_rota = new System.Windows.Forms.ComboBox();
-            this.txtNaturalidade = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtNacionalidade = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.cmbEst_civil = new System.Windows.Forms.ComboBox();
-            this.txtProfissao = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.txtRg = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.txtCpf = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
             this.txtObs = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.txtSerie = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -89,7 +79,7 @@
             // txtTel_pai
             // 
             this.txtTel_pai.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.txtTel_pai.Location = new System.Drawing.Point(600, 357);
+            this.txtTel_pai.Location = new System.Drawing.Point(596, 377);
             this.txtTel_pai.Mask = "(99) 90000-0000";
             this.txtTel_pai.Name = "txtTel_pai";
             this.txtTel_pai.Size = new System.Drawing.Size(154, 28);
@@ -108,7 +98,7 @@
             // txtPeriodo
             // 
             this.txtPeriodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.txtPeriodo.Location = new System.Drawing.Point(618, 254);
+            this.txtPeriodo.Location = new System.Drawing.Point(613, 254);
             this.txtPeriodo.Name = "txtPeriodo";
             this.txtPeriodo.Size = new System.Drawing.Size(55, 28);
             this.txtPeriodo.TabIndex = 55;
@@ -118,7 +108,7 @@
             // 
             this.txtRa_rg.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtRa_rg.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.txtRa_rg.Location = new System.Drawing.Point(189, 306);
+            this.txtRa_rg.Location = new System.Drawing.Point(185, 314);
             this.txtRa_rg.Name = "txtRa_rg";
             this.txtRa_rg.Size = new System.Drawing.Size(153, 28);
             this.txtRa_rg.TabIndex = 6;
@@ -128,7 +118,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.label5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label5.Location = new System.Drawing.Point(94, 309);
+            this.label5.Location = new System.Drawing.Point(90, 317);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(72, 22);
             this.label5.TabIndex = 54;
@@ -138,7 +128,7 @@
             // 
             this.txtBairro.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBairro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.txtBairro.Location = new System.Drawing.Point(188, 129);
+            this.txtBairro.Location = new System.Drawing.Point(184, 128);
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(349, 28);
             this.txtBairro.TabIndex = 3;
@@ -149,7 +139,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.label4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label4.Location = new System.Drawing.Point(104, 135);
+            this.label4.Location = new System.Drawing.Point(100, 134);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(63, 22);
             this.label4.TabIndex = 53;
@@ -159,7 +149,7 @@
             // 
             this.txtNumero.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.txtNumero.Location = new System.Drawing.Point(658, 77);
+            this.txtNumero.Location = new System.Drawing.Point(655, 75);
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(96, 28);
             this.txtNumero.TabIndex = 2;
@@ -170,7 +160,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label3.Location = new System.Drawing.Point(570, 83);
+            this.label3.Location = new System.Drawing.Point(567, 81);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(78, 22);
             this.label3.TabIndex = 52;
@@ -180,7 +170,7 @@
             // 
             this.txtLogradouro.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtLogradouro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.txtLogradouro.Location = new System.Drawing.Point(188, 77);
+            this.txtLogradouro.Location = new System.Drawing.Point(185, 75);
             this.txtLogradouro.Name = "txtLogradouro";
             this.txtLogradouro.Size = new System.Drawing.Size(349, 28);
             this.txtLogradouro.TabIndex = 1;
@@ -191,7 +181,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label2.Location = new System.Drawing.Point(58, 83);
+            this.label2.Location = new System.Drawing.Point(55, 81);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(107, 22);
             this.label2.TabIndex = 51;
@@ -202,7 +192,7 @@
             this.groupBox4.Controls.Add(this.rbIntegral);
             this.groupBox4.Controls.Add(this.rbTarde);
             this.groupBox4.Controls.Add(this.rbManha);
-            this.groupBox4.Location = new System.Drawing.Point(189, 229);
+            this.groupBox4.Location = new System.Drawing.Point(184, 229);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(402, 60);
             this.groupBox4.TabIndex = 5;
@@ -257,7 +247,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.label9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label9.Location = new System.Drawing.Point(506, 363);
+            this.label9.Location = new System.Drawing.Point(502, 383);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(86, 22);
             this.label9.TabIndex = 45;
@@ -267,7 +257,7 @@
             // 
             this.txtNome.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.txtNome.Location = new System.Drawing.Point(188, 22);
+            this.txtNome.Location = new System.Drawing.Point(184, 22);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(506, 28);
             this.txtNome.TabIndex = 0;
@@ -287,9 +277,9 @@
             // cmbEscola
             // 
             this.cmbEscola.FormattingEnabled = true;
-            this.cmbEscola.Location = new System.Drawing.Point(188, 180);
+            this.cmbEscola.Location = new System.Drawing.Point(184, 183);
             this.cmbEscola.Name = "cmbEscola";
-            this.cmbEscola.Size = new System.Drawing.Size(506, 28);
+            this.cmbEscola.Size = new System.Drawing.Size(316, 28);
             this.cmbEscola.TabIndex = 4;
             this.cmbEscola.Validating += new System.ComponentModel.CancelEventHandler(this.cmbEscola_Validating);
             // 
@@ -298,7 +288,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.label6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label6.Location = new System.Drawing.Point(98, 186);
+            this.label6.Location = new System.Drawing.Point(94, 189);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(69, 22);
             this.label6.TabIndex = 58;
@@ -307,7 +297,7 @@
             // txtDt_nascimento
             // 
             this.txtDt_nascimento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.txtDt_nascimento.Location = new System.Drawing.Point(600, 303);
+            this.txtDt_nascimento.Location = new System.Drawing.Point(596, 311);
             this.txtDt_nascimento.Mask = "00/00/0000";
             this.txtDt_nascimento.Name = "txtDt_nascimento";
             this.txtDt_nascimento.Size = new System.Drawing.Size(154, 28);
@@ -320,7 +310,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.label11.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label11.Location = new System.Drawing.Point(486, 306);
+            this.label11.Location = new System.Drawing.Point(482, 314);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(109, 22);
             this.label11.TabIndex = 60;
@@ -330,7 +320,7 @@
             // 
             this.btSalva.Image = global::ERP_Transporte.Properties.Resources.selecionado_24;
             this.btSalva.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btSalva.Location = new System.Drawing.Point(459, 925);
+            this.btSalva.Location = new System.Drawing.Point(454, 776);
             this.btSalva.Name = "btSalva";
             this.btSalva.Size = new System.Drawing.Size(297, 60);
             this.btSalva.TabIndex = 23;
@@ -344,7 +334,7 @@
             // 
             this.txtPai.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtPai.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.txtPai.Location = new System.Drawing.Point(188, 357);
+            this.txtPai.Location = new System.Drawing.Point(184, 377);
             this.txtPai.Name = "txtPai";
             this.txtPai.Size = new System.Drawing.Size(316, 28);
             this.txtPai.TabIndex = 8;
@@ -354,7 +344,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.label13.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label13.Location = new System.Drawing.Point(124, 363);
+            this.label13.Location = new System.Drawing.Point(120, 383);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(41, 22);
             this.label13.TabIndex = 61;
@@ -364,7 +354,7 @@
             // 
             this.txtMae.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtMae.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.txtMae.Location = new System.Drawing.Point(188, 408);
+            this.txtMae.Location = new System.Drawing.Point(184, 436);
             this.txtMae.Name = "txtMae";
             this.txtMae.Size = new System.Drawing.Size(316, 28);
             this.txtMae.TabIndex = 10;
@@ -374,7 +364,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.label7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label7.Location = new System.Drawing.Point(124, 414);
+            this.label7.Location = new System.Drawing.Point(120, 442);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(49, 22);
             this.label7.TabIndex = 65;
@@ -383,7 +373,7 @@
             // txtTel_mae
             // 
             this.txtTel_mae.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.txtTel_mae.Location = new System.Drawing.Point(600, 408);
+            this.txtTel_mae.Location = new System.Drawing.Point(596, 436);
             this.txtTel_mae.Mask = "(99) 90000-0000";
             this.txtTel_mae.Name = "txtTel_mae";
             this.txtTel_mae.Size = new System.Drawing.Size(154, 28);
@@ -395,7 +385,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.label14.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label14.Location = new System.Drawing.Point(506, 414);
+            this.label14.Location = new System.Drawing.Point(502, 442);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(86, 22);
             this.label14.TabIndex = 64;
@@ -405,7 +395,7 @@
             // 
             this.txtResponsavel.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtResponsavel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.txtResponsavel.Location = new System.Drawing.Point(188, 463);
+            this.txtResponsavel.Location = new System.Drawing.Point(184, 493);
             this.txtResponsavel.Name = "txtResponsavel";
             this.txtResponsavel.Size = new System.Drawing.Size(316, 28);
             this.txtResponsavel.TabIndex = 12;
@@ -415,7 +405,7 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.label15.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label15.Location = new System.Drawing.Point(46, 469);
+            this.label15.Location = new System.Drawing.Point(42, 499);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(119, 22);
             this.label15.TabIndex = 69;
@@ -424,7 +414,7 @@
             // txtTel_resp
             // 
             this.txtTel_resp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.txtTel_resp.Location = new System.Drawing.Point(600, 463);
+            this.txtTel_resp.Location = new System.Drawing.Point(596, 493);
             this.txtTel_resp.Mask = "(99) 90000-0000";
             this.txtTel_resp.Name = "txtTel_resp";
             this.txtTel_resp.Size = new System.Drawing.Size(154, 28);
@@ -436,7 +426,7 @@
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.label16.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label16.Location = new System.Drawing.Point(506, 469);
+            this.label16.Location = new System.Drawing.Point(502, 499);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(86, 22);
             this.label16.TabIndex = 68;
@@ -446,7 +436,7 @@
             // 
             this.txtResp_qualif.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtResp_qualif.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.txtResp_qualif.Location = new System.Drawing.Point(190, 518);
+            this.txtResp_qualif.Location = new System.Drawing.Point(184, 551);
             this.txtResp_qualif.Name = "txtResp_qualif";
             this.txtResp_qualif.Size = new System.Drawing.Size(316, 28);
             this.txtResp_qualif.TabIndex = 14;
@@ -456,7 +446,7 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.label17.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label17.Location = new System.Drawing.Point(22, 525);
+            this.label17.Location = new System.Drawing.Point(16, 558);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(144, 22);
             this.label17.TabIndex = 71;
@@ -467,7 +457,7 @@
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.label18.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label18.Location = new System.Drawing.Point(98, 748);
+            this.label18.Location = new System.Drawing.Point(94, 611);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(72, 22);
             this.label18.TabIndex = 74;
@@ -476,135 +466,16 @@
             // cmbId_rota
             // 
             this.cmbId_rota.FormattingEnabled = true;
-            this.cmbId_rota.Location = new System.Drawing.Point(188, 742);
+            this.cmbId_rota.Location = new System.Drawing.Point(184, 605);
             this.cmbId_rota.Name = "cmbId_rota";
             this.cmbId_rota.Size = new System.Drawing.Size(506, 28);
             this.cmbId_rota.TabIndex = 21;
             this.cmbId_rota.Validating += new System.ComponentModel.CancelEventHandler(this.cmbId_rota_Validating);
             // 
-            // txtNaturalidade
-            // 
-            this.txtNaturalidade.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtNaturalidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.txtNaturalidade.Location = new System.Drawing.Point(188, 572);
-            this.txtNaturalidade.Name = "txtNaturalidade";
-            this.txtNaturalidade.Size = new System.Drawing.Size(199, 28);
-            this.txtNaturalidade.TabIndex = 15;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.label8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label8.Location = new System.Drawing.Point(50, 578);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(117, 22);
-            this.label8.TabIndex = 76;
-            this.label8.Text = "Naturalidade:";
-            // 
-            // txtNacionalidade
-            // 
-            this.txtNacionalidade.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtNacionalidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.txtNacionalidade.Location = new System.Drawing.Point(555, 569);
-            this.txtNacionalidade.Name = "txtNacionalidade";
-            this.txtNacionalidade.Size = new System.Drawing.Size(199, 28);
-            this.txtNacionalidade.TabIndex = 16;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.label10.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label10.Location = new System.Drawing.Point(406, 575);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(129, 22);
-            this.label10.TabIndex = 78;
-            this.label10.Text = "Nacionalidade:";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.label12.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label12.Location = new System.Drawing.Point(86, 635);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(80, 22);
-            this.label12.TabIndex = 80;
-            this.label12.Text = "Est Civil:";
-            // 
-            // cmbEst_civil
-            // 
-            this.cmbEst_civil.FormattingEnabled = true;
-            this.cmbEst_civil.Location = new System.Drawing.Point(188, 629);
-            this.cmbEst_civil.Name = "cmbEst_civil";
-            this.cmbEst_civil.Size = new System.Drawing.Size(200, 28);
-            this.cmbEst_civil.TabIndex = 17;
-            // 
-            // txtProfissao
-            // 
-            this.txtProfissao.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtProfissao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.txtProfissao.Location = new System.Drawing.Point(555, 628);
-            this.txtProfissao.Name = "txtProfissao";
-            this.txtProfissao.Size = new System.Drawing.Size(199, 28);
-            this.txtProfissao.TabIndex = 18;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.label19.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label19.Location = new System.Drawing.Point(406, 632);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(90, 22);
-            this.label19.TabIndex = 82;
-            this.label19.Text = "Profissão:";
-            // 
-            // txtRg
-            // 
-            this.txtRg.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtRg.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.txtRg.Location = new System.Drawing.Point(188, 688);
-            this.txtRg.Name = "txtRg";
-            this.txtRg.Size = new System.Drawing.Size(199, 28);
-            this.txtRg.TabIndex = 19;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.label20.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label20.Location = new System.Drawing.Point(124, 689);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(42, 22);
-            this.label20.TabIndex = 84;
-            this.label20.Text = "RG:";
-            // 
-            // txtCpf
-            // 
-            this.txtCpf.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtCpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.txtCpf.Location = new System.Drawing.Point(555, 685);
-            this.txtCpf.Name = "txtCpf";
-            this.txtCpf.Size = new System.Drawing.Size(199, 28);
-            this.txtCpf.TabIndex = 20;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.label21.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label21.Location = new System.Drawing.Point(484, 688);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(51, 22);
-            this.label21.TabIndex = 86;
-            this.label21.Text = "CPF:";
-            // 
             // txtObs
             // 
             this.txtObs.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtObs.Location = new System.Drawing.Point(190, 809);
+            this.txtObs.Location = new System.Drawing.Point(184, 668);
             this.txtObs.Multiline = true;
             this.txtObs.Name = "txtObs";
             this.txtObs.Size = new System.Drawing.Size(564, 67);
@@ -615,7 +486,7 @@
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.label22.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label22.Location = new System.Drawing.Point(118, 809);
+            this.label22.Location = new System.Drawing.Point(112, 668);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(48, 22);
             this.label22.TabIndex = 88;
@@ -625,25 +496,35 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // txtSerie
+            // 
+            this.txtSerie.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtSerie.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.txtSerie.Location = new System.Drawing.Point(652, 183);
+            this.txtSerie.Name = "txtSerie";
+            this.txtSerie.Size = new System.Drawing.Size(96, 28);
+            this.txtSerie.TabIndex = 89;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.label8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label8.Location = new System.Drawing.Point(588, 189);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(57, 22);
+            this.label8.TabIndex = 90;
+            this.label8.Text = "Série:";
+            // 
             // frmEstudante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(830, 1015);
+            this.ClientSize = new System.Drawing.Size(830, 877);
+            this.Controls.Add(this.txtSerie);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.label22);
             this.Controls.Add(this.txtObs);
-            this.Controls.Add(this.txtCpf);
-            this.Controls.Add(this.label21);
-            this.Controls.Add(this.txtRg);
-            this.Controls.Add(this.label20);
-            this.Controls.Add(this.txtProfissao);
-            this.Controls.Add(this.label19);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.cmbEst_civil);
-            this.Controls.Add(this.txtNacionalidade);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.txtNaturalidade);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.cmbId_rota);
             this.Controls.Add(this.txtResp_qualif);
@@ -728,20 +609,10 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.ComboBox cmbId_rota;
-        private System.Windows.Forms.TextBox txtNaturalidade;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtNacionalidade;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.ComboBox cmbEst_civil;
-        private System.Windows.Forms.TextBox txtProfissao;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox txtRg;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox txtCpf;
-        private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox txtObs;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.TextBox txtSerie;
+        private System.Windows.Forms.Label label8;
     }
 }
