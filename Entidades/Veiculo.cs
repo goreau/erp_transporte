@@ -124,7 +124,10 @@ namespace ERP_Transporte.Entidades
 
         public DataTable Consulta()
         {
-            string sql = "SELECT * FROM veiculo";
+            string sql = "SELECT id, placa AS Placa, modelo AS Modelo, ano AS Ano, renavam AS Renavam, capacidade AS Capacidade, " +
+                "CASE combustivel WHEN 1 THEN 'Etanol' WHEN 2 THEN 'Gasolina' WHEN 3 THEN 'Diesel' ELSE 'Flex' END AS Combustível, " +
+                "valor AS Valor, updated_at AS 'Ultima atualização' " +
+                "FROM veiculo";
 
             MySqlCommand cmd = new MySqlCommand(sql, conn);
 

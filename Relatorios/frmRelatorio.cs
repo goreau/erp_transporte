@@ -59,7 +59,7 @@ namespace ERP_Transporte.Relatorios
             cmbVeiculo.Enabled = arrVeiculo.Contains(this.tipo);
             cmbFornecedor.Enabled = arrFornecedor.Contains(this.tipo);
             txtInicio.Enabled = arrPeriodo.Contains(this.tipo);
-            txtFinal.Enabled = arrPeriodo.Contains(this.tipo);
+            txtFinal.Enabled = arrPeriodo.Contains(this.tipo) && this.tipo != 6;
 
             if (cmbEscola.Enabled)
             {
@@ -165,7 +165,7 @@ namespace ERP_Transporte.Relatorios
             {
                 if (cmbRota.SelectedValue.ToString() != "0")
                 {
-                    filt += " AND p.id_rota=" + cmbRota.SelectedValue.ToString();
+                    filt += (this.tipo == 5 || this.tipo == 6 ? " AND r.id = " : " AND p.id_rota = " ) + cmbRota.SelectedValue.ToString();
                     fant += "Trajeto: " + cmbRota.GetItemText(cmbRota.SelectedItem) + ", "; //cmbEscola.SelectedText + ", ";
                 }
             }
@@ -198,8 +198,18 @@ namespace ERP_Transporte.Relatorios
                 {
                     data = dt.Year.ToString() + "-" + dt.Month.ToString() + "-" + dt.Day.ToString();
                 }
-                filt += " AND p.data >='" + data + "'";
-                fant += "Data: " + txtInicio.Text + ", "; //cmbEscola.SelectedText + ", ";
+                if (this.tipo == 6)
+                {
+                    string ano = dt.Year.ToString();
+                    filt += " AND YEAR(p.data) = " + ano ;
+                    fant += "Ano: " + ano + ", "; 
+                }
+                else
+                {
+                    filt += (this.tipo == 5 ? " AND r.data >='" : " AND p.data >='") + data + "'";
+                    fant += "Data: " + txtInicio.Text + ", "; //cmbEscola.SelectedText + ", ";
+                }
+                
             }
 
             if (valorReal(txtFinal) != "")
@@ -211,7 +221,7 @@ namespace ERP_Transporte.Relatorios
                 {
                     data = dt.Year.ToString() + "-" + dt.Month.ToString() + "-" + dt.Day.ToString();
                 }
-                filt += " AND p.data <='" + data + "'";
+                filt += (this.tipo == 5 ? " AND r.data <='" : " AND p.data <='") + data + "'";
                 fant += "Data: " + txtFinal.Text + ", "; //cmbEscola.SelectedText + ", ";
             }
 

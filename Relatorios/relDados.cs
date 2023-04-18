@@ -47,7 +47,7 @@ namespace ERP_Transporte.Relatorios
                 "sum(CASE WHEN MONTH(p.`data`) <= 10 AND(dt_inativo IS NULL OR MONTH(dt_inativo) > 10) THEN p.valor ELSE 0 END) AS 'out', " +
                 "sum(CASE WHEN MONTH(p.`data`) <= 11 AND(dt_inativo IS NULL OR MONTH(dt_inativo) > 11) THEN p.valor ELSE 0 END) AS nov, " +
                 "sum(CASE WHEN MONTH(p.`data`) <= 12 AND(dt_inativo IS NULL OR MONTH(dt_inativo) > 12) THEN p.valor ELSE 0 END) AS dez " +
-                "FROM contrato p JOIN estudante e ON p.id_aluno = e.id JOIN rota r ON r.id = e.id_rota WHERE YEAR(p.`data`)= 2023 ";// + filt;
+                "FROM contrato p JOIN estudante e ON p.id_aluno = e.id JOIN rota r ON r.id = e.id_rota " + filt;// ;WHERE YEAR(p.`data`)= 2023
 
             MySqlCommand cmd = new MySqlCommand(sql, conn);
 

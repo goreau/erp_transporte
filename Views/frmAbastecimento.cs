@@ -152,10 +152,6 @@ namespace ERP_Transporte.Views
             {
                 rbDiesel.Checked = true;
             }
-            else
-            {
-                rbFlex.Checked = true;
-            }
 
             txtVencimento.Text = dr["vencimento"].ToString();
             string arq = dr["arquivo"].ToString();

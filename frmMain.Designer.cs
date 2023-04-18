@@ -78,10 +78,10 @@
             this.abastecimentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manutençãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rendimentoPorRotaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.previsáoDeRecursosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ajudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
-            this.previsáoDeRecursosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -202,20 +202,20 @@
             this.consultarToolStripMenuItem3});
             this.rotasToolStripMenuItem.Image = global::ERP_Transporte.Properties.Resources.rotas_48;
             this.rotasToolStripMenuItem.Name = "rotasToolStripMenuItem";
-            this.rotasToolStripMenuItem.Size = new System.Drawing.Size(88, 29);
-            this.rotasToolStripMenuItem.Text = "Rota";
+            this.rotasToolStripMenuItem.Size = new System.Drawing.Size(104, 29);
+            this.rotasToolStripMenuItem.Text = "Trajeto";
             // 
             // cadastrarToolStripMenuItem3
             // 
             this.cadastrarToolStripMenuItem3.Name = "cadastrarToolStripMenuItem3";
-            this.cadastrarToolStripMenuItem3.Size = new System.Drawing.Size(189, 34);
+            this.cadastrarToolStripMenuItem3.Size = new System.Drawing.Size(270, 34);
             this.cadastrarToolStripMenuItem3.Text = "Cadastrar";
             this.cadastrarToolStripMenuItem3.Click += new System.EventHandler(this.cadastrarToolStripMenuItem3_Click);
             // 
             // consultarToolStripMenuItem3
             // 
             this.consultarToolStripMenuItem3.Name = "consultarToolStripMenuItem3";
-            this.consultarToolStripMenuItem3.Size = new System.Drawing.Size(189, 34);
+            this.consultarToolStripMenuItem3.Size = new System.Drawing.Size(270, 34);
             this.consultarToolStripMenuItem3.Text = "Consultar";
             this.consultarToolStripMenuItem3.Click += new System.EventHandler(this.consultarToolStripMenuItem3_Click);
             // 
@@ -483,6 +483,13 @@
             this.rendimentoPorRotaToolStripMenuItem.Text = "Receita por Rota";
             this.rendimentoPorRotaToolStripMenuItem.Click += new System.EventHandler(this.rendimentoPorRotaToolStripMenuItem_Click);
             // 
+            // previsáoDeRecursosToolStripMenuItem
+            // 
+            this.previsáoDeRecursosToolStripMenuItem.Name = "previsáoDeRecursosToolStripMenuItem";
+            this.previsáoDeRecursosToolStripMenuItem.Size = new System.Drawing.Size(280, 34);
+            this.previsáoDeRecursosToolStripMenuItem.Text = "Previsáo de Recursos";
+            this.previsáoDeRecursosToolStripMenuItem.Click += new System.EventHandler(this.previsáoDeRecursosToolStripMenuItem_Click);
+            // 
             // ajudaToolStripMenuItem
             // 
             this.ajudaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -504,13 +511,6 @@
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
             this.toolStripMenuItem4.Size = new System.Drawing.Size(98, 29);
             this.toolStripMenuItem4.Text = "              ";
-            // 
-            // previsáoDeRecursosToolStripMenuItem
-            // 
-            this.previsáoDeRecursosToolStripMenuItem.Name = "previsáoDeRecursosToolStripMenuItem";
-            this.previsáoDeRecursosToolStripMenuItem.Size = new System.Drawing.Size(280, 34);
-            this.previsáoDeRecursosToolStripMenuItem.Text = "Previsáo de Recursos";
-            this.previsáoDeRecursosToolStripMenuItem.Click += new System.EventHandler(this.previsáoDeRecursosToolStripMenuItem_Click);
             // 
             // frmMain
             // 

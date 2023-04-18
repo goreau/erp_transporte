@@ -148,3 +148,5 @@ C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP Transporte.
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP Transporte.csproj.CopyComplete
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP Transporte.exe
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP Transporte.pdb
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\System.ValueTuple.dll
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\System.ValueTuple.xml

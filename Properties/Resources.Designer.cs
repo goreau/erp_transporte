@@ -203,6 +203,16 @@ namespace ERP_Transporte.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap filter_24 {
+            get {
+                object obj = ResourceManager.GetObject("filter-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap gasolina_48 {
             get {
                 object obj = ResourceManager.GetObject("gasolina-48", resourceCulture);
@@ -266,6 +276,16 @@ namespace ERP_Transporte.Properties {
         internal static System.Drawing.Bitmap selecionado_24 {
             get {
                 object obj = ResourceManager.GetObject("selecionado-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tabela_48 {
+            get {
+                object obj = ResourceManager.GetObject("tabela-48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

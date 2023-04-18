@@ -130,7 +130,8 @@ namespace ERP_Transporte.Entidades
 
         public DataTable Consulta()
         {
-            string sql = "SELECT * FROM pagamento";
+            string sql = "SELECT p.id, p.dia_vencimento AS 'Dia Vcto', f.nome AS Fornecedor, a.nome AS Categoria, p.valor AS Valor, p.data AS 'Data', p.updated_at AS 'Ultima atualização' " +
+                "FROM pagamento p JOIN fornecedor f ON f.id = p.id_fornecedor JOIN auxiliar a ON a.id = p.categoria";
 
             MySqlCommand cmd = new MySqlCommand(sql, conn);
 

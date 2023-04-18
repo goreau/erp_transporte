@@ -186,7 +186,9 @@ namespace ERP_Transporte.Entidades
 
         public DataTable Consulta()
         {
-            string sql = "SELECT * FROM colaborador";
+            string sql = "SELECT c.id, c.nome AS Nome, a.nome AS Função, aa.nome AS Categoria, DATE_FORMAT(c.dt_admissao, '%d/%m/%Y') as Admissão, " +
+                "rg AS RG, cpf AS CPF, cnh AS CNH, cnh_categoria AS Categoria, DATE_FORMAT(c.dt_validade, '%d/%m/%Y') AS Validade, remuneracao AS Remuneração, c.updated_at AS 'Ultima atualização' " +
+                "FROM colaborador c JOIN auxiliar a ON a.id = c.funcao JOIN auxiliar aa ON aa.id = c.categoria";
 
             MySqlCommand cmd = new MySqlCommand(sql, conn);
 

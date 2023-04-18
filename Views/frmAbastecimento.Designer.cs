@@ -49,7 +49,6 @@
             this.txtId = new System.Windows.Forms.TextBox();
             this.txtCombustivel = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rbFlex = new System.Windows.Forms.RadioButton();
             this.rbDiesel = new System.Windows.Forms.RadioButton();
             this.rbGasolina = new System.Windows.Forms.RadioButton();
             this.rbAlcool = new System.Windows.Forms.RadioButton();
@@ -275,32 +274,17 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.rbFlex);
             this.groupBox1.Controls.Add(this.rbDiesel);
             this.groupBox1.Controls.Add(this.rbGasolina);
             this.groupBox1.Controls.Add(this.rbAlcool);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(189, 405);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(525, 101);
+            this.groupBox1.Size = new System.Drawing.Size(427, 101);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Combustível";
             this.groupBox1.Validating += new System.ComponentModel.CancelEventHandler(this.groupBox1_Validating);
-            // 
-            // rbFlex
-            // 
-            this.rbFlex.AutoSize = true;
-            this.rbFlex.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.rbFlex.Location = new System.Drawing.Point(434, 41);
-            this.rbFlex.Name = "rbFlex";
-            this.rbFlex.Size = new System.Drawing.Size(69, 26);
-            this.rbFlex.TabIndex = 4;
-            this.rbFlex.TabStop = true;
-            this.rbFlex.Tag = "4";
-            this.rbFlex.Text = "Flex";
-            this.rbFlex.UseVisualStyleBackColor = true;
-            this.rbFlex.CheckedChanged += new System.EventHandler(this.rbAlcool_CheckedChanged);
             // 
             // rbDiesel
             // 
@@ -509,7 +493,6 @@
         private System.Windows.Forms.Button btSalva;
         private System.Windows.Forms.TextBox txtCombustivel;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton rbFlex;
         private System.Windows.Forms.RadioButton rbDiesel;
         private System.Windows.Forms.RadioButton rbGasolina;
         private System.Windows.Forms.RadioButton rbAlcool;

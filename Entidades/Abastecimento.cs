@@ -191,7 +191,9 @@ namespace ERP_Transporte.Entidades
 
         public DataTable Consulta()
         {
-            string sql = "SELECT * FROM abastecimento";
+            string sql = "SELECT m.id, CONCAT(v.modelo, '(', v.placa, ')') AS Veículo, km AS Km, f.nome AS fornecedor, m.litros AS Quantidade, m.valor_litro AS 'Valor Litro', CASE m.combustivel WHEN 1 THEN 'Etanol' WHEN 2 THEN 'Gasolina' ELSE 'Diesel' END AS Combustível, CASE m.pagamento WHEN 1 THEN 'Cartão' WHEN 2 THEN 'Dinheiro' ELSE 'Cheque' END AS 'Forma Pgto', " +
+                "DATE_FORMAT(m.vencimento, '%d/%m/%Y') as Vencimento, m.updated_at AS 'Ultima atualização' " +
+                "FROM abastecimento m JOIN veiculo v ON v.id = m.id_veiculo JOIN fornecedor AS f ON f.id = m.id_fornecedor";
 
             MySqlCommand cmd = new MySqlCommand(sql, conn);
 

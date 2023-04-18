@@ -97,7 +97,8 @@ namespace ERP_Transporte.Entidades
 
         public DataTable Consulta()
         {
-            string sql = "SELECT * FROM rota";
+            string sql = "SELECT r.id, r.nome AS Nome, e.nome AS Escola, km AS Km, valor_km AS 'Valor Km', r.updated_at AS 'Ultima atualização' " +
+                "FROM rota r JOIN escola e ON e.id = r.id_escola";
 
             MySqlCommand cmd = new MySqlCommand(sql, conn);
 

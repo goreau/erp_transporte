@@ -95,7 +95,8 @@ namespace ERP_Transporte.Entidades
 
         public DataTable Consulta()
         {
-            string sql = "SELECT * FROM fornecedor";
+            string sql = "SELECT f.id, f.nome AS Nome, telefone AS Telefone, a.nome AS Categoria, f.updated_at AS 'Ultima atualização' " +
+                "FROM fornecedor f JOIN auxiliar a ON a.id = f.categoria";
 
             MySqlCommand cmd = new MySqlCommand(sql, conn);
 

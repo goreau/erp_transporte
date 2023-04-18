@@ -110,7 +110,8 @@ namespace ERP_Transporte.Entidades
 
         public DataTable Consulta()
         {
-            string sql = "SELECT * FROM recebimento";
+            string sql = "SELECT r.id, t.nome AS Trajeto, e.nome AS Estudante, r.ano AS Ano, r.mes AS Mes, r.valor AS Valor, DATE_FORMAT(r.data, '%d/%m/%Y') AS 'Data', r.updated_at AS 'Ultima atualização' " +
+                "FROM recebimento r JOIN contrato c ON c.id = r.id_contrato JOIN estudante e ON c.id_aluno = e.id JOIN rota t ON t.id = e.id_rota";
 
             MySqlCommand cmd = new MySqlCommand(sql, conn);
 

@@ -16,6 +16,9 @@ namespace ERP_Transporte.Views
         private DataTable dados;
         private int idxTabela;
         private int idSelecionado;
+        private DataTable filtered;
+        
+
         public frmConsulta(DataTable dd, int tab)
         {
             InitializeComponent();
@@ -26,6 +29,8 @@ namespace ERP_Transporte.Views
         private void loadDados(DataTable dd)
         {
             this.dados = dd;
+            this.filtered = new DataTable();
+
             dgConsulta.DataSource = this.dados;
             dgConsulta.Columns[0].Visible = false;
         }
@@ -189,6 +194,83 @@ namespace ERP_Transporte.Views
             }
 
             dgConsulta.Height = height;
+        }
+
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var value = dgConsulta.SelectedCells[0].Value.ToString();
+            var col = dgConsulta.SelectedCells[0].ColumnIndex;
+
+            Type tp = this.dados.Columns[col].DataType;
+            string name = this.dados.Columns[col].ColumnName;
+
+            if (this.filtered.Rows.Count > 0)
+            {
+                if (tp == typeof(Int32))
+                {
+                    filtered = this.filtered.AsEnumerable()
+                      .Where(row => row.Field<int>(name) == int.Parse(value))
+                      .CopyToDataTable();
+
+                }
+                else if (tp == typeof(String))
+                {
+                    filtered = this.filtered.AsEnumerable()
+                      .Where(row => row.Field<String>(name) == value)
+                      .CopyToDataTable();
+                }
+                else if (tp == typeof(DateTime))
+                {
+                    filtered = this.filtered.AsEnumerable()
+                      .Where(row => row.Field<DateTime>(name) == DateTime.Parse(value))
+                      .CopyToDataTable();
+                }
+                else
+                {
+                    filtered = this.filtered.AsEnumerable()
+                      .Where(row => row.Field<decimal>(name) == Decimal.Parse(value))
+                      .CopyToDataTable();
+                }
+            } 
+            else
+            {
+                if (tp == typeof(Int32))
+                {
+                    filtered = this.dados.AsEnumerable()
+                      .Where(row => row.Field<int>(name) == int.Parse(value))
+                      .CopyToDataTable();
+
+                }
+                else if (tp == typeof(String))
+                {
+                    filtered = this.dados.AsEnumerable()
+                      .Where(row => row.Field<String>(name) == value)
+                      .CopyToDataTable();
+                }
+                else if (tp == typeof(DateTime))
+                {
+                    filtered = this.dados.AsEnumerable()
+                      .Where(row => row.Field<DateTime>(name) == DateTime.Parse(value))
+                      .CopyToDataTable();
+                }
+                else
+                {
+                    filtered = this.dados.AsEnumerable()
+                      .Where(row => row.Field<decimal>(name) == Decimal.Parse(value))
+                      .CopyToDataTable();
+                }
+            }
+
+
+            this.dgConsulta.DataSource = filtered;
+
+        }
+
+        private void btClear_Click(object sender, EventArgs e)
+        {
+            this.dgConsulta.DataSource = dados;
+            this.filtered.Clear();
         }
     }
 }

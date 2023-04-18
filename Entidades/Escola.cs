@@ -103,7 +103,10 @@ namespace ERP_Transporte.Entidades
             
         public DataTable Consulta()
         {
-            string sql = "SELECT * FROM escola";
+            string sql = "SELECT id, nome AS Nome, CONCAT(logradouro, ', ', numero, ' - ', bairro) AS Endereço, " +
+                "telefone AS Telefone, CASE periodo WHEN 1 THEN 'M' WHEN 2 THEN 'T' ELSE 'I' END AS Período, " +
+                "TIME_FORMAT(entrada, '%H %i') AS Entrada, TIME_FORMAT(saida, '%H %i') AS Saída, TIME_FORMAT(especial, '%H %i') AS Especial, " +
+                "updated_at AS 'Ultima atualização' FROM escola";
 
             MySqlCommand cmd = new MySqlCommand(sql, conn);
 
