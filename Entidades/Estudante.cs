@@ -166,7 +166,7 @@ namespace ERP_Transporte.Entidades
 
         public DataRow Contrato(int id)
         {
-            string sql = "SELECT e.`id`, e.`nome` as 'Nome', s.nome as 'Escola', s.telefone as 'TelEscola', CONCAT(s.`logradouro`,', nº ', s.`numero`, ', Bairro: ', s.`bairro`) as 'EndEscola',  e.`periodo` as 'Periodo', `ra_rg` as 'RA', `dt_nascimento` as 'Nascimento', `pai` as 'NomePai', `tel_pai` as 'TelPai', `mae` as 'NomeMae', `tel_mae` as 'TelMae', " +
+            string sql = "SELECT e.`id`, e.`nome` as 'Nome', s.nome as 'Escola', s.telefone as 'TelEscola', CONCAT(s.`logradouro`,', nº ', s.`numero`, ', Bairro: ', s.`bairro`) as 'EndEscola',  e.`periodo` as 'Periodo', `ra_rg` as 'RA', DATE_FORMAT(dt_nascimento, '%d/%m/%Y') as 'Nascimento', `pai` as 'NomePai', `tel_pai` as 'TelPai', `mae` as 'NomeMae', `tel_mae` as 'TelMae', " +
                 "`responsavel` as 'NomeResp', `resp_qualif` as 'Qualificacao', `tel_resp` as 'TelResp',  " +
                 "r.nome as 'Rota', e.resp_nasc as 'RespNasc', s.entrada, s.saida, e.serie " +
                 "FROM `estudante` e JOIN escola s on e.id_escola=s.id JOIN rota r on e.id_rota = r.id  WHERE e.id=@id";
@@ -244,7 +244,7 @@ namespace ERP_Transporte.Entidades
             dr["nome"] = "-- Selecione --";
             dt.Rows.Add(dr);
 
-            dt.DefaultView.Sort = "id";
+            dt.DefaultView.Sort = "nome";
             dt = dt.DefaultView.ToTable();
 
 

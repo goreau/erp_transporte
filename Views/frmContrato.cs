@@ -51,25 +51,12 @@ namespace ERP_Transporte.Views
             string[] parent;
             string quali = "";
 
-            if (dr_contr["id_contratante"].ToString() == "1")
-            {
-                resp = dr_est["NomePai"].ToString();
-                telresp = dr_est["TelPai"].ToString();
-                parent = new string[3] { "X", " ", " " };
-            } 
-            else if (dr_contr["id_contratante"].ToString() == "2")
-            {
-                resp = dr_est["NomeMae"].ToString();
-                telresp = dr_est["TelMae"].ToString();
-                parent = new string[3] { " ", "X", " " };
-            }
-            else 
-            {
-                resp = dr_est["NomeResp"].ToString();
-                telresp = dr_est["TelResp"].ToString();
-                parent = new string[3] { " ", " ", "X" };
-                quali = dr_est["Qualificacao"].ToString();
-            }
+            
+            resp = dr_est["NomeResp"].ToString();
+            telresp = dr_est["TelResp"].ToString();
+            parent = new string[3] { " ", " ", "X" };
+            quali = dr_est["Qualificacao"].ToString();
+            
 
             string[] period;
 

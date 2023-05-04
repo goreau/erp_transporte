@@ -48,7 +48,7 @@
             this.dgConsulta.Name = "dgConsulta";
             this.dgConsulta.RowHeadersWidth = 62;
             this.dgConsulta.RowTemplate.Height = 28;
-            this.dgConsulta.Size = new System.Drawing.Size(982, 573);
+            this.dgConsulta.Size = new System.Drawing.Size(1530, 573);
             this.dgConsulta.TabIndex = 0;
             this.dgConsulta.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
             this.dgConsulta.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgConsulta_RowEnter);
@@ -62,16 +62,15 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 573);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(982, 82);
+            this.panel1.Size = new System.Drawing.Size(1530, 82);
             this.panel1.TabIndex = 3;
             // 
             // btClear
             // 
-            this.btClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btClear.Image = global::ERP_Transporte.Properties.Resources.tabela_48;
-            this.btClear.Location = new System.Drawing.Point(179, 18);
+            this.btClear.Image = global::ERP_Transporte.Properties.Resources.grid_16;
+            this.btClear.Location = new System.Drawing.Point(243, 18);
             this.btClear.Name = "btClear";
-            this.btClear.Size = new System.Drawing.Size(139, 49);
+            this.btClear.Size = new System.Drawing.Size(212, 49);
             this.btClear.TabIndex = 4;
             this.btClear.Text = "Remover ";
             this.btClear.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -81,11 +80,10 @@
             // 
             // btFiltrar
             // 
-            this.btFiltrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btFiltrar.Image = global::ERP_Transporte.Properties.Resources.filter_24;
-            this.btFiltrar.Location = new System.Drawing.Point(34, 18);
+            this.btFiltrar.Image = global::ERP_Transporte.Properties.Resources.filter_16;
+            this.btFiltrar.Location = new System.Drawing.Point(12, 18);
             this.btFiltrar.Name = "btFiltrar";
-            this.btFiltrar.Size = new System.Drawing.Size(139, 49);
+            this.btFiltrar.Size = new System.Drawing.Size(212, 49);
             this.btFiltrar.TabIndex = 3;
             this.btFiltrar.Text = "Filtrar";
             this.btFiltrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -97,7 +95,7 @@
             // 
             this.btDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btDelete.Image = global::ERP_Transporte.Properties.Resources.delete_24;
-            this.btDelete.Location = new System.Drawing.Point(586, 18);
+            this.btDelete.Location = new System.Drawing.Point(1134, 18);
             this.btDelete.Name = "btDelete";
             this.btDelete.Size = new System.Drawing.Size(204, 49);
             this.btDelete.TabIndex = 1;
@@ -111,7 +109,7 @@
             // 
             this.btEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btEdit.Image = global::ERP_Transporte.Properties.Resources.edite_24;
-            this.btEdit.Location = new System.Drawing.Point(273, 18);
+            this.btEdit.Location = new System.Drawing.Point(821, 18);
             this.btEdit.Name = "btEdit";
             this.btEdit.Size = new System.Drawing.Size(204, 49);
             this.btEdit.TabIndex = 0;
@@ -125,7 +123,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(982, 655);
+            this.ClientSize = new System.Drawing.Size(1530, 655);
             this.Controls.Add(this.dgConsulta);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

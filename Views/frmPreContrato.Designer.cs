@@ -63,7 +63,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtNacionalidade = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.cmbContratante = new System.Windows.Forms.ComboBox();
             this.txtTrajeto = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.rbOutro = new System.Windows.Forms.RadioButton();
@@ -78,6 +77,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.txtData = new System.Windows.Forms.MaskedTextBox();
             this.label14 = new System.Windows.Forms.Label();
+            this.lblResponsavel = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -436,16 +436,6 @@
             this.label3.TabIndex = 119;
             this.label3.Text = "Contratante:";
             // 
-            // cmbContratante
-            // 
-            this.cmbContratante.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbContratante.FormattingEnabled = true;
-            this.cmbContratante.Location = new System.Drawing.Point(166, 155);
-            this.cmbContratante.Name = "cmbContratante";
-            this.cmbContratante.Size = new System.Drawing.Size(411, 30);
-            this.cmbContratante.TabIndex = 2;
-            this.cmbContratante.Validating += new System.ComponentModel.CancelEventHandler(this.cmbContratante_Validating);
-            // 
             // txtTrajeto
             // 
             this.txtTrajeto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
@@ -598,11 +588,21 @@
             this.label14.TabIndex = 152;
             this.label14.Text = "Data:";
             // 
+            // lblResponsavel
+            // 
+            this.lblResponsavel.AutoSize = true;
+            this.lblResponsavel.Location = new System.Drawing.Point(167, 160);
+            this.lblResponsavel.Name = "lblResponsavel";
+            this.lblResponsavel.Size = new System.Drawing.Size(60, 20);
+            this.lblResponsavel.TabIndex = 153;
+            this.lblResponsavel.Text = "label15";
+            // 
             // frmPreContrato
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1185, 841);
+            this.Controls.Add(this.lblResponsavel);
             this.Controls.Add(this.txtData);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
@@ -639,7 +639,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtNacionalidade);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.cmbContratante);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.cmbAluno);
             this.Controls.Add(this.label2);
@@ -692,7 +691,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtNacionalidade;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cmbContratante;
         private System.Windows.Forms.TextBox txtTrajeto;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.RadioButton rbIdaevolta;
@@ -707,5 +705,6 @@
         private System.Windows.Forms.CheckBox chkInativo;
         private System.Windows.Forms.MaskedTextBox txtData;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label lblResponsavel;
     }
 }

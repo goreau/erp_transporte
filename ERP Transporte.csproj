@@ -400,6 +400,8 @@
     </None>
     <None Include="Resources\filter-24.png" />
     <None Include="Resources\tabela-48.png" />
+    <None Include="Resources\filter-16.png" />
+    <None Include="Resources\grid-16.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

@@ -37,7 +37,16 @@ namespace ERP_Transporte.Views
 
         private void frmConsulta_Load(object sender, EventArgs e)
         {
-            this.Width = Screen.PrimaryScreen.Bounds.Width;
+            this.Width = Screen.PrimaryScreen.Bounds.Width - 20;
+            if (dgConsulta.Rows.Count > 20)
+            {
+                this.Height = Screen.PrimaryScreen.Bounds.Height;
+            }
+            else
+            {
+                this.Height = dgConsulta.Rows.Count * 40;
+            }
+            
             this.Left = 0;
             this.Top = 0;
         }
@@ -187,13 +196,13 @@ namespace ERP_Transporte.Views
 
         private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
-            var height = 40;
+           /* var height = 40;
             foreach (DataGridViewRow dr in dgConsulta.Rows)
             {
                 height += dr.Height;
             }
 
-            dgConsulta.Height = height;
+            dgConsulta.Height = height;*/
         }
 
 

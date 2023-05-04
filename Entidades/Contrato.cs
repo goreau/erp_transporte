@@ -26,10 +26,10 @@ namespace ERP_Transporte.Entidades
 
         public int Add(frmPreContrato form)
         {
-            string sql = "INSERT INTO `contrato`(`id_aluno`, `id_contratante`, `logradouro`, `numero`, `bairro`, `nacionalidade`, `dt_nascimento`, `est_civil`, " +
-                "`rg`, `emissor`, `cpf`, `profissao`, `naturalidade`, `valor`, `dia`, `trajeto`, `traj_esp`, `data`) " +
-                "VALUES (@id_aluno, @id_contratante, @logradouro, @numero, @bairro, @nacionalidade, @dt_nascimento, @est_civil, " +
-                "@rg, @emissor, @cpf, @profissao, @naturalidade, @valor, @dia, @trajeto, @traj_esp, @data)";
+            string sql = "INSERT INTO `contrato`(`id_aluno`, `logradouro`, `numero`, `bairro`, `nacionalidade`, `dt_nascimento`, `est_civil`, " +
+                "`rg`, `emissor`, `cpf`, `profissao`, `naturalidade`, `valor`, `dia`, `trajeto`, `trajeto_esp`, `data`) " +
+                "VALUES (@id_aluno, @logradouro, @numero, @bairro, @nacionalidade, @dt_nascimento, @est_civil, " +
+                "@rg, @emissor, @cpf, @profissao, @naturalidade, @valor, @dia, @trajeto, @trajeto_esp, @data)";
 
             MySqlCommand cmd = new MySqlCommand(sql, conn);
 
@@ -37,10 +37,6 @@ namespace ERP_Transporte.Entidades
             var cmb = form.Controls.OfType<ComboBox>().FirstOrDefault(r => r.Name == "cmbAluno");
 
             cmd.Parameters.AddWithValue("@id_aluno", cmb.SelectedValue);
-
-            cmb = form.Controls.OfType<ComboBox>().FirstOrDefault(r => r.Name == "cmbContratante");
-
-            cmd.Parameters.AddWithValue("@id_contratante", cmb.SelectedIndex);
 
             cmd.Parameters.AddWithValue("@logradouro", form.Controls["txtLogradouro"].Text);
             cmd.Parameters.AddWithValue("@numero", form.Controls["txtNumero"].Text);
@@ -67,7 +63,9 @@ namespace ERP_Transporte.Entidades
             cmd.Parameters.AddWithValue("@dia", form.Controls["txtDia"].Text);
 
             cmd.Parameters.AddWithValue("@trajeto", form.Controls["txtTrajeto"].Text);
-            cmd.Parameters.AddWithValue("@trajeto_esp", form.Controls["txtTrajeto_esp"].Text);
+
+            string aux = form.Controls["txtTrajeto"].Text == "4" ? form.Controls["txtTrajeto_esp"].Text : " ";
+            cmd.Parameters.AddWithValue("@trajeto_esp", aux);
 
             dt = Convert.ToDateTime(form.Controls["txtData"].Text);
 
@@ -196,7 +194,7 @@ namespace ERP_Transporte.Entidades
 
         public DataRow ContratoData(int id)
         {
-            string sql = "SELECT c.`id`, c.id_aluno as 'id_aluno', CONCAT(c.`logradouro`,', nº ', c.`numero`, ', Bairro: ', `bairro`) as 'Endereco', `dt_nascimento` as 'Nascimento', id_contratante, " +
+            string sql = "SELECT c.`id`, c.id_aluno as 'id_aluno', CONCAT(c.`logradouro`,', nº ', c.`numero`, ', Bairro: ', `bairro`) as 'Endereco', DATE_FORMAT(dt_nascimento, '%d/%m/%Y') as 'Nascimento',  " +
                 "`naturalidade` as 'Naturalidade', `nacionalidade` as 'Nacionalidade', (CASE `est_civil` WHEN 1 THEN 'Solteiro' WHEN 2 THEN 'Casado' WHEN 3 THEN 'União Est' ELSE 'Viúvo' END)  as 'EstadoCivil', `rg` as 'RG', `emissor` as 'Emissor',`cpf` as 'CPF', profissao as 'Profissao', " +
                 "c.valor, c.dia, trajeto, trajeto_esp " +
                 "FROM `contrato` c  WHERE c.id=@id";

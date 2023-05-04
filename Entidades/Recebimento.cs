@@ -158,7 +158,7 @@ namespace ERP_Transporte.Entidades
 
         public DataRow Recibo(int id)
         {
-            string sql = "SELECT r.valor, r.data, c.cpf, (CASE WHEN id_contratante=1 THEN e.pai WHEN id_contratante=2 THEN e.mae ELSE e.responsavel END) as pagador " +
+            string sql = "SELECT r.valor, r.data, c.cpf, e.responsavel as pagador " +
                 "FROM recebimento r join contrato c on r.id_contrato=c.id JOIN estudante e on e.id=c.id_aluno WHERE r.id=@id";
 
             MySqlCommand cmd = new MySqlCommand(sql, conn);

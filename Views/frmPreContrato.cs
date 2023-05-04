@@ -52,20 +52,8 @@ namespace ERP_Transporte.Views
 
             dr_estudante = obj.Get(aluno);
 
-            cmbContratante.Items.Insert(0, "-- Selecione --");
-            if (dr_estudante["pai"].ToString() != "")
-            {
-                cmbContratante.Items.Insert(1, dr_estudante["pai"].ToString());
-            }
-            if (dr_estudante["mae"].ToString() != "")
-            {
-                cmbContratante.Items.Insert(2, dr_estudante["mae"].ToString());
-            }
-            if (dr_estudante["responsavel"].ToString() != "")
-            {
-                cmbContratante.Items.Insert(1, dr_estudante["responsavel"].ToString());
-            }
-            cmbContratante.SelectedIndex = 0;
+            lblResponsavel.Text = dr_estudante["responsavel"].ToString();
+          
         }
 
         private void cmbAluno_SelectedIndexChanged(object sender, EventArgs e)
@@ -82,9 +70,10 @@ namespace ERP_Transporte.Views
             {
                 return;
             }
-            this.btContrato.Enabled = id > 0;
 
             DataRow dados = ctr.Get(id);
+
+            this.btContrato.Enabled = dados != null;
             if (dados != null)
             {
                 this.id_contrato = int.Parse(dados["id"].ToString());
@@ -111,7 +100,6 @@ namespace ERP_Transporte.Views
             txtCpf.Text = dr["cpf"].ToString();
             txtProfissao.Text = dr["profissao"].ToString();
             txtDt_nascimento.Text = dr["dt_nascimento"].ToString();
-            cmbContratante.SelectedIndex = Convert.ToInt16(dr["id_contratante"].ToString());
             cmbEst_civil.SelectedIndex = Convert.ToInt16(dr["est_civil"].ToString());
             txtLogradouro.Text = dr["logradouro"].ToString();
             txtNacionalidade.Text = dr["nacionalidade"].ToString();
@@ -244,28 +232,7 @@ namespace ERP_Transporte.Views
         }
 
         #region Validate
-        private void cmbContratante_Validating(object sender, CancelEventArgs e)
-        {
-            validateContratante();
-        }
-
-        private bool validateContratante()
-        {
-
-            bool bStatus = true;
-
-            if (cmbContratante.SelectedItem != null && cmbContratante.SelectedItem.ToString() != "0")
-            {
-                errorProvider1.SetError(cmbContratante, "");
-            }
-            else
-            {
-                errorProvider1.SetError(cmbContratante, "É necessário informar o resaponsável pelo contrato.");
-                bStatus = false;
-            }
-
-            return bStatus;
-        }
+       
 
         private void txtLogradouro_Validating(object sender, CancelEventArgs e)
         {
