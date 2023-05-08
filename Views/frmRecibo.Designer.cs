@@ -50,6 +50,7 @@
             this.Name = "frmRecibo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Recibo";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmRecibo_Load);
             this.ResumeLayout(false);
 

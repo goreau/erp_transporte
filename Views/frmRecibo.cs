@@ -41,14 +41,16 @@ namespace ERP_Transporte.Views
          //   Conversor conv = new Conversor();
 
             string extenso = Conversor.EscreverExtenso(valor);
+            string mes = System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(Convert.ToInt16(dr["mes"].ToString()));
 
             this.reportViewer1.LocalReport.SetParameters(new Microsoft.Reporting.WinForms.ReportParameter("pagador", dr["pagador"].ToString()));
             this.reportViewer1.LocalReport.SetParameters(new Microsoft.Reporting.WinForms.ReportParameter("valor", dr["valor"].ToString()));
             this.reportViewer1.LocalReport.SetParameters(new Microsoft.Reporting.WinForms.ReportParameter("cpf", dr["cpf"].ToString()));
             this.reportViewer1.LocalReport.SetParameters(new Microsoft.Reporting.WinForms.ReportParameter("data", dr["data"].ToString()));
             this.reportViewer1.LocalReport.SetParameters(new Microsoft.Reporting.WinForms.ReportParameter("extenso", extenso));
-
-
+            this.reportViewer1.LocalReport.SetParameters(new Microsoft.Reporting.WinForms.ReportParameter("ano", dr["ano"].ToString()));
+            this.reportViewer1.LocalReport.SetParameters(new Microsoft.Reporting.WinForms.ReportParameter("mes", mes));
+            
             this.reportViewer1.RefreshReport();
         }
     }
