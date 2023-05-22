@@ -1,8 +1,40 @@
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP Transporte.csproj.AssemblyReference.cache
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP Transporte.csproj.SuggestedBindingRedirects.cache
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.Auxiliares.frmSobre.resources
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.Auxiliares.frmSplash.resources
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.frmMain.resources
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.Properties.Resources.resources
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.Relatorios.frmRelatorio.resources
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.Views.frmAbastecimento.resources
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.Views.frmAuxiliar.resources
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.Views.frmColaborador.resources
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.Views.frmConsulta.resources
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.Views.frmContrato.resources
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.Views.frmDespesa.resources
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.Views.frmDias.resources
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.Views.frmEmpresa.resources
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.Views.frmEscola.resources
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.Views.frmEstudante.resources
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.Views.frmFornecedor.resources
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.Views.frmLiquidacao.resources
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.Views.frmLiquidacaoEd.resources
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.Views.frmManutencao.resources
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.Views.frmPagamento.resources
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.Views.frmPreContrato.resources
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.Views.frmRecebimento.resources
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.Views.frmRecibo.resources
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.Views.frmRota.resources
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.Views.frmTrafego.resources
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.Views.frmVeiculo.resources
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP Transporte.csproj.GenerateResource.cache
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP Transporte.csproj.CoreCompileInputs.cache
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\SqlServerTypes\x64\msvcr120.dll
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\SqlServerTypes\x64\SqlServerSpatial140.dll
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\SqlServerTypes\x86\msvcr120.dll
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\SqlServerTypes\x86\SqlServerSpatial140.dll
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\Relatorios\rptAbastecimento.rdlc
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\Relatorios\rptDespesa.rdlc
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\Relatorios\rptLiquidacao.rdlc
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\Relatorios\rptListaAlunos.rdlc
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\Relatorios\rptListaEscola.rdlc
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\Relatorios\rptManutencao.rdlc
@@ -46,6 +78,7 @@ C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\System.Memory.d
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\System.Numerics.Vectors.dll
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\System.Threading.Tasks.Extensions.dll
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\System.ValueTuple.dll
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\EnvDTE.dll
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\Microsoft.ReportViewer.WebForms.dll
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\Microsoft.ReportViewer.Common.dll
@@ -58,6 +91,7 @@ C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\System.Memory.x
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\System.Numerics.Vectors.xml
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\System.Threading.Tasks.Extensions.xml
+C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\System.ValueTuple.xml
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\de\Microsoft.ReportViewer.DataVisualization.resources.dll
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\es\Microsoft.ReportViewer.DataVisualization.resources.dll
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
@@ -118,35 +152,6 @@ C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\pt\Microsoft.Re
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\ru\Microsoft.ReportViewer.Common.resources.dll
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
-C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP Transporte.csproj.AssemblyReference.cache
-C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP Transporte.csproj.SuggestedBindingRedirects.cache
-C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.Auxiliares.frmSobre.resources
-C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.Auxiliares.frmSplash.resources
-C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.frmMain.resources
-C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.Properties.Resources.resources
-C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.Relatorios.frmRelatorio.resources
-C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.Views.frmAbastecimento.resources
-C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.Views.frmAuxiliar.resources
-C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.Views.frmColaborador.resources
-C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.Views.frmConsulta.resources
-C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.Views.frmContrato.resources
-C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.Views.frmDias.resources
-C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.Views.frmEmpresa.resources
-C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.Views.frmEscola.resources
-C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.Views.frmEstudante.resources
-C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.Views.frmFornecedor.resources
-C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.Views.frmManutencao.resources
-C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.Views.frmPagamento.resources
-C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.Views.frmPreContrato.resources
-C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.Views.frmRecebimento.resources
-C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.Views.frmRecibo.resources
-C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.Views.frmRota.resources
-C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.Views.frmTrafego.resources
-C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP_Transporte.Views.frmVeiculo.resources
-C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP Transporte.csproj.GenerateResource.cache
-C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP Transporte.csproj.CoreCompileInputs.cache
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP Transporte.csproj.CopyComplete
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP Transporte.exe
 C:\Users\usuario\Documents\vsProjects\ERP Transporte\obj\Release\ERP Transporte.pdb
-C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\System.ValueTuple.dll
-C:\Users\usuario\Documents\vsProjects\ERP Transporte\bin\Release\System.ValueTuple.xml

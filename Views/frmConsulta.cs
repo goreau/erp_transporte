@@ -32,7 +32,9 @@ namespace ERP_Transporte.Views
             this.filtered = new DataTable();
 
             dgConsulta.DataSource = this.dados;
-            dgConsulta.Columns[0].Visible = false;
+            
+            if (dados.Rows.Count > 0)
+                dgConsulta.Columns[0].Visible = false;
         }
 
         private void frmConsulta_Load(object sender, EventArgs e)
@@ -44,7 +46,9 @@ namespace ERP_Transporte.Views
             }
             else
             {
-                this.Height = dgConsulta.Rows.Count * 40;
+                int tam = dgConsulta.Rows.Count * 40;
+                this.Height = tam > 300 ? tam : 300;
+
             }
             
             this.Left = 0;
@@ -98,6 +102,12 @@ namespace ERP_Transporte.Views
                     break;
                 case 11:
                     fEdit = new frmAbastecimento(idSelecionado);
+                    break;
+                case 12:
+                    fEdit = new frmDespesa(idSelecionado);
+                    break;
+                case 13:
+                    fEdit = new frmLiquidacaoEd(idSelecionado);
                     break;
                 default:
                     fEdit = new frmEscola(idSelecionado);
@@ -156,6 +166,14 @@ namespace ERP_Transporte.Views
                 case 11:
                     Abastecimento ab = new Abastecimento();
                     dd = ab.Consulta();
+                    break;
+                case 12:
+                    Despesa dp = new Despesa();
+                    dd = dp.Consulta();
+                    break;
+                case 13:
+                    Liquidacao lq = new Liquidacao();
+                    dd = lq.Consulta();
                     break;
             }
 

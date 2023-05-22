@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ERP_Transporte.Relatorios
 {
@@ -60,8 +61,8 @@ namespace ERP_Transporte.Relatorios
             return dt;
         }
     }
-    internal class RendimentoRota 
-    { 
+    internal class RendimentoRota
+    {
         public string Trajeto { get; set; }
         public int Estudantes { get; set; }
         public double Receita { get; set; }
@@ -283,5 +284,99 @@ namespace ERP_Transporte.Relatorios
             return dt;
 
         }
+    }
+
+    internal class LiquidacaoRel
+    {
+        public string Fornecedor { get; set; }
+        public string Categoria { get; set; }
+        public string Descricao { get; set; }
+        public int Parcela { get; set; }
+        public string Vencimento { get; set; }
+        public Double Valor { get; set; }
+        public string Situacao { get; set; }
+        public string DataPgto { get; set; }
+        public Double ValorPago { get; set; }
+
+
+        public DataTable getDados(string filt)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+
+                MySqlConnection conn = Database.conn;
+
+                if (conn.State != ConnectionState.Open)
+                {
+                    conn.Open();
+                }
+
+                string sql = "SELECT f.nome AS fornecedor, a.nome AS categoria, d.descricao AS descricao, IF(d.id_tipo = 1, 'Unica', di.parcela) AS parcela, DATE_FORMAT(IF(d.id_tipo = 1, d.data, di.vencimento), '%d/%m/%Y')  AS vencimento, CASE WHEN d.id_tipo = 1 THEN d.valor ELSE di.valor END AS valor, " +
+                    "CASE WHEN ISNULL(l.id) THEN IF(d.id_tipo = 1, 'A Vista','Aberta') ELSE 'Liquidada' END AS situacao, COALESCE(DATE_FORMAT(IF(d.id_tipo = 1, d.data, l.data), '%d/%m/%Y'), '--') AS dataPgto, COALESCE(IF(d.id_tipo = 1, d.valor, l.valor), '--') AS valorPago  " +
+                    "FROM despesa d LEFT JOIN despesa_item di ON d.id = di.id_despesa LEFT JOIN liquidacao l ON l.id_despesa_item = di.id JOIN fornecedor f ON f.id = d.id_fornecedor " +
+                    "JOIN auxiliar a ON a.id = d.id_categoria " + filt + " ORDER BY d.id desc, di.parcela";
+
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+
+
+                da.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Não foi possível recuperar os dados do relatório. Tente novamente.");
+            }
+
+            return dt;
+
+        }
+
+    }
+    internal class DespesaRel
+    {
+        public string Fornecedor { get; set; }
+        public string Categoria { get; set; }
+        public string Descricao { get; set; }
+        public string Data { get; set; }
+        public Double Valor { get; set; }
+
+
+
+        public DataTable getDados(string filt)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+
+                MySqlConnection conn = Database.conn;
+
+                if (conn.State != ConnectionState.Open)
+                {
+                    conn.Open();
+                }
+
+                string sql = "SELECT f.nome AS fornecedor, a.nome AS categoria, d.descricao AS descricao, DATE_FORMAT(d.data, '%d/%m/%Y') AS data, d.valor AS valor " +
+                    "FROM despesa d JOIN fornecedor f ON f.id = d.id_fornecedor JOIN auxiliar a ON a.id = d.id_categoria " + filt + " ORDER BY f.nome, a.nome, d.data";
+
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+
+
+                da.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Não foi possível recuperar os dados do relatório. Tente novamente.");
+            }
+
+            return dt;
+
+        }
+
     }
 }

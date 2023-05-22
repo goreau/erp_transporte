@@ -127,11 +127,13 @@
     <Compile Include="Entidades\Auxiliar.cs" />
     <Compile Include="Entidades\Colaborador.cs" />
     <Compile Include="Entidades\Contrato.cs" />
+    <Compile Include="Entidades\Despesa.cs" />
     <Compile Include="Entidades\Dias.cs" />
     <Compile Include="Entidades\Empresa.cs" />
     <Compile Include="Entidades\Escola.cs" />
     <Compile Include="Entidades\Estudante.cs" />
     <Compile Include="Entidades\Fornecedor.cs" />
+    <Compile Include="Entidades\Liquidacao.cs" />
     <Compile Include="Entidades\Manutencao.cs" />
     <Compile Include="Entidades\Pagamento.cs" />
     <Compile Include="Entidades\Recebimento.cs" />
@@ -191,6 +193,12 @@
     <Compile Include="Views\frmContrato.Designer.cs">
       <DependentUpon>frmContrato.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\frmDespesa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmDespesa.Designer.cs">
+      <DependentUpon>frmDespesa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\frmDias.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -220,6 +228,18 @@
     </Compile>
     <Compile Include="Views\frmFornecedor.Designer.cs">
       <DependentUpon>frmFornecedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmLiquidacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmLiquidacao.Designer.cs">
+      <DependentUpon>frmLiquidacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmLiquidacaoEd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmLiquidacaoEd.Designer.cs">
+      <DependentUpon>frmLiquidacaoEd.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\frmManutencao.cs">
       <SubType>Form</SubType>
@@ -289,6 +309,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Relatorios\rptContrato.rdlc" />
+    <EmbeddedResource Include="Relatorios\rptDespesa.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\rptLiquidacao.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Relatorios\rptListaAlunos.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -320,6 +346,9 @@
     <EmbeddedResource Include="Views\frmContrato.resx">
       <DependentUpon>frmContrato.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmDespesa.resx">
+      <DependentUpon>frmDespesa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\frmDias.resx">
       <DependentUpon>frmDias.cs</DependentUpon>
     </EmbeddedResource>
@@ -334,6 +363,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\frmFornecedor.resx">
       <DependentUpon>frmFornecedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmLiquidacao.resx">
+      <DependentUpon>frmLiquidacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmLiquidacaoEd.resx">
+      <DependentUpon>frmLiquidacaoEd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\frmManutencao.resx">
       <DependentUpon>frmManutencao.cs</DependentUpon>
@@ -361,7 +396,9 @@
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\ERP_Transporte.Relatorios.DadosEmpresa.datasource" />
+    <None Include="Properties\DataSources\ERP_Transporte.Relatorios.DespesaRel.datasource" />
     <None Include="Properties\DataSources\ERP_Transporte.Relatorios.Escolas.datasource" />
+    <None Include="Properties\DataSources\ERP_Transporte.Relatorios.LiquidacaoRel.datasource" />
     <None Include="Properties\DataSources\ERP_Transporte.Relatorios.ListaAbastecimento.datasource" />
     <None Include="Properties\DataSources\ERP_Transporte.Relatorios.ListaAluno.datasource" />
     <None Include="Properties\DataSources\ERP_Transporte.Relatorios.ListaEscolas.datasource" />

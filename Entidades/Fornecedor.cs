@@ -98,13 +98,20 @@ namespace ERP_Transporte.Entidades
             string sql = "SELECT f.id, f.nome AS Nome, telefone AS Telefone, a.nome AS Categoria, f.updated_at AS 'Ultima atualização' " +
                 "FROM fornecedor f JOIN auxiliar a ON a.id = f.categoria";
 
-            MySqlCommand cmd = new MySqlCommand(sql, conn);
-
-            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-
             DataTable dt = new DataTable();
+            try
+            {
 
-            da.Fill(dt);
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                da.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Nâo foi possível consultar os fornecedores nesse momento.");
+            }
 
             return dt;
         }
@@ -129,23 +136,28 @@ namespace ERP_Transporte.Entidades
         public DataTable Combo()
         {
             string sql = "SELECT id, nome FROM fornecedor ORDER BY nome";
-
-            MySqlCommand cmd = new MySqlCommand(sql, conn);
-
-            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-
             DataTable dt = new DataTable();
+            try
+            {
 
-            da.Fill(dt);
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
 
-            DataRow dr = dt.NewRow();
-            dr["id"] = 0;
-            dr["nome"] = "-- Selecione --";
-            dt.Rows.Add(dr);
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
 
-            dt.DefaultView.Sort = "id";
-            dt = dt.DefaultView.ToTable();
+                da.Fill(dt);
 
+                DataRow dr = dt.NewRow();
+                dr["id"] = 0;
+                dr["nome"] = "-- Selecione --";
+                dt.Rows.Add(dr);
+
+                dt.DefaultView.Sort = "id";
+                dt = dt.DefaultView.ToTable();    
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Nâo foi possível consultar os fornecedores nesse momento.");
+            }
 
             return dt;
         }

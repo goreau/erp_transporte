@@ -363,5 +363,57 @@ namespace ERP_Transporte
             form.MdiParent = this;
             form.Show();
         }
+
+        private void cadastrarDespezaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDespesa form = new frmDespesa(0);
+            form.MdiParent = this;
+            form.Show();
+        }
+
+        private void consultarDespesaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Despesa obj = new Despesa();
+
+            DataTable dt = obj.Consulta();
+
+            frmConsulta form = new frmConsulta(dt, 12);
+
+            form.MdiParent = this;
+            form.Show();
+        }
+
+        private void toolStripMenuItem8_Click(object sender, EventArgs e)
+        {
+            frmLiquidacao form = new frmLiquidacao();
+            form.MdiParent = this;
+            form.Show();
+        }
+
+        private void toolStripMenuItem10_Click(object sender, EventArgs e)
+        {
+            Liquidacao obj = new Liquidacao();
+
+            DataTable dt = obj.Consulta();
+
+            frmConsulta form = new frmConsulta(dt, 13);
+
+            form.MdiParent = this;
+            form.Show();
+        }
+
+        private void relaçãoDeDespesasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmRelatorio form = new frmRelatorio(7);
+            form.MdiParent = this;
+            form.Show();
+        }
+
+        private void resumoDeDespesasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmRelatorio form = new frmRelatorio(8);
+            form.MdiParent = this;
+            form.Show();
+        }
     }
 }

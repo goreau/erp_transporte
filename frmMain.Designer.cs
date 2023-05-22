@@ -60,6 +60,12 @@
             this.cadastrarAbastecimentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarAbastecimentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastrarDespezaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultarDespesaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripMenuItem8 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem9 = new System.Windows.Forms.ToolStripSeparator();
             this.cadastrarToolStripMenuItem7 = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarPagamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
@@ -79,9 +85,11 @@
             this.manutençãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rendimentoPorRotaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.previsáoDeRecursosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.relaçãoDeDespesasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ajudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.resumoDeDespesasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -208,14 +216,14 @@
             // cadastrarToolStripMenuItem3
             // 
             this.cadastrarToolStripMenuItem3.Name = "cadastrarToolStripMenuItem3";
-            this.cadastrarToolStripMenuItem3.Size = new System.Drawing.Size(270, 34);
+            this.cadastrarToolStripMenuItem3.Size = new System.Drawing.Size(189, 34);
             this.cadastrarToolStripMenuItem3.Text = "Cadastrar";
             this.cadastrarToolStripMenuItem3.Click += new System.EventHandler(this.cadastrarToolStripMenuItem3_Click);
             // 
             // consultarToolStripMenuItem3
             // 
             this.consultarToolStripMenuItem3.Name = "consultarToolStripMenuItem3";
-            this.consultarToolStripMenuItem3.Size = new System.Drawing.Size(270, 34);
+            this.consultarToolStripMenuItem3.Size = new System.Drawing.Size(189, 34);
             this.consultarToolStripMenuItem3.Text = "Consultar";
             this.consultarToolStripMenuItem3.Click += new System.EventHandler(this.consultarToolStripMenuItem3_Click);
             // 
@@ -339,6 +347,12 @@
             // contaToolStripMenuItem
             // 
             this.contaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cadastrarDespezaToolStripMenuItem,
+            this.consultarDespesaToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.toolStripMenuItem8,
+            this.toolStripMenuItem10,
+            this.toolStripMenuItem9,
             this.cadastrarToolStripMenuItem7,
             this.consultarPagamentoToolStripMenuItem,
             this.toolStripMenuItem2,
@@ -348,6 +362,44 @@
             this.contaToolStripMenuItem.Name = "contaToolStripMenuItem";
             this.contaToolStripMenuItem.Size = new System.Drawing.Size(99, 29);
             this.contaToolStripMenuItem.Text = "Conta";
+            // 
+            // cadastrarDespezaToolStripMenuItem
+            // 
+            this.cadastrarDespezaToolStripMenuItem.Name = "cadastrarDespezaToolStripMenuItem";
+            this.cadastrarDespezaToolStripMenuItem.Size = new System.Drawing.Size(297, 34);
+            this.cadastrarDespezaToolStripMenuItem.Text = "Cadastrar Despesa";
+            this.cadastrarDespezaToolStripMenuItem.Click += new System.EventHandler(this.cadastrarDespezaToolStripMenuItem_Click);
+            // 
+            // consultarDespesaToolStripMenuItem
+            // 
+            this.consultarDespesaToolStripMenuItem.Name = "consultarDespesaToolStripMenuItem";
+            this.consultarDespesaToolStripMenuItem.Size = new System.Drawing.Size(297, 34);
+            this.consultarDespesaToolStripMenuItem.Text = "Consultar Despesa";
+            this.consultarDespesaToolStripMenuItem.Click += new System.EventHandler(this.consultarDespesaToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(294, 6);
+            // 
+            // toolStripMenuItem8
+            // 
+            this.toolStripMenuItem8.Name = "toolStripMenuItem8";
+            this.toolStripMenuItem8.Size = new System.Drawing.Size(297, 34);
+            this.toolStripMenuItem8.Text = "Cadastrar Liquidação";
+            this.toolStripMenuItem8.Click += new System.EventHandler(this.toolStripMenuItem8_Click);
+            // 
+            // toolStripMenuItem10
+            // 
+            this.toolStripMenuItem10.Name = "toolStripMenuItem10";
+            this.toolStripMenuItem10.Size = new System.Drawing.Size(297, 34);
+            this.toolStripMenuItem10.Text = "Consultar Liquidação";
+            this.toolStripMenuItem10.Click += new System.EventHandler(this.toolStripMenuItem10_Click);
+            // 
+            // toolStripMenuItem9
+            // 
+            this.toolStripMenuItem9.Name = "toolStripMenuItem9";
+            this.toolStripMenuItem9.Size = new System.Drawing.Size(294, 6);
             // 
             // cadastrarToolStripMenuItem7
             // 
@@ -442,7 +494,9 @@
             this.abastecimentosToolStripMenuItem,
             this.manutençãoToolStripMenuItem,
             this.rendimentoPorRotaToolStripMenuItem,
-            this.previsáoDeRecursosToolStripMenuItem});
+            this.previsáoDeRecursosToolStripMenuItem,
+            this.relaçãoDeDespesasToolStripMenuItem,
+            this.resumoDeDespesasToolStripMenuItem});
             this.relatórioToolStripMenuItem.Image = global::ERP_Transporte.Properties.Resources.documentos_48;
             this.relatórioToolStripMenuItem.Name = "relatórioToolStripMenuItem";
             this.relatórioToolStripMenuItem.Size = new System.Drawing.Size(122, 29);
@@ -451,44 +505,51 @@
             // listaDeAlunosToolStripMenuItem
             // 
             this.listaDeAlunosToolStripMenuItem.Name = "listaDeAlunosToolStripMenuItem";
-            this.listaDeAlunosToolStripMenuItem.Size = new System.Drawing.Size(280, 34);
+            this.listaDeAlunosToolStripMenuItem.Size = new System.Drawing.Size(283, 34);
             this.listaDeAlunosToolStripMenuItem.Text = "Lista de Alunos";
             this.listaDeAlunosToolStripMenuItem.Click += new System.EventHandler(this.listaDeAlunosToolStripMenuItem_Click);
             // 
             // listaDeEscolasToolStripMenuItem
             // 
             this.listaDeEscolasToolStripMenuItem.Name = "listaDeEscolasToolStripMenuItem";
-            this.listaDeEscolasToolStripMenuItem.Size = new System.Drawing.Size(280, 34);
+            this.listaDeEscolasToolStripMenuItem.Size = new System.Drawing.Size(283, 34);
             this.listaDeEscolasToolStripMenuItem.Text = "Lista de Escolas";
             this.listaDeEscolasToolStripMenuItem.Click += new System.EventHandler(this.listaDeEscolasToolStripMenuItem_Click);
             // 
             // abastecimentosToolStripMenuItem
             // 
             this.abastecimentosToolStripMenuItem.Name = "abastecimentosToolStripMenuItem";
-            this.abastecimentosToolStripMenuItem.Size = new System.Drawing.Size(280, 34);
+            this.abastecimentosToolStripMenuItem.Size = new System.Drawing.Size(283, 34);
             this.abastecimentosToolStripMenuItem.Text = "Abastecimentos";
             this.abastecimentosToolStripMenuItem.Click += new System.EventHandler(this.abastecimentosToolStripMenuItem_Click);
             // 
             // manutençãoToolStripMenuItem
             // 
             this.manutençãoToolStripMenuItem.Name = "manutençãoToolStripMenuItem";
-            this.manutençãoToolStripMenuItem.Size = new System.Drawing.Size(280, 34);
+            this.manutençãoToolStripMenuItem.Size = new System.Drawing.Size(283, 34);
             this.manutençãoToolStripMenuItem.Text = "Manutenção";
             this.manutençãoToolStripMenuItem.Click += new System.EventHandler(this.manutençãoToolStripMenuItem_Click);
             // 
             // rendimentoPorRotaToolStripMenuItem
             // 
             this.rendimentoPorRotaToolStripMenuItem.Name = "rendimentoPorRotaToolStripMenuItem";
-            this.rendimentoPorRotaToolStripMenuItem.Size = new System.Drawing.Size(280, 34);
+            this.rendimentoPorRotaToolStripMenuItem.Size = new System.Drawing.Size(283, 34);
             this.rendimentoPorRotaToolStripMenuItem.Text = "Receita por Rota";
             this.rendimentoPorRotaToolStripMenuItem.Click += new System.EventHandler(this.rendimentoPorRotaToolStripMenuItem_Click);
             // 
             // previsáoDeRecursosToolStripMenuItem
             // 
             this.previsáoDeRecursosToolStripMenuItem.Name = "previsáoDeRecursosToolStripMenuItem";
-            this.previsáoDeRecursosToolStripMenuItem.Size = new System.Drawing.Size(280, 34);
+            this.previsáoDeRecursosToolStripMenuItem.Size = new System.Drawing.Size(283, 34);
             this.previsáoDeRecursosToolStripMenuItem.Text = "Previsáo de Recursos";
             this.previsáoDeRecursosToolStripMenuItem.Click += new System.EventHandler(this.previsáoDeRecursosToolStripMenuItem_Click);
+            // 
+            // relaçãoDeDespesasToolStripMenuItem
+            // 
+            this.relaçãoDeDespesasToolStripMenuItem.Name = "relaçãoDeDespesasToolStripMenuItem";
+            this.relaçãoDeDespesasToolStripMenuItem.Size = new System.Drawing.Size(283, 34);
+            this.relaçãoDeDespesasToolStripMenuItem.Text = "Relação de Despesas";
+            this.relaçãoDeDespesasToolStripMenuItem.Click += new System.EventHandler(this.relaçãoDeDespesasToolStripMenuItem_Click);
             // 
             // ajudaToolStripMenuItem
             // 
@@ -511,6 +572,13 @@
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
             this.toolStripMenuItem4.Size = new System.Drawing.Size(98, 29);
             this.toolStripMenuItem4.Text = "              ";
+            // 
+            // resumoDeDespesasToolStripMenuItem
+            // 
+            this.resumoDeDespesasToolStripMenuItem.Name = "resumoDeDespesasToolStripMenuItem";
+            this.resumoDeDespesasToolStripMenuItem.Size = new System.Drawing.Size(283, 34);
+            this.resumoDeDespesasToolStripMenuItem.Text = "Resumo de Despesas";
+            this.resumoDeDespesasToolStripMenuItem.Click += new System.EventHandler(this.resumoDeDespesasToolStripMenuItem_Click);
             // 
             // frmMain
             // 
@@ -586,5 +654,13 @@
         private System.Windows.Forms.ToolStripMenuItem manutençãoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem rendimentoPorRotaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem previsáoDeRecursosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cadastrarDespezaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consultarDespesaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem9;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem8;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem10;
+        private System.Windows.Forms.ToolStripMenuItem relaçãoDeDespesasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem resumoDeDespesasToolStripMenuItem;
     }
 }

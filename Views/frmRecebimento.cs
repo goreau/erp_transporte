@@ -298,11 +298,18 @@ namespace ERP_Transporte.Views
 
             DataTable dt = et.Combo(id_rota);
 
-
-            cmbEstudante.DataSource = dt;
-            cmbEstudante.DisplayMember = "nome";
-            cmbEstudante.ValueMember = "id";
-            cmbEstudante.SelectedIndex = 0;
+            if (dt.Rows.Count > 0)
+            {
+                cmbEstudante.DataSource = dt;
+                cmbEstudante.DisplayMember = "nome";
+                cmbEstudante.ValueMember = "id";
+                cmbEstudante.SelectedIndex = 0;
+            }
+            else
+            {
+                MessageBox.Show("Não existem contratos cadastrados na rota informada!");
+            }
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
