@@ -341,7 +341,7 @@ namespace ERP_Transporte.Views
             else
             {
                 txtDt_nascimento.TextMaskFormat = MaskFormat.IncludeLiterals;
-                string data = "";
+
                 DateTime dt;
                 bool success = DateTime.TryParse(txtDt_nascimento.Text, out dt);
                 if (success)
@@ -370,7 +370,7 @@ namespace ERP_Transporte.Views
             else
             {
                 txtData.TextMaskFormat = MaskFormat.IncludeLiterals;
-                string data = "";
+  
                 DateTime dt;
                 bool success = DateTime.TryParse(txtData.Text, out dt);
                 if (success)

@@ -55,6 +55,7 @@ namespace ERP_Transporte.Entidades
             }
             catch (Exception)
             {
+                MessageBox.Show("Nâo foi possível salvar o registro nesse momento. Tente novamente.");
                 return 0;
             }
         }
@@ -90,18 +91,27 @@ namespace ERP_Transporte.Entidades
             }
             catch (Exception)
             {
+                MessageBox.Show("Nâo foi possível salvar o registro nesse momento. Tente novamente.");
                 return 0;
             }
         }
 
         public DataTable Delete(int id)
         {
-            string sql = "DELETE FROM liquidacao WHERE id=@id";
-            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            try
+            {
+                string sql = "DELETE FROM liquidacao WHERE id=@id";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
 
-            cmd.Parameters.AddWithValue("@id", id);
+                cmd.Parameters.AddWithValue("@id", id);
 
-            cmd.ExecuteNonQuery();
+                cmd.ExecuteNonQuery();
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Nâo foi possível excluir o registro nesse momento. Tente novamente.");
+            }
 
             return this.Consulta();
         }
@@ -120,7 +130,7 @@ namespace ERP_Transporte.Entidades
 
                 da.Fill(dt);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Nâo foi possível consultar as despesas nesse momento.");
             }
@@ -129,21 +139,31 @@ namespace ERP_Transporte.Entidades
 
         public DataRow Get(int id)
         {
-            string sql = "SELECT p.id, f.nome AS fornecedor, a.nome as categoria, d.descricao, di.vencimento, di.parcela as parcela, di.valor, p.data AS data_pago, p.valor AS valor_pago " +
+            DataRow dr = null;
+            try
+            {
+                string sql = "SELECT p.id, f.nome AS fornecedor, a.nome as categoria, d.descricao, di.vencimento, di.parcela as parcela, di.valor, p.data AS data_pago, p.valor AS valor_pago " +
                 "FROM liquidacao p JOIN despesa_item di ON di.id=p.id_despesa_item JOIN despesa d ON d.id=di.id_despesa JOIN fornecedor f ON f.id = d.id_fornecedor JOIN auxiliar a ON a.id = d.id_categoria " +
                 "WHERE p.id=@id";
 
-            MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
 
-            cmd.Parameters.AddWithValue("@id", id);
+                cmd.Parameters.AddWithValue("@id", id);
 
-            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
 
-            DataTable dt = new DataTable();
+                DataTable dt = new DataTable();
 
-            da.Fill(dt);
+                da.Fill(dt);
 
-            return dt.Rows[0];
+                dr = dt.Rows[0];
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Nâo foi possível consultar as despesas nesse momento. Tente novamente.");
+            }
+
+            return dr;
         }
     }
 }

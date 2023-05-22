@@ -325,7 +325,7 @@ namespace ERP_Transporte.Relatorios
 
                 da.Fill(dt);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Não foi possível recuperar os dados do relatório. Tente novamente.");
             }
@@ -369,7 +369,7 @@ namespace ERP_Transporte.Relatorios
 
                 da.Fill(dt);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Não foi possível recuperar os dados do relatório. Tente novamente.");
             }

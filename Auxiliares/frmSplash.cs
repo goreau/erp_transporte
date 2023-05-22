@@ -36,7 +36,7 @@ namespace ERP_Transporte.Auxiliares
             {
                 this.Invoke(del, progress);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 
             }

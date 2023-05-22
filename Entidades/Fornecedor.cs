@@ -26,69 +26,79 @@ namespace ERP_Transporte.Entidades
 
         public int Add(frmFornecedor form)
         {
-            string sql = "INSERT INTO `fornecedor`(`nome`, `telefone`, `categoria`) " +
-                "VALUES (@nome, @telefone, @categoria)";
-
-            MySqlCommand cmd = new MySqlCommand(sql, conn);
-
-            cmd.Parameters.AddWithValue("@nome", form.Controls["txtNome"].Text);
-
-            var cmb = form.Controls.OfType<ComboBox>().FirstOrDefault(r => r.Name == "cmbCategoria");
-            DataRowView drv = cmb.SelectedItem as DataRowView;
-            String sel = drv.Row["id"].ToString();
-
-            cmd.Parameters.AddWithValue("@categoria", sel);
-
-            cmd.Parameters.AddWithValue("@telefone", form.Controls["txtTelefone"].Text);
-
-
             try
             {
+                string sql = "INSERT INTO `fornecedor`(`nome`, `telefone`, `categoria`) " +
+                    "VALUES (@nome, @telefone, @categoria)";
+
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+                cmd.Parameters.AddWithValue("@nome", form.Controls["txtNome"].Text);
+
+                var cmb = form.Controls.OfType<ComboBox>().FirstOrDefault(r => r.Name == "cmbCategoria");
+                DataRowView drv = cmb.SelectedItem as DataRowView;
+                String sel = drv.Row["id"].ToString();
+
+                cmd.Parameters.AddWithValue("@categoria", sel);
+
+                cmd.Parameters.AddWithValue("@telefone", form.Controls["txtTelefone"].Text);
+
                 return cmd.ExecuteNonQuery();
             }
             catch (Exception)
             {
+                MessageBox.Show("Nâo foi possível salvar o registro nesse momento. Tente novamente.");
                 return 0;
             }
         }
 
         public int Edit(frmFornecedor form)
         {
-            string sql = "UPDATE `fornecedor` SET `nome`= @nome, `telefone`= @telefone, `categoria`= @categoria, `updated_at` = CURRENT_TIMESTAMP() " +
-                " WHERE id = @id";
-
-            MySqlCommand cmd = new MySqlCommand(sql, conn);
-
-            cmd.Parameters.AddWithValue("@id", form.Controls["txtId"].Text);
-
-            cmd.Parameters.AddWithValue("@nome", form.Controls["txtNome"].Text);
-
-            var cmb = form.Controls.OfType<ComboBox>().FirstOrDefault(r => r.Name == "cmbCategoria");
-            DataRowView drv = cmb.SelectedItem as DataRowView;
-            String sel = drv.Row["id"].ToString();
-
-            cmd.Parameters.AddWithValue("@categoria", sel);
-
-            cmd.Parameters.AddWithValue("@telefone", form.Controls["txtTelefone"].Text);
-
             try
             {
+                string sql = "UPDATE `fornecedor` SET `nome`= @nome, `telefone`= @telefone, `categoria`= @categoria, `updated_at` = CURRENT_TIMESTAMP() " +
+                    " WHERE id = @id";
+
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+                cmd.Parameters.AddWithValue("@id", form.Controls["txtId"].Text);
+
+                cmd.Parameters.AddWithValue("@nome", form.Controls["txtNome"].Text);
+
+                var cmb = form.Controls.OfType<ComboBox>().FirstOrDefault(r => r.Name == "cmbCategoria");
+                DataRowView drv = cmb.SelectedItem as DataRowView;
+                String sel = drv.Row["id"].ToString();
+
+                cmd.Parameters.AddWithValue("@categoria", sel);
+
+                cmd.Parameters.AddWithValue("@telefone", form.Controls["txtTelefone"].Text);
+
+            
                 return cmd.ExecuteNonQuery();
             }
             catch (Exception)
             {
+                MessageBox.Show("Nâo foi possível salvar o registro nesse momento. Tente novamente.");
                 return 0;
             }
         }
 
         public DataTable Delete(int id)
         {
-            string sql = "DELETE FROM fornecedor WHERE id=@id";
-            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            try
+            {
+                string sql = "DELETE FROM fornecedor WHERE id=@id";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
 
-            cmd.Parameters.AddWithValue("@id", id);
+                cmd.Parameters.AddWithValue("@id", id);
 
-            cmd.ExecuteNonQuery();
+                cmd.ExecuteNonQuery();
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Nâo foi possível excluir o registro nesse momento. Tente novamente.");
+            }
 
             return this.Consulta();
         }
@@ -108,7 +118,7 @@ namespace ERP_Transporte.Entidades
 
                 da.Fill(dt);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Nâo foi possível consultar os fornecedores nesse momento.");
             }
@@ -118,25 +128,37 @@ namespace ERP_Transporte.Entidades
 
         public DataRow Get(int id)
         {
-            string sql = "SELECT * FROM fornecedor WHERE id=@id";
+            DataRow dataRow = null;
+            try
+            {
+                string sql = "SELECT * FROM fornecedor WHERE id=@id";
 
-            MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
 
-            cmd.Parameters.AddWithValue("@id", id);
+                cmd.Parameters.AddWithValue("@id", id);
 
-            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
 
-            DataTable dt = new DataTable();
+                DataTable dt = new DataTable();
 
-            da.Fill(dt);
+                da.Fill(dt);
 
-            return dt.Rows[0];
+                dataRow = dt.Rows[0];
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Nâo foi possível recuperar o registro nesse momento. Tente novamente.");
+            }
+
+
+            return dataRow;
         }
 
         public DataTable Combo()
         {
             string sql = "SELECT id, nome FROM fornecedor ORDER BY nome";
             DataTable dt = new DataTable();
+            DataRow dr = null;
             try
             {
 
@@ -146,7 +168,7 @@ namespace ERP_Transporte.Entidades
 
                 da.Fill(dt);
 
-                DataRow dr = dt.NewRow();
+                dr = dt.NewRow();
                 dr["id"] = 0;
                 dr["nome"] = "-- Selecione --";
                 dt.Rows.Add(dr);
@@ -154,8 +176,13 @@ namespace ERP_Transporte.Entidades
                 dt.DefaultView.Sort = "id";
                 dt = dt.DefaultView.ToTable();    
             }
-            catch (Exception ex)
+            catch (Exception)
             {
+                dr = dt.NewRow();
+                dr["id"] = 0;
+                dr["nome"] = "-- Selecione --";
+                dt.Rows.Add(dr);
+
                 MessageBox.Show("Nâo foi possível consultar os fornecedores nesse momento.");
             }
 

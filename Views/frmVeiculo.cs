@@ -357,7 +357,7 @@ namespace ERP_Transporte.Views
         private bool validateEntrada()
         {
             bool bStatus = true;
-            string data = "";
+
             DateTime dt;
             bool success = DateTime.TryParse(txtEntrada.Text, out dt);
             if (success)
@@ -421,7 +421,6 @@ namespace ERP_Transporte.Views
             {
                 txtLicenciamento.TextMaskFormat = MaskFormat.IncludeLiterals;
                 
-                string data = "";
                 DateTime dt;
                 bool success = DateTime.TryParse(txtLicenciamento.Text, out dt);
                 if (success)

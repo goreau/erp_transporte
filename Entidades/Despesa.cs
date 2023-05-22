@@ -97,26 +97,25 @@ namespace ERP_Transporte.Entidades
 
         public int AddDetail(DataRow dr, long id, MySqlTransaction trans)
         {
-            string sql = "INSERT INTO `despesa_item`(`id_despesa`, `parcela`, `vencimento`, `valor`) " +
-                "VALUES (@master, @parcela, @vencimento, @valor)";
-
-            MySqlCommand cmd = new MySqlCommand(sql, conn, trans);
-
-            cmd.Parameters.AddWithValue("@master", id);
-            cmd.Parameters.AddWithValue("@parcela",dr["parcela"]);
-            cmd.Parameters.AddWithValue("@valor", dr["valor"].ToString().Replace(".", "").Replace(",", "."));
-
-            string data = "";
-            DateTime dt;
-            bool success = DateTime.TryParse(dr["vencimento"].ToString(), out dt);
-            if (success)
-            {
-                data = dt.Year.ToString() + "-" + dt.Month.ToString() + "-" + dt.Day.ToString();
-            }
-            cmd.Parameters.AddWithValue("@vencimento", data);
-
             try
             {
+                string sql = "INSERT INTO `despesa_item`(`id_despesa`, `parcela`, `vencimento`, `valor`) " +
+                "VALUES (@master, @parcela, @vencimento, @valor)";
+
+                MySqlCommand cmd = new MySqlCommand(sql, conn, trans);
+
+                cmd.Parameters.AddWithValue("@master", id);
+                cmd.Parameters.AddWithValue("@parcela",dr["parcela"]);
+                cmd.Parameters.AddWithValue("@valor", dr["valor"].ToString().Replace(".", "").Replace(",", "."));
+
+                string data = "";
+                DateTime dt;
+                bool success = DateTime.TryParse(dr["vencimento"].ToString(), out dt);
+                if (success)
+                {
+                    data = dt.Year.ToString() + "-" + dt.Month.ToString() + "-" + dt.Day.ToString();
+                }
+                cmd.Parameters.AddWithValue("@vencimento", data);
 
                 return cmd.ExecuteNonQuery();
             }
@@ -128,14 +127,14 @@ namespace ERP_Transporte.Entidades
 
         public int DeleteDetail(long desp, MySqlTransaction trans)
         {
-            string sql = "DELETE FROM `despesa_item` WHERE id_despesa=@desp";
-
-            MySqlCommand cmd = new MySqlCommand(sql, conn, trans);
-
-            cmd.Parameters.AddWithValue("@desp", desp);
-
             try
             {
+                string sql = "DELETE FROM `despesa_item` WHERE id_despesa=@desp";
+
+                MySqlCommand cmd = new MySqlCommand(sql, conn, trans);
+
+                cmd.Parameters.AddWithValue("@desp", desp);
+
                 return cmd.ExecuteNonQuery();
             }
             catch (Exception)
@@ -146,60 +145,61 @@ namespace ERP_Transporte.Entidades
 
         public int Edit(frmDespesa form, DataTable table, bool detail)
         {
-            string sql = "UPDATE `despesa` SET `data`=@data, `id_fornecedor`=@fornecedor,`id_categoria`=@categoria," +
+            try
+            {
+                string sql = "UPDATE `despesa` SET `data`=@data, `id_fornecedor`=@fornecedor,`id_categoria`=@categoria," +
                 "`notaFiscal`=@nota,`valor`=@valor,`id_tipo`=@tipo, `id_metodo`=@metodo, `descricao`=@descricao, `updated_at` = CURRENT_TIMESTAMP() " +
                 " WHERE id = @id";
 
-            MySqlCommand cmd = new MySqlCommand(sql);
+                MySqlCommand cmd = new MySqlCommand(sql);
 
-            MySqlTransaction trans;
+                MySqlTransaction trans;
 
-            if (conn.State != ConnectionState.Open)
-            {
-                conn.Open();
-            }
-
-
-            trans = conn.BeginTransaction();
-            cmd.Connection = conn;
-            cmd.Transaction = trans;
-
-            SplitContainer sc = (SplitContainer)form.Controls["splitContainer1"];
-            Control.ControlCollection colec = sc.Panel1.Controls;
+                if (conn.State != ConnectionState.Open)
+                {
+                    conn.Open();
+                }
 
 
+                trans = conn.BeginTransaction();
+                cmd.Connection = conn;
+                cmd.Transaction = trans;
 
-            cmd.Parameters.AddWithValue("@id", colec["txtId"].Text);
+                SplitContainer sc = (SplitContainer)form.Controls["splitContainer1"];
+                Control.ControlCollection colec = sc.Panel1.Controls;
 
-            long id = long.Parse(colec["txtId"].Text);
 
-            var cmb = colec.OfType<ComboBox>().FirstOrDefault(r => r.Name == "cmbFornecedor");
-            DataRowView drv = cmb.SelectedItem as DataRowView;
-            String sel = drv.Row["id"].ToString();
-            cmd.Parameters.AddWithValue("@fornecedor", sel);
 
-            cmb = colec.OfType<ComboBox>().FirstOrDefault(r => r.Name == "cmbCategoria");
-            drv = cmb.SelectedItem as DataRowView;
-            sel = drv.Row["id"].ToString();
-            cmd.Parameters.AddWithValue("@categoria", sel);
+                cmd.Parameters.AddWithValue("@id", colec["txtId"].Text);
 
-            cmd.Parameters.AddWithValue("@tipo", colec["txtTipoPgto"].Text);
-            cmd.Parameters.AddWithValue("@metodo", colec["txtMetodoPgto"].Text);
-            cmd.Parameters.AddWithValue("@valor", colec["txtValor"].Text.Replace(".", "").Replace(",", "."));
-            cmd.Parameters.AddWithValue("@nota", colec["txtNF"].Text);
-            cmd.Parameters.AddWithValue("@descricao", colec["txtDescricao"].Text);
+                long id = long.Parse(colec["txtId"].Text);
 
-            string data = "";
-            DateTime dt;
-            bool success = DateTime.TryParse(colec["txtData"].Text, out dt);
-            if (success)
-            {
-                data = dt.Year.ToString() + "-" + dt.Month.ToString() + "-" + dt.Day.ToString();
-            }
-            cmd.Parameters.AddWithValue("@data", data);
+                var cmb = colec.OfType<ComboBox>().FirstOrDefault(r => r.Name == "cmbFornecedor");
+                DataRowView drv = cmb.SelectedItem as DataRowView;
+                String sel = drv.Row["id"].ToString();
+                cmd.Parameters.AddWithValue("@fornecedor", sel);
 
-            try
-            {
+                cmb = colec.OfType<ComboBox>().FirstOrDefault(r => r.Name == "cmbCategoria");
+                drv = cmb.SelectedItem as DataRowView;
+                sel = drv.Row["id"].ToString();
+                cmd.Parameters.AddWithValue("@categoria", sel);
+
+                cmd.Parameters.AddWithValue("@tipo", colec["txtTipoPgto"].Text);
+                cmd.Parameters.AddWithValue("@metodo", colec["txtMetodoPgto"].Text);
+                cmd.Parameters.AddWithValue("@valor", colec["txtValor"].Text.Replace(".", "").Replace(",", "."));
+                cmd.Parameters.AddWithValue("@nota", colec["txtNF"].Text);
+                cmd.Parameters.AddWithValue("@descricao", colec["txtDescricao"].Text);
+
+                string data = "";
+                DateTime dt;
+                bool success = DateTime.TryParse(colec["txtData"].Text, out dt);
+                if (success)
+                {
+                    data = dt.Year.ToString() + "-" + dt.Month.ToString() + "-" + dt.Day.ToString();
+                }
+                cmd.Parameters.AddWithValue("@data", data);
+
+            
                 cmd.ExecuteNonQuery();
 
                 if (detail)
@@ -253,7 +253,7 @@ namespace ERP_Transporte.Entidades
 
                 da.Fill(dt);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Nâo foi possível consultar as despesas nesse momento.");
             }
@@ -262,12 +262,20 @@ namespace ERP_Transporte.Entidades
 
         public DataTable Delete(int id)
         {
-            string sql = "DELETE FROM despesa WHERE id=@id";
-            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            try
+            {
+                string sql = "DELETE FROM despesa WHERE id=@id";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
 
-            cmd.Parameters.AddWithValue("@id", id);
+                cmd.Parameters.AddWithValue("@id", id);
 
-            cmd.ExecuteNonQuery();
+                cmd.ExecuteNonQuery();
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Nâo foi possível excluir o registro nesse momento. Tente novamente.");
+            }
 
             return this.Consulta();
         }
@@ -286,78 +294,111 @@ namespace ERP_Transporte.Entidades
 
                 da.Fill(dt);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show("Nâo foi possível consultar as despesas nesse momento.");
+                MessageBox.Show("Nâo foi possível consultar as despesas nesse momento. Tente novamente.");
             }
             return dt;
         }
 
         public DataTable Details(int desp)
         {
-            string sql = "SELECT p.id, p.parcela AS 'Parcela', p.vencimento as 'Vencimento', p.valor AS 'Valor' " +
+            DataTable dt = new DataTable();
+            try
+            {
+                string sql = "SELECT p.id, p.parcela AS 'Parcela', p.vencimento as 'Vencimento', p.valor AS 'Valor' " +
                 "FROM despesa_item p WHERE p.id_despesa=@desp ORDER BY p.parcela";
 
-            MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
 
-            cmd.Parameters.AddWithValue("@desp", desp);
+                cmd.Parameters.AddWithValue("@desp", desp);
 
-            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
 
-            DataTable dt = new DataTable();
-
-            da.Fill(dt);
+                da.Fill(dt);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Nâo foi possível consultar as despesas nesse momento. Tente novamente.");
+            }
+            
 
             return dt;
         }
 
         public DataRow Get(int id)
         {
-            string sql = "SELECT * FROM despesa WHERE id=@id";
+            DataRow dataRow = null;
+            try
+            {
+                string sql = "SELECT * FROM despesa WHERE id=@id";
 
-            MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
 
-            cmd.Parameters.AddWithValue("@id", id);
+                cmd.Parameters.AddWithValue("@id", id);
 
-            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
 
-            DataTable dt = new DataTable();
+                DataTable dt = new DataTable();
 
-            da.Fill(dt);
+                da.Fill(dt);
 
-            return dt.Rows[0];
+                dataRow = dt.Rows[0];
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Nâo foi possível recuperar o registro nesse momento. Tente novamente.");
+            }
+
+
+            return dataRow;
         }
 
         public DataRow GetWithDetail(int id)
         {
-            string sql = "SELECT f.nome as fornecedor, a.nome AS categoria, d.descricao, di.parcela, di.vencimento, di.valor " +
+            DataRow dataRow = null;
+            try
+            {
+                string sql = "SELECT f.nome as fornecedor, a.nome AS categoria, d.descricao, di.parcela, di.vencimento, di.valor " +
                 "FROM despesa d JOIN despesa_item di ON di.id_despesa=d.id JOIN fornecedor f ON f.id = d.id_fornecedor JOIN auxiliar a ON a.id = d.id_categoria WHERE di.id=@id";
 
-            MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
 
-            cmd.Parameters.AddWithValue("@id", id);
+                cmd.Parameters.AddWithValue("@id", id);
 
-            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
 
-            DataTable dt = new DataTable();
+                DataTable dt = new DataTable();
 
-            da.Fill(dt);
+                da.Fill(dt);
 
-            return dt.Rows[0];
+                dataRow = dt.Rows[0];
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Nâo foi possível consultar os registros nesse momento. Tente novamente.");
+            }
+            return dataRow;
         }
 
         public DataSet Combo()
         {
-            string sql = "SELECT id, concat(placa,'-',modelo) as nome FROM despesa";
-
-            MySqlCommand cmd = new MySqlCommand(sql, conn);
-
-            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-
             DataSet ds = new DataSet();
+            try
+            {
+                string sql = "SELECT id, concat(placa,'-',modelo) as nome FROM despesa";
 
-            da.Fill(ds);
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
 
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                da.Fill(ds);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Nâo foi possível consultar os registros nesse momento. Tente novamente.");
+            }
+            
             return ds;
         }
     }

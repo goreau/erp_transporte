@@ -28,7 +28,7 @@ namespace ERP_Transporte.Views
             this.populaCombos();
             details = new DataTable();
 
-            this.Resize();
+            this.MyResize();
             this.edDetail = false;
 
             if (id > 0)
@@ -50,7 +50,7 @@ namespace ERP_Transporte.Views
             dgDetails.Columns[0].Visible = false;
         }
 
-        private void Resize()
+        private void MyResize()
         {
             this.pn1 = this.splitContainer1.Panel1.Width;
             this.pn2 = this.splitContainer1.Panel2.Width;
@@ -104,7 +104,7 @@ namespace ERP_Transporte.Views
 
         private void rbParcelado_CheckedChanged(object sender, EventArgs e)
         {
-            if (start)
+            if (start && this.id == 0)
             {
                 start = false;
                 splitContainer2.Visible = false;
@@ -121,20 +121,32 @@ namespace ERP_Transporte.Views
                 splitContainer1.SplitterDistance = this.pn1;
                 splitContainer2.SplitterDistance = (int) this.Size.Height / 4;
 
-                this.Location = new Point(this.Parent.Width / 2 - this.Width / 2 + this.Parent.Location.X,
-                                        this.Parent.Height / 2 - this.Height / 2 + this.Parent.Location.Y);
             }
             else
             {
                 splitContainer2.Visible = false;
                 if (li.Checked)
                 {
-                    this.Size = new Size(this.pn1, this.Size.Height);
-                    this.Location = new Point(this.Parent.Width / 2 - this.Width / 2 + this.Parent.Location.X,
-                                        this.Parent.Height / 2 - this.Height / 2 + this.Parent.Location.Y);
+                    this.Size = new Size(this.pn1, this.Size.Height);                    
                 }
             }
-              
+            this.tamForm();
+        }
+
+        private void tamForm()
+        {
+            try
+            {
+                Screen myScreen = Screen.FromControl(this);
+
+
+                this.Location = new Point(myScreen.Bounds.Width / 2 - this.Width / 2 + myScreen.Bounds.Location.X,
+                                        myScreen.Bounds.Height / 2 - this.Height / 2 + myScreen.Bounds.Location.Y);
+            }
+            catch (Exception)
+            {
+            }
+            
         }
 
         private void populaCombos()

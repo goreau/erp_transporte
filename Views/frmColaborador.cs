@@ -270,7 +270,7 @@ namespace ERP_Transporte.Views
         private bool validateAdmissao()
         {
             bool bStatus = true;
-            string data = "";
+
             DateTime dt;
             bool success = DateTime.TryParse(txtDt_admissao.Text, out dt);
             if (success)
@@ -311,7 +311,7 @@ namespace ERP_Transporte.Views
             else
             {
                 txtDt_nascimento.TextMaskFormat = MaskFormat.IncludeLiterals;
-                string data = "";
+
                 DateTime dt;
                 bool success = DateTime.TryParse(txtDt_expedicao.Text, out dt);
                 if (success)
@@ -345,7 +345,7 @@ namespace ERP_Transporte.Views
             else
             {
                 txtDt_nascimento.TextMaskFormat = MaskFormat.IncludeLiterals;
-                string data = "";
+
                 DateTime dt;
                 txtDt_validade.TextMaskFormat = MaskFormat.IncludeLiterals;
 
@@ -381,7 +381,7 @@ namespace ERP_Transporte.Views
             else
             {
                 txtDt_nascimento.TextMaskFormat = MaskFormat.IncludeLiterals;
-                string data = "";
+
                 DateTime dt;
                 bool success = DateTime.TryParse(txtDt_nascimento.Text, out dt);
                 if (success)

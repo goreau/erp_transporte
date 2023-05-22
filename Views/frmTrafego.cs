@@ -304,7 +304,7 @@ namespace ERP_Transporte.Views
         private bool validateData()
         {
             bool bStatus = true;
-            string data = "";
+  
             DateTime dt;
             bool success = DateTime.TryParse(txtData.Text, out dt);
             if (success)
