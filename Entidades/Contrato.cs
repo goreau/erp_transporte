@@ -90,7 +90,7 @@ namespace ERP_Transporte.Entidades
         {
             try
             {
-                string sql = "UPDATE `contrato` SET id_aluno=@id_aluno, id_contratante=@id_contratante, logradouro=@logradouro, numero=@numero, bairro=@bairro, nacionalidade=@nacionalidade, dt_nascimento=@dt_nascimento, est_civil=@est_civil, " +
+                string sql = "UPDATE `contrato` SET id_aluno=@id_aluno, logradouro=@logradouro, numero=@numero, bairro=@bairro, nacionalidade=@nacionalidade, dt_nascimento=@dt_nascimento, est_civil=@est_civil, " +
                 "rg=@rg, emissor=@emissor, cpf=@cpf, profissao=@profissao,  naturalidade=@naturalidade, valor=@valor, dia=@dia, trajeto=@trajeto, trajeto_esp=@trajeto_esp, data=@data, inativo=@inativo, dt_inativo=@dt_inativo, `updated_at` = CURRENT_TIMESTAMP() " +
                 " WHERE id = @id";
 
@@ -101,9 +101,9 @@ namespace ERP_Transporte.Entidades
 
                 cmd.Parameters.AddWithValue("@id_aluno", cmb.SelectedValue);
 
-                cmb = form.Controls.OfType<ComboBox>().FirstOrDefault(r => r.Name == "cmbContratante");
+               // cmb = form.Controls.OfType<ComboBox>().FirstOrDefault(r => r.Name == "cmbContratante");
 
-                cmd.Parameters.AddWithValue("@id_contratante", cmb.SelectedIndex);
+               // cmd.Parameters.AddWithValue("@id_contratante", cmb.SelectedIndex);
 
                 cmd.Parameters.AddWithValue("@logradouro", form.Controls["txtLogradouro"].Text);
                 cmd.Parameters.AddWithValue("@numero", form.Controls["txtNumero"].Text);
